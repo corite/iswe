@@ -1,11 +1,74 @@
 \section{System Features}
-\subsection{Verbräuche eintragen}
-Verbräuche eintragen
-\subsubsection{Description and Priority}
+Wir haben die Systemfunktionen nach Usergruppen aufgeteilt. TODO: Hier kommt das Use-Case Diagramm hin!
+
+\subsection{Systemfunktionen für alle Usergruppen}
+\subsubsection{Anmeldung}
+\paragraph{Description and Priority}
+\paragraph{Stimulus/Response Seuquences}
+\paragraph{Functional Requirements}
+
+\subsection{Benutzer}
+\subsubsection{Accounterstellung}
+\paragraph{Description and Priority}
+Diese Funktion ermöglicht es, einer Person, die an dem Produkt interessiert ist, ein Account anzulegen und somit anfangen kann das Produkt zu nutzen. Die Priorität dieser Funktion kann nicht überschätzt werden, da ohne sie, keine der Folgenden umsetzbar wäre.
+\paragraph{Stimulus/Response Seuquences} Der/die Interessierte gibt in der Anmelde-Maske ihren frei gewählten Benutzername, ihre E-Mail-Adresse und schließlich ein Passwort ein. Nach einem Knopfdruck, wird, wenn die Eingaben die funktionalen Anforderungen REG4, REG5, REG6 erfüllen, der Benutzer nun auf die Startseite weitergeleitet. Wenn nicht, wird der Benutzer über die nicht erfüllten Anforderungen in der Anmelde-Maske informiert und kann daraufhin seine/ihre Eingaben anpassen.
+\paragraph{Functional Requirements}
+\begin{itemize}
+	\item \textbf{REG1} Darstellen der Anmelde-Maske
+	\item \textbf{REG2} Validieren den Eingabe also Überprüfung von REG4, REG5, REG6  durch ggf. Abgleich mit der Datenbank
+	\item \textbf{REG3} Auf nicht erfüllte Anforderungen (REG4, REG5, REG6) in der Anmeldemaske aufmerksam machen, falls diese nicht erfüllt sind.
+	\item \textbf{REG4} Kein 2 Benutzer dürfen den selben Benutzername haben.
+	\item \textbf{REG5} Das Passwort muss dem folgenden Standard genügen:
+	\begin{itemize}
+		\item Mindestlänge: 8 Zeichen
+		\item Enthält min. einen deutschen Großbuchstaben (A-Z, Ä, Ö, Ü)
+		\item Enthält min. einen deutschen Kleinbuchstaben (a-z, ä, ö, ü, ß)
+		\item Enthält min. eine arabische Ziffer (0-9)
+		\item Enthält min. ein Zeichen, dass nicht in die bisherigen Kategorien passt (!, \$, \#, \%, ...)
+	\end{itemize}
+	\item \textbf{REG6} Die eingegebene E-Mail-Adresse muss im richtigen Format sein.
+	
+\end{itemize}
+
+\subsubsection{Verbräuche eintragen}
+\paragraph{Description and Priority}
 Es ermöglicht dem Benutzer seine Daten in die Datenbank einzutragen, welche später für weitere Features von nöten sind. Neben dem manuellen Eintragen gibt es auch die Möglichkeit der automatischen Erfassung der Daten mittels einem Gerät, das der Benutzer zuhause installieren muss, sobald dies passiert ist übermittelt das Gerät jeden Tag die aktuellen Daten… oder so.
-\subsubsection{Stimulus/Response Seuquences}
+
+\paragraph{Stimulus/Response Seuquences}
 Der Benutzer trägt in einer WebMaske seine einzelnen Verbräuche ein und kann mit einem Klick auf den Button “hochladen” seine Daten der Datenbank hinzufügen, bevor dies geschieht, wird aber überprüft, ob die Daten neu und sinnig sind.
-\subsubsection{Functional Requirements}
-\subsection{Verbräuche vergleichen}
-\subsection{Account erstellen}
-\subsection{Abomodell ändern}
+\paragraph{Functional Requirements}
+
+\subsubsection{Statistiken einsehen}
+\paragraph{Description and Priority}
+\paragraph{Stimulus/Response Seuquences}
+\paragraph{Functional Requirements}
+
+\subsubsection{Immobilien bearbeiten}
+\paragraph{Description and Priority}
+\paragraph{Stimulus/Response Seuquences}
+\paragraph{Functional Requirements}
+
+\subsubsection{Abomodell ändern}
+\paragraph{Description and Priority}
+\paragraph{Stimulus/Response Seuquences}
+\paragraph{Functional Requirements}
+
+\subsubsection{Account für Support freischalten???}
+
+
+\subsection{Support}
+\subsubsection{Account eines Users verwalten}
+\paragraph{Description and Priority}
+\paragraph{Stimulus/Response Seuquences}
+\paragraph{Functional Requirements}
+
+
+\subsection{Admin}
+\subsubsection{Abomodelle modifizieren}
+\paragraph{Description and Priority}
+\paragraph{Stimulus/Response Seuquences}
+\paragraph{Functional Requirements}
+
+\subsubsection{Supportaccount erstellen???}
+
+\subsubsection{Vergleichsgruppen festlegen???}
