@@ -69,7 +69,9 @@ TODO: Text an Pfeile
 	\node[object] (8) [below of=s5] {Bestätigung};
 	\node[activity] (9) [right of=s4, node distance=6.7cm] {Abbrechen};
 	\node[circle, fill] [right of=9, node distance=1.35cm] (cancel) {};
-	\node[circle, fill] [left of=8, node distance=2cm] (finish) {};
+	\node[activity] (10) [left of=8, node distance=3cm] {Abomodell setzen};
+	\node[circle, fill] [left of=10, node distance=2cm] (finish) {};
+	
 	
 	\draw[->] (start) -- (1);
 	\draw[->] (1) -- (2);
@@ -90,7 +92,8 @@ TODO: Text an Pfeile
 	\draw[->] (s5) to [out=90,in=0,looseness=0.1] (s4);
 	\draw[->] (s4) --(9);
 	\draw[->] (9) --(cancel);
-	\draw[->] (8) -- (finish);
+	\draw[->] (8) --(10);
+	\draw[->] (10) -- (finish);
 \end{tikzpicture}
 \paragraph{Description and Priority}
 Der Benutzer kann hiermit zwischen Abomodellen wechseln. Geplant sind die Abomodelle \textit{Frei}, \textit{Standart} und \textit{Professionell} wovon Ersteres kostenlos und standardmäßig ausgewählt sein sollte. Diese Finktion enthält neben dem Auswählen des Modells die Zahlung und Überprüfung vertraglicher Kündigungsfristen. Die Funktion gehört nicht zu den Kernanforderungen jedoch kann ohne Sie kein Umsatz erzielt werden und hat daher trotzdem eine hohe Priorität. 
