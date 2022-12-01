@@ -1,12 +1,17 @@
 \section{External Interface Description}
 \subsection{User Interfaces}
-Die Software bietet ein normales User-Interface über welches man auf alle Standard Funktionen Zugriff hat, wie Verbrauch eintragen, Verbrauch vergleichen oder Statistiken anzeigen.\\
-Außerdem gibt es ein Support Interface welches sich über Anfrage vom User erweiterten Zugriff auf deren Accounts beschaffen kann.\\
-Zuletzt gibt es ein Admin Interface, welches vollkommene Kontrolle über alle Funktionalitäten hat.
+\subsubsection{User-Interface}
+Die Software bietet ein User-Interface welches Zugriff auf alle Standard Funktionen, wie Verbrauch eintragen, Verbrauch vergleichen oder Statistiken anzeigen bereitstellt.
+\subsubsection{Support-Interface}
+Über ein Support Interface soll erweiterter Zugriff auf User Accounts nach deren Freigabe möglich sein.
+\subsubsection{Admin-Interface}
+Es wird ein Admin Interface bereitgestellt, welches vollkommene Kontrolle über alle Funktionalitäten hat.
 \subsection{Hardware Interfaces}
-Es lassen sich automatisch Verbräuche über ein externes Gerät einlesen??
+Die Software bedient sich keiner Hardware Interfaces.
 \subsection{Software Interfaces}
-Die Software verwendet eine Datenbank um die Verbräuche abspeichern zu können, dass sie später weiter verwendet werden können.
+\subsubsection{Stadtwerke}
+Die Software bezieht, sofern vorhanden, Daten aus den örtlichen Stadtwerken um Statistiken bereitzustellen mit denen der eigene Verbrauch verglichen werden kann.
+\subsubsection{Zahlungsdienstleister}
+Ein Austausch mit den Zahlungsdienstleistern ist erforderlich um Zahlungen für Premium Versionen gewährleisten zu können.
 \subsection{Communication Interfaces}
-Die Software bezieht, sofern vorhanden, Daten aus den örtlichen Stadtwerken um Statistiken bereitzustellen mit denen der eigene Verbrauch verglichen werden kann.\\
-Des weiteren erfolgt ein Austausch mit den Zahlungsdienstleistern.
+Die Kommunikation der Einzelnen Interfaces erfolgt über HTTP.
