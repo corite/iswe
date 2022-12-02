@@ -1,61 +1,78 @@
 \section{Overall Description}
 
-
 \subsection{Product Perspective}
 
-\begin{itemize}
-    \item neues, eigenständiges Produkt
-    \item TODO: Skizze der Architektur
-\end{itemize}
+Beim entwickelten Produkt handelt es sich um eine komplette Neuentwicklung. Architekturell handelt es sich um eine Client-Server Anwendung mit eine Browser Applikation welche mit einem Server kommuniziert, welcher wiederum alle benötigten Daten aufbereitet und persistiert.
 
 \subsection{Product Functions}
 
-\begin{itemize}
-    \item eintragen (manuell, automatisch) verschiedener Verbräuche: Strom, Gas, Wasser und auch andere, beliebige Güter
-    \item Ansicht des eigenen Verbrauchs in diversen Statistiken, Umrechnung in Kosten, CO2 Fußabdruck
-    \item Vergleich mit anderen Nutzern der App (Durchschnittswerte)
-    \item Vergleich mit Standardwerten
-\end{itemize}
+\subsubsection{Eintragen von Verbräuchen}
+
+Der primäre Anwendungsfall der Applikation ist das Eintragen und Verwalten von verschiedenartigen Verbrauchswerte. Hierzu zählen unter anderem aber nicht ausschließlich Gas, Strom und Wasser. 
+
+\paragraph{Manuelles Eintragen}
+
+    Verbrauchswerte können über das Web-Interface eingetragen werden.
+
+\paragraph{Automatisiertes Eintragen}
+\label{autom_eintragen}
+
+    Verbrauchswerte können zudem über Geräte von Drittanbietern direkt am Zähler ausgelesen werden. Die Werte werden dann vom Gerät über eine eine von der Applikation bereitzustellende API übertragen.
+
+\subsubsection{Statistiken}
+
+Alle gesammelten Daten können im Web-Interface auf verschiedene Arten visualisiert werden mit anderen Daten verglichen werden können. Der Vergleich soll sowhl anhand des eigentlichen Verbrauchs (also in beispielsweise kWh) aber auch umgerechnet in Kosten in der jeweiligen Landeswährung oder Umweltbelastung in beispielsweise Tonnen $CO_2$ möglich sein.
+
+\paragraph{Vergleich mit eigener Historie}
+
+Zunächst kann der Nutzer seinen aktuellen Verbrauch  mit (vom Nutzer ausgewählten) Vergleichszeiträumen aus seiner eigenen Verbrauchshistorie vergleichen.
+
+
+\paragraph{Vergleich mit anderen Nutzern der Plattform}
+Darüber hinaus kann der Nutzer seinen Momentanverbrauch auch mit gemittelten Werten aus diversen Vergleichsgruppen aus der Nutzerbasis unserer Applikation vergleichen. Die Vergleichsgruppen sind variabel und müssen durch den Systemadministrator einstellbar sein. Vorstellbare Vergleichsgruppen sind beispielsweise eine Aufteilung der Nutzer nach Wohnsitz oder Größe der Immobilie.
+
+
+\paragraph{Vergleich mit plattformunabhängigen Metriken}
+\label{vgl_plattformunabhängig}
+
+Die letzte mögliche Vergleichsmetrik besteht in Standard Vergleichswerten welche nicht von Nutzern dieser Applikation, sondern von externen Forschungsinstituten bereitgestellt werden. Diese Daten werden aus dem Format des externen Instituts zur internen Verwendung in ein maschinenlesbares Format übertragen, um unabhängig von der Auslieferungsart der Daten des Instituts zu sein.
+
 
 \subsection{User Classes and Characteristics}
 
-\begin{itemize}
-    \item Privatpersonen, keine weiteren Einschränkungen
-    \item Verschiedene Abo Modelle je nach Art/Umfang der Nutzung
-    \item genaue Aufteilung der Nutzer TBD
-\end{itemize}
+    Der Nutzerkreis wird auf Privatpersonen eingeschränkt. 
+    Zur Nutzung der App muss eines von verschiedenen Abomodellen ausgewählt werden.
+    Die Aufteilung folgt im generellen einem \glqq{}Freemium\grqq{} Schema, sprich es gibt eine kostenlose Klasse und eine (oder mehrere) Bezahlmodelle. Die Abgrenzung zwischen den Klassen bleibt zu entscheiden. Vorstellbare ist hier eine Begrenzung der Anzahl von Immobilien im Free-Modell, oder etwa das Features wie das automatisierte Eintragen von Verbrauchswerten (siehe \ref{autom_eintragen}) nur für bezahlende Nutzer zur Verfügung stehen.
 
 \subsection{Operating Environment}
 
-\begin{itemize}
-    \item Server, Datenbank etc: \begin{itemize}
-        \item kontrollierte Umgebung auf einem Server, keine weiteren Einschränkungen
-        \item Cloud oder On Premise?
-    \end{itemize}
-    \item Client Applikation: \begin{itemize}
-        \item Browser Applikation
-        \item alle OS und verbreitete Browser (Chrome, Firefox, Safari) 
-    \end{itemize}
-\end{itemize}
+\subsubsection{Server}
+
+Für die Laufzeitumgebung des Servers gibt es keine Einschränkungen.
+
+[Cloud oder On Premise???]
+
+\subsubsection{Client}
+\label{subsec:OEclient}
+    Die Client-Anwendung wird in als Browser-Anwendung zur Verfügung gestellt. Sie muss alle gängigen Browser (Google-Chrome und Chromium basierte Browser, Firefox, Safari) auf allen gängigen Endgeräten (Smartphone, Tablet, PC) mit den jeweiligen Betriebssystemen (Android / iOS, Windows / MacOS / Linux) unterstützen.
 
 \subsection{Design and Implementation Constraints}
 
-\begin{itemize}
-    \item client App muss Browser Anwendung sein
-    \item muss verschiedene Geräte unterstützen (PC, Handy, Tablet...) 
-    \item intuitive Bedienung, kein Fachpublikum
-\end{itemize}
+Wie bereits in \ref{subsec:OEclient} beschrieben ist die Client-Anwendung als Browser-Applikation zu implementieren. Darüber hinaus muss die Nutzeranwendung einfach und intuitiv bedienbar sein da kein Fachpublikum angesprochen wird.
 
 \subsection{User Documentation}
 
-\begin{itemize}
-    \item online Kunden Support
-    \item wiki und tutorial (alles online auf der Website)
-\end{itemize}
+    Da die Client Applikation intuitiv bedienbar sein muss, sollte eine Dokumentation für den Großteil der Nutzer*innen nicht notwendig sein. Da jedoch auch technisch weniger versierte Nutzer zur Zielgruppe gehören und um spezielle Anwendungsfälle abzudecken wird eine Dokumentation in Form eines Online-Wiki direkt auf der Website der Anwendung bereitgestellt. Darüber hinaus können Fragen auch vom Kundensupport beantwortet werden. 
 
 \subsection{Assumptions and Dependencies}
 
-\begin{itemize}
-    \item Automatisches Auslesegerät von Externen Anbietern abhängig (sowohl Verfügbarkeit als auch Implementierung und Qualität)
-    \item die client software muss sich an Änderungen im Browser anpassen
-\end{itemize}
+\subsubsection{Statistiken}
+    Plattformunabhängig Statistiken (\ref{vgl_plattformunabhängig}) werden von Drittanbietern bereitgestellt. Das Format, die Aktualität der Daten und die Kontinuität der Bereitstellung kann nicht sichergestellt werden. 
+
+
+\subsubsection{Lesegerät}
+    Die Implementierung von kompatiblen Lesegeräten (siehe \ref{autom_eintragen}) ist abhängig von Drittanbietern.
+\subsubsection{Payment Anbieter}
+
+    Um Nutzern das Bezahlen so komfortabel wie möglich zu machen müssen wir auf externe Zahlungsdienstleister wie beispielsweise PayPal, Klarna, Visa usw. zurückgreifen. Die Schnittstellen dieser Anbieter können sich ändern, sowie deren Geschäftsbedingungen, Kosten oder Anforderungen. 
+    
