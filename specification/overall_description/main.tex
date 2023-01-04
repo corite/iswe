@@ -1,10 +1,12 @@
-\section{Overall Description}
+\section{Allgemeine Beschreibung (des Softwareprodukts)}
 
-\subsection{Product Perspective}
+
+\subsection{Produktperspektive (zu anderen Softwareprodukten)}
+
 
 Beim entwickelten Produkt handelt es sich um eine komplette Neuentwicklung. Architekturell handelt es sich um eine Client-Server Anwendung mit eine Browser Applikation welche mit einem Server kommuniziert, welcher wiederum alle benötigten Daten aufbereitet und persistiert.
 
-\subsection{Product Functions}
+\subsection{Produktfunktionen (eine Zusammenfassung und Übersicht)}
 
 \subsubsection{Eintragen von Verbräuchen}
 
@@ -38,7 +40,7 @@ Darüber hinaus kann der Nutzer seinen Momentanverbrauch auch mit gemittelten We
 Die letzte mögliche Vergleichsmetrik besteht in Standard Vergleichswerten welche nicht von Nutzern dieser Applikation, sondern von externen Forschungsinstituten bereitgestellt werden. Diese Daten werden aus dem Format des externen Instituts zur internen Verwendung in ein maschinenlesbares Format übertragen, um unabhängig von der Auslieferungsart der Daten des Instituts zu sein.
 
 
-\subsection{User Classes and Characteristics}
+\subsection{Benutzermerkmale (Informationen zu erwarteten Nutzern, z.B. Bildung, Erfahrung, Sachkenntnis)}
 % meschnl. Akteure + Eigenschaften (zB Rechte)
 % zB Admin: kompliziertere Oberflächen, kann zum benutzen geschult werden. Wie Support
 
@@ -46,8 +48,9 @@ Die letzte mögliche Vergleichsmetrik besteht in Standard Vergleichswerten welch
     Zur Nutzung der App muss eines von verschiedenen Abomodellen ausgewählt werden.
     Die Aufteilung folgt im generellen einem \glqq{}Freemium\grqq{} Schema, sprich es gibt eine kostenlose Klasse und eine (oder mehrere) Bezahlmodelle. Die Abgrenzung zwischen den Klassen bleibt zu entscheiden. Vorstellbare ist hier eine Begrenzung der Anzahl von Immobilien im Free-Modell, oder etwa das Features wie das automatisierte Eintragen von Verbrauchswerten (siehe \ref{autom_eintragen}) nur für bezahlende Nutzer zur Verfügung stehen.
 
-\subsection{Operating Environment}
+\subsection{Entwicklungsumgebung}
 % Wo gehostet? Wir können "völlig frei" schreiben.
+
 \subsubsection{Server}
 
 Für die Laufzeitumgebung des Servers gibt es keine Einschränkungen.
@@ -58,18 +61,19 @@ Für die Laufzeitumgebung des Servers gibt es keine Einschränkungen.
 \label{subsec:OEclient}
     Die Client-Anwendung wird in als Browser-Anwendung zur Verfügung gestellt. Sie muss alle gängigen Browser (Google-Chrome und Chromium basierte Browser, Firefox, Safari) auf allen gängigen Endgeräten (Smartphone, Tablet, PC) mit den jeweiligen Betriebssystemen (Android / iOS, Windows / MacOS / Linux) unterstützen.
 
-\subsection{Design and Implementation Constraints}
+\subsection{Design- und Implementierungsbeschränkungen}
 
 Wie bereits in \ref{subsec:OEclient} beschrieben ist die Client-Anwendung als Browser-Applikation zu implementieren. Darüber hinaus muss die Nutzeranwendung einfach und intuitiv bedienbar sein da kein Fachpublikum angesprochen wird.
 
-\subsection{User Documentation}
+\subsection{Benutzerhandbuch/Nutzerdokumentationen}
 
     Da die Client Applikation intuitiv bedienbar sein muss, sollte eine Dokumentation für den Großteil der Nutzer*innen nicht notwendig sein. Da jedoch auch technisch weniger versierte Nutzer zur Zielgruppe gehören und um spezielle Anwendungsfälle abzudecken wird eine Dokumentation in Form eines Online-Wiki direkt auf der Website der Anwendung bereitgestellt. Darüber hinaus können Fragen auch vom Kundensupport beantwortet werden. 
 
-\subsection{Assumptions and Dependencies}
+\subsection{Annahmen und Abhängigkeiten (Faktoren, die die Entwicklung beeinflussen, aber nicht behindern z.B. Wahl des Betriebssystems)}
 % Annahmen über die Welt
 % zB "Wir gehen davon aus, dass alle Geräte über HTTP kommunizieren"
 % zB "Wir gehen davon aus dass alle Messwerte in SI Einheiten sind"
+
 
 \subsubsection{Statistiken}
     Plattformunabhängig Statistiken (\ref{vgl_plattformunabhängig}) werden von Drittanbietern bereitgestellt. Das Format, die Aktualität der Daten und die Kontinuität der Bereitstellung kann nicht sichergestellt werden. 
