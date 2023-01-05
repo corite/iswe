@@ -1,9 +1,6 @@
 \section{Systemfunktionen}
 Wir haben die Systemfunktionen nach Usergruppen aufgeteilt. TODO: Hier kommt das Use-Case Diagramm hin!
 
-
-\includegraphics[width=10cm]{system_features/UC.jpg}
-
 \subsection{Systemfunktionen für alle Usergruppen}
 \subsubsection{Anmeldung}
 \paragraph{Beschreibung und Priorität}
@@ -11,7 +8,7 @@ Wir haben die Systemfunktionen nach Usergruppen aufgeteilt. TODO: Hier kommt das
 \paragraph{Funktionale Anforderungen}
 
 \subsection{Benutzer}
-\subsubsection{Accounterstellung}
+\subsubsection{Accounterstellung}\label{acc}
 \paragraph{Beschreibung und Priorität}
 Diese Funktion ermöglicht es, einer Person, die an dem Produkt interessiert ist, ein Account anzulegen und somit anfangen kann das Produkt zu nutzen. Die Priorität dieser Funktion kann nicht überschätzt werden, da ohne sie, keine der Folgenden umsetzbar wäre.
 \paragraph{Sequenzen von Benutzeraktionen und Systemantworten} Der/die Interessierte gibt in der Anmelde-Maske ihren frei gewählten Benutzername, ihre E-Mail-Adresse und schließlich ein Passwort ein. Nach einem Knopfdruck, wird, wenn die Eingaben die funktionalen Anforderungen REG4, REG5, REG6 erfüllen, der Benutzer nun auf die Startseite weitergeleitet. Wenn nicht, wird der Benutzer über die nicht erfüllten Anforderungen in der Anmelde-Maske informiert und kann daraufhin seine/ihre Eingaben anpassen.
@@ -22,15 +19,15 @@ Diese Funktion ermöglicht es, einer Person, die an dem Produkt interessiert ist
 	\item \textbf{REG3} Auf nicht erfüllte Anforderungen (REG4, REG5, REG6) in der Anmeldemaske aufmerksam machen, falls diese nicht erfüllt sind.
 	\item \textbf{REG4} Kein 2 Benutzer dürfen den selben Benutzername haben.
 	\item \textbf{REG5} Das Passwort muss dem folgenden Standard genügen:
-	      \begin{itemize}
-		      \item Mindestlänge: 8 Zeichen
-		      \item Enthält min. einen deutschen Großbuchstaben (A-Z, Ä, Ö, Ü)
-		      \item Enthält min. einen deutschen Kleinbuchstaben (a-z, ä, ö, ü, ß)
-		      \item Enthält min. eine arabische Ziffer (0-9)
-		      \item Enthält min. ein Zeichen, dass nicht in die bisherigen Kategorien passt (!, \$, \#, \%, ...)
-	      \end{itemize}
+	\begin{itemize}
+		\item Mindestlänge: 8 Zeichen
+		\item Enthält min. einen deutschen Großbuchstaben (A-Z, Ä, Ö, Ü)
+		\item Enthält min. einen deutschen Kleinbuchstaben (a-z, ä, ö, ü, ß)
+		\item Enthält min. eine arabische Ziffer (0-9)
+		\item Enthält min. ein Zeichen, dass nicht in die bisherigen Kategorien passt (!, \$, \#, \%, ...)
+	\end{itemize}
 	\item \textbf{REG6} Die eingegebene E-Mail-Adresse muss im richtigen Format sein.
-
+	
 \end{itemize}
 
 \subsubsection{Verbräuche eintragen}
@@ -48,12 +45,51 @@ Der Benutzer trägt in einer WebMaske seine einzelnen Verbräuche ein und kann m
 
 \subsubsection{Immobilien bearbeiten}
 \paragraph{Beschreibung und Priorität}
+Der Benutzer kann Immobilien hinzufügen,
+bearbeiten und entfernen. %was soll das noch können?
+% Ein Benutzer sollte(?) für das Eintragen von Wasser-/Gas-/ Stromverbrauch 
+% mindestens eine Immobilie angeben mit Informationen über den Flächeninhalt 
+% und Anzahl der Haushaltsmitglieder für eine möglichst genaue Analyse über den Verbrauch des Nutzers verglichen mit dem Durchschnitt. 
+Diese Funktion hat keine hohe Priorität(?) da sie nur für den Vergleich mit dem Durchschnitt relevant ist. 
 \paragraph{Sequenzen von Benutzeraktionen und Systemantworten}
+Der Benutzer wählt in seinem Profil aus, 
+dass er seine Immobilien bearbeiten möchte. 
+Dabei bekommt er die Option, eine neue Immobilie anzulegen, 
+oder von vorhandenen Immobilien eine zu bearbeiten. 
+Wenn er das erste aussucht, kann man eine Bezeichnung,
+Flächeninhalt und Haushaltsgröße % noch was?
+eintragen. Die Bezeichnung ist zwingend notwendig, %(?)
+die anderen Angaben nicht. 
+Der Nutzer kann sich dazu entscheiden, den Vorgang abzubrechen.
+Wenn der Nutzer eine vorhandene Immobilie bearbeiten will,
+dann werden ihm ebenfalls angeboten, Bezeichnung, Flächeninhalt und 
+Haushaltsgröße zu ändern,
+zusätzlich hat er die Option, die ganze Immobilie zu löschen. 
+Wenn der Nutzer etwas bearbeitet hat, bekommt er die Option, seine Änderungen zu speichern. 
+Wenn er das auswählt, dann ist der Bearbeitungsvorgang abgeschlossen.
+
+Wenn der Nutzer sich für das Löschen entscheidet, wird er final gewarnt, 
+dass das Löschen einer Immobilie alle damit verbundenen Daten löscht und der Vorgang nicht widerrufbar ist.  
+%klingt momentan sehr dumm muss geändert werden
+Wenn der Nutzer zugestimmt hat, dass ihm das bewusst ist und trotzdem fortfahren will, dann wird die Immobilie und alle Daten die damit verbunden waren aus der Datenbank entfernt.
+
 \paragraph{Funktionale Anforderungen}
 
-\subsubsection{Abomodell ändern}
+% Müssen wir dazu schreiben, was das Character Limit ist? 
+%dass Flächen  und Haushaltsgröße nur mit Zahlen angegeben werden können? 
+%Was wir mit ungültigen Antworten machen?
+\begin{itemize}
+    \item Wenn noch keine Immobilie angelegt wurde, gibts auch keine Option, etwas bearbeiten zu können (?)
+    \item Die Bezeichnung kann alle möglichen ASCII-Zeichen (?) beinhalten.
+    \item Der Flächeninhalt kann nur in positiven Fließkommazahlen/ ganzen Zahlen angegeben werden.
+    \item Die Haushaltsgröße kann nur in positiven ganzen Zahlen angegeben werden
+    \item ???
+\end{itemize}
 
-\begin{tikzpicture}[object/.style = {draw, rectangle}, activity/.style = {draw, rounded corners=0.1cm}, split/.style = {draw, diamond}, node distance=1.3cm]
+\subsubsection{Abomodell ändern}
+TODO: Text an Pfeile
+
+\begin{tikzpicture}[object/.style = {draw, rectangle}, activity/.style = {draw, rounded corners=0.1cm}, split/.style = {draw, diamond}] 
 	\node[circle, fill] (start) {};
 	\node[object] (1) [below of=start] {Abomodell ändern};
 	\node[activity] (2) [right of=1, node distance=4cm] {Modell wählen};
@@ -63,43 +99,42 @@ Der Benutzer trägt in einer WebMaske seine einzelnen Verbräuche ein und kann m
 	\node[activity] (4) [right of=s2, node distance=5cm] {Modell auf \textit{Frei} setzen};
 	\node[circle, fill] (unabo) [right of=4, , node distance=3cm] {};
 	\node[split] (s3) [below of=s2] {};
-	\node[activity] (5) [right of=s3, node distance=6cm] {Rechnungsadresse eintragen};
+	\node[activity] (5) [right of=s3, node distance=5cm] {Rechnungsadresse eintragen};
 	\node[split] (s4) [below of=s3] {};
 	\node[activity] (6) [below of=s4] {Bezahlungmethode wählen};
 	\node[activity] (7) [right of=6,  node distance=5cm] {Bezahlung durchführen};
 	\node[split] (s5) [right of=7,  node distance=3.5cm] {};
-	\node[object] (8) [below of=s5, node distance=1.5cm] {Bestätigung};
-	\node[activity] (9) [right of=s4, node distance=7.3cm] {Abbrechen};
+	\node[object] (8) [below of=s5] {Bestätigung};
+	\node[activity] (9) [right of=s4, node distance=6.7cm] {Abbrechen};
 	\node[circle, fill] [right of=9, node distance=1.35cm] (cancel) {};
 	\node[activity] (10) [left of=8, node distance=3cm] {Abomodell setzen};
 	\node[circle, fill] [left of=10, node distance=2cm] (finish) {};
-
-
+	
+	
 	\draw[->] (start) -- (1);
 	\draw[->] (1) -- (2);
 	\draw[->] (2) -- (3);
 	\draw[->] (3) -- (s1);
-	\draw[->] (s1) to [out=0,in=270, looseness=0.3] node[below=1mm, align=center] {Startzeitpunkt genügt ABO3 nicht} (3) ;
-	\draw[->] (s1) -- node[left=1mm, align=center] {Startzeitpunkt\\genügt ABO3} (s2);
-	\draw[->] (s2) -- node[above=1mm] {\textit{Frei} gewählt} (4);
+	\draw[->] (s1) to [out=0,in=270, looseness=0.3] (3);
+	\draw[->] (s1) -- (s2);
+	\draw[->] (s2) -- (4);
 	\draw[->] (4) -- (unabo);
-	\draw[->] (s2) -- node[left=1mm, align=center] {gew. Abo \\ kostenpflichtig} (s3);
-	\draw[->] (s3) -- node[above=1mm] {Adresse unbekannt} (5);
-	\draw[->] (s3) -- node[left=1mm, align=center] {Adresse \\ bekannt} (s4);
+	\draw[->] (s2) -- (s3);
+	\draw[->] (s3) -- (5);
+	\draw[->] (s3) -- (s4);
 	\draw[->] (5) -- (s4);
-	\draw[->] (s4) -- node[left=1mm] {kein Abbruch} (6);
+	\draw[->] (s4) -- (6);
 	\draw[->] (6) -- (7);
 	\draw[->] (7) -- (s5);
-	\draw[->] (s5) -- node[left=1mm, align=center] {Zahlung erfolgt} (8);
-	\draw[->] (s5) to [out=90,in=0,looseness=0.1] node[right=4.5cm, above=-0.5cm, align=center] {Zahlung abgelehnt} (s4);
-	\draw[->] (s4)-- node[above=0.1mm] {\qquad Abbruch} (9);
+	\draw[->] (s5) -- (8);
+	\draw[->] (s5) to [out=90,in=0,looseness=0.1] (s4);
+	\draw[->] (s4) --(9);
 	\draw[->] (9) --(cancel);
 	\draw[->] (8) --(10);
 	\draw[->] (10) -- (finish);
 \end{tikzpicture}
 \paragraph{Beschreibung und Priorität}
-Der Benutzer kann hiermit zwischen Abomodellen wechseln. Geplant sind die Abomodelle \textit{Frei}, \textit{Standart} und \textit{Professionell} wovon Ersteres kostenlos und standardmäßig ausgewählt sein sollte. Diese Finktion enthält neben dem Auswählen des Modells die Zahlung und Überprüfung vertraglicher Kündigungsfristen. Die Funktion gehört nicht zu den Kernanforderungen jedoch kann ohne Sie kein Umsatz erzielt werden und hat daher trotzdem eine hohe Priorität.
-
+Der Benutzer kann hiermit zwischen Abomodellen wechseln. Geplant sind die Abomodelle \textit{Frei}, \textit{Standart} und \textit{Professionell} wovon Ersteres kostenlos und standardmäßig ausgewählt sein sollte. Diese Finktion enthält neben dem Auswählen des Modells die Zahlung und Überprüfung vertraglicher Kündigungsfristen. Die Funktion gehört nicht zu den Kernanforderungen jedoch kann ohne Sie kein Umsatz erzielt werden und hat daher trotzdem eine hohe Priorität. 
 
 \paragraph{Sequenzen von Benutzeraktionen und Systemantworten}
 Nach der Auswahl des gewünschten Abomodells, muss, falls sich der User für ein kostenpflichtiges Modell entscheidet, man einen Startzeitpunkt (nach Richtlinie ABO3) entscheiden. Nach der Eingabe von Rechnungsadresse, die, falls Sie für den Benutzer schon bekannt ist, auch schon vor eingetragen sein sollte, kann der Benutzer eine präferierte Zahlungsmethode anwählen, wodurch er/sie zu einem externen Zahlungsdienstleister weitergeleitet wird. Schließlich kann der Prozess abgeschlossen werden und das neue Abomodell wird zum angegebenen Startzeitpunkt gesetzt. Eine Bezahlbestätigung wird versendet. Der Vorgang kann zu jedem Zeitpunkt abgebrochen werden.
@@ -109,10 +144,10 @@ Nach der Auswahl des gewünschten Abomodells, muss, falls sich der User für ein
 	\item \textbf{ABO1} Darstellen der Maske zum Auswählen des Abomodells und Eintragen von Startzeitpunkt und Rechnungsdresse.
 	\item \textbf{ABO2} Validieren der Eingabe des Startzeitpunkts (nach ABO3) und Reflektieren möglicher Fehler in der Maske
 	\item \textbf{ABO3} Der Startzeitpunkt muss folgenden Richtlinien genügen:
-	      \begin{itemize}
-		      \item Er muss in der Zukunft liegen oder am derzeitigen Tag sein
-		      \item Falls die Kündigungszeitraum eines laufendes Abos noch nicht abgelaufen ist, muss der Startzeitpunkt nach Ablauf dieses Zeitraums liegen
-	      \end{itemize}
+	\begin{itemize}
+		\item Er muss in der Zukunft liegen oder am derzeitigen Tag sein
+		\item Falls die Kündigungszeitraum eines laufendes Abos noch nicht abgelaufen ist, muss der Startzeitpunkt nach Ablauf dieses Zeitraums liegen
+	\end{itemize}
 	\item \textbf{ABO4} Grundlegende Format-Überprüfungen der Rechnungsadresse (zB Postleitzahl besteht aus Zahlen etc.) und sollen bei Nichteinhaltung in der Maske kommuniziert werden
 	\item \textbf{ABO5} Eine Verbindung zu sämtliche externen Zahlungsanbietern muss aufgebaut werden. Derzeit sind \textit{PayPal}, per Lastschrift, Sofort-Überweisung der \textit{Sofort GmbH}, \textit{Klarna}, mit Kreditkarte ???
 	\item \textbf{ABO6} Schaffen einer Möglichkeit in jedem Schritt den Prozess abzubrechen
@@ -126,9 +161,11 @@ Nach der Auswahl des gewünschten Abomodells, muss, falls sich der User für ein
 \subsection{Support}
 \subsubsection{Account eines Users verwalten}
 \paragraph{Beschreibung und Priorität}
+Diese Funktion ermöglicht es dem Nutzer nach Erstellung seines Accounts Änderungen daran vorzunehmen, wie zum Beispiel, seine Adresse nach einem Umzug zu ändern. Außerdem hat der Nutzer hier die Möglichkeit die Daten seines Accounts zu verwalten, also löschen oder anfordern nach DSGVO. Die Priorität sollte hoch eingestuft werden, da wir uns zum einen an die DSGVO halten sollten und zum anderen sichergestellt werden sollte, dass wir relevante Vebrauchsstatistiken zum Vergleich bereitstellen können.
 \paragraph{Sequenzen von Benutzeraktionen und Systemantworten}
+siehe \ref{acc}
 \paragraph{Funktionale Anforderungen}
-
+siehe \ref{acc}
 
 \subsection{Admin}
 \subsubsection{Abomodelle modifizieren}
