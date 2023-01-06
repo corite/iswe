@@ -133,7 +133,7 @@ Nach der Auswahl des gewünschten Abomodells, muss, falls sich der User für ein
 \subsection{Admin}
 \subsubsection{Abomodelle modifizieren}
 \paragraph{Beschreibung und Priorität}
-Der Admin kann hiermit die alle drei verfügbaren Abomodelle (Frei, Standard und Professionell) grundlegend ändern. Alle Abomodelle haben verschiedene Funktionen, welche der Admin anpassen kann. Der Admin hat die Möglichkeit die Kosten der verschieden Modelle anzupassen, Funktionen freischalten und Funktionen einschränken oder sogar ganz entfernen. Falls der Admin die Kosten eines Modells ändert, oder Funktionen hinzufügt oder entfernt, müssen gesetzliche Regelungen für Vertragsänderungen eingehalten werden. Das heißt Nutzer dieses Abomodells müssen benachrichtigt werden und es muss Ihnen eine Möglichkeit gegeben werden, das Abomodell zu kündigen. Das passiert unabhängig davon, ob der Admin die Kosten erhöht oder verringert, oder Funktionen hinzufügt oder entfernt. 
+Der Admin kann hiermit alle drei verfügbaren Abomodelle (Frei, Standard und Professionell) grundlegend ändern. Alle Abomodelle haben verschiedene Funktionen, welche der Admin anpassen kann. Der Admin hat die Möglichkeit die Kosten der verschieden Modelle anzupassen, Funktionen freischalten und Funktionen einschränken oder sogar ganz entfernen. Falls der Admin die Kosten eines Modells ändert, oder Funktionen hinzufügt oder entfernt, müssen gesetzliche Regelungen für Vertragsänderungen eingehalten werden. Das heißt Nutzer dieses Abomodells müssen benachrichtigt werden und es muss Ihnen eine Möglichkeit gegeben werden, das Abomodell zu kündigen. Das passiert unabhängig davon, ob der Admin die Kosten erhöht oder verringert, oder Funktionen hinzufügt oder entfernt. 
 \paragraph{Sequenzen von Adminaktionen und Systemantworten}
 Falls der Admin Abomodelle modifizieren will, muss der Admin gemäß ABOM3 einen Startzeitpunkt wählen, ab dem die Änderungen gültig werden. Dem Admin soll bekannt gemacht werden, ob der Zeitpunkt zu Nahe gewählt ist. Danach kann der Admin aus folgenden Funktionen wählen:
 \begin{itemize}
@@ -141,13 +141,14 @@ Falls der Admin Abomodelle modifizieren will, muss der Admin gemäß ABOM3 einen
 	\item Eine neue Funktion hinzufügen
 	\item Den Preis des Abomodells ändern
 \end{itemize}
+Wenn der Admin sich für eine der Funktionen entschieden hat, kann er diese ausführen und bestätigen sofern alles den Anforderungen entspricht. Der gesamte Vorgang kann jederzeit auch abgebrochen werden. Fährt der Admin fort, speichert das System die Änderungen und wendet diese zu dem gegebenen Zeitpunkt an.
 
 \paragraph{Funktionale Anforderungen}
 \begin{itemize}
 	\item \textbf{ABOM1} Darstellen der Maske zum Auswählen des Abomodells und Eintragen von Startzeitpunkt.
 	\item \textbf{ABOM2} Funktion entsprechend dem gewählten Abomodell muss änderbar und löschbar sein
 	\item \textbf{ABOM3} Funktion soll hinzufügbar sein.
-	\item \textbf{ABOM4} Ein neuer Preis für das Abomodell sein wählbar sein.
+	\item \textbf{ABOM4} Ein neuer Preis für das Abomodell soll wählbar sein.
 	\item \textbf{ABOM5} Der Startzeitpunkt muss in der Zukunft liegen und muss den gesetzlichen Regelungen entsprechen
 	\item \textbf{ABOM6} Validieren der Eingabe des Startzeitpunkts (nach ABO5) und Reflektieren möglicher Fehler in der Maske
 \end{itemize}
