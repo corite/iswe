@@ -21,12 +21,24 @@ Refer to any external policies or regulations that state safety issues that affe
 Define any safety certifications that must be satisfied.}
 
 
-\begin{enumerate}
-    \item regelmaessige backups (wo? am besten zwei orte )
-    \item falls etwas schiefgeht... was dann? hoffentlich gibts ein zweites backup?
-    \item 
-    \item keine kritische Infrastruktur also gibts keine konkreten legalen Richtlinien
-\end{enumerate}
+Bei einem Datenbankbreach sollten die sensiblen Daten unserer Nutzer nicht 
+gefährdet werden.
+Deswegen dürfen die Kontodaten, Passwörter und Adressen nicht zusammen gespeichert werden.
+Weiterhin werden die Account-, Bezahl- und Verbrauchsdaten jeweils in verschiedenen Datenbanken ((gespeichert)).
+%Risikobewertung vs Kosten??
+
+Im Fall eines Ausfalles des ((Systems)) sollte nach spätestens zwei Stunden
+eine Reaktion von ((uns)) kommen, 
+Bemühungen das System ((zum laufen zu bekommen)).
+Sechs Stunden Ausfall sind zu viel, das muss vermieden werden.
+
+Daten müssen in mindestens zwei Verschiedenen ((Orten)) 
+abgespeichert werden, 
+damit bei einem Verlust von Daten % wie können wir das verhindern?
+möglichst wenig verloren geht.
+Es sollen maximal alle fünf Minuten die Daten gespeichert werden, 
+um den Datenverlust gering zu halten. %sollen wir das begründen?
+
 
 
 
@@ -38,7 +50,8 @@ Refer to any external policies or regulations containing security issues that af
 Define any security or privacy certifications that must be satisfied.}
 
 \begin{enumerate}
-    \item Datenschutz? persönliche Daten, die erhoben werden, sind optional
+    \item Datenschutz? persönliche Daten, die erhoben werden, sind optional%????
+    \item (ELI: Was müssen wir erheben? Was muss/soll optional bleiben?)
     \item verschlüsseln der Daten (wie genau?)
 \end{enumerate}
 
@@ -52,23 +65,53 @@ robustness, testability, and usability. Write these to be specific, quantitative
 and verifiable when possible.
 At the least, clarify the relative preferences for various attributes, 
 such as ease of use over ease of learning.}
+% Auf 4-5 wichtige Eigenschaften einigen, welche einander nicht ausschließen
+% Zur Auswahl: 
+% Anpassungsfähigkeit, Verfügbarkeit, Richtigkeit, Flexibilität,
+% Kombatibilität, Wartungsfähigkeit, Portabel, Zuverlässig,
+% Wiederverwendbarkeit, Robust, Testbar, Nützlich/ Benutzerfreundlich? 
 
-\begin{enumerate}
-    \item flexibel (für neue Funktionen in der Zukunft?)
-    \item availability: Seite ist 24/7 erreichbar (ist support auch unser Teilbereich?)
-    \item easy-to-use
-    \item maintainability: (sollten wir eventuell tun, aber was ist der Anspruch?)
-    \item portability: sollte auf PC und mobilem gerät funktion
-    \item
-\end{enumerate}
+% Spezifisch, messbar, bestätigbar?
+
+\begin{itemize}
+    \item \textbf{Verfügbarkeit: }
+    Die abzurufenden Daten sollten zu jederzeit verfügbar sein,
+    damit der Benutzer immer die Möglichkeit hat, 
+    seine Verbäuche einzusehen und vergleichen zu können.
+    
+    \textit{(ELI: immer verfügbar, max 2h Ausfall bis Reaktion, 
+    max 6h bevor Stress kommt(müssen wir uns für sowas einen Plan ausdenken??)\\,
+    es dürfen nur ca 5 min an Daten verloren gehen\\
+    messbar: Trainingsszenario? bei dem geschaut wird, 
+    wie viele Daten verloren gehen oder sowas? )}
+    
+    \item \textbf{Richtigkeit: }
+    Es sollten die korrekten, 
+    vom Nutzer verbrauchten Daten einsehbar und 
+    aktuell sein und angezeigt werden.
+
+\textit{(ELI: kann man das spezifizieren?? unrealistische Angaben überprüfen?
+\\TestNutzer anlegen, austesten, 
+    wie sich die Daten verhalten und errechnen, 
+    was eigentlich rauskommen sollte)}
+    \item \textbf{Wartungsfähigkeit: }
+    Die Administratoren und der Support sollten korrekte Verbrauchsdaten 
+    pflegen und die Anwendung jederzeit an ein Abo-Modell anpassbar sein.
+
+    \textit{(ELI: heißt das auch, dass der Code übersichtlich, verständlich, 
+    nachvollziehbar ist? Kann man sowas messen?
+    Probleme/Bugs müssen schnell erkannt und gefixt werden?? )}
+
+    \item \textbf{Benutzerfreundlichkeit: }
+    Die angezeigten Daten sollten möglichst viele Kundenbedürfnisse 
+    befriedigen, übersichtlich und leicht verständlich sein.
+
+    \textit{(ELI: könnte verschiedene Versionen des Designs an 
+    Leute verteilen, die abstimmen, bewerten, kritisieren?)}
+\end{itemize}
 
 \subsection{Geschäftsregeln}
 \textit{List any operating principles about the product, 
 such as which individuals or roles can perform which functions under specific circumstances. 
 These are not functional requirements in themselves, 
 but they may imply certain functional requirements to enforce the rules}
-
-\begin{enumerate}
-    \item admin (kann soll Funktionen einfach zwischen Preisklassen verschieben können)
-    \item (support? sonderzugriff?)
-\end{enumerate}
