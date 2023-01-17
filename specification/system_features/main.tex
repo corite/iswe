@@ -134,8 +134,7 @@ TODO: Text an Pfeile
 	\draw[->] (10) -- (finish);
 \end{tikzpicture}
 \paragraph{Beschreibung und Priorität}
-Der Benutzer kann hiermit zwischen Abomodellen wechseln. Geplant sind die Abomodelle \textit{Frei}, \textit{Standart} und \textit{Professionell} wovon Ersteres kostenlos und standardmäßig ausgewählt sein sollte. Diese Finktion enthält neben dem Auswählen des Modells die Zahlung und Überprüfung vertraglicher Kündigungsfristen. Die Funktion gehört nicht zu den Kernanforderungen jedoch kann ohne Sie kein Umsatz erzielt werden und hat daher trotzdem eine hohe Priorität. 
-
+Der Benutzer kann hiermit zwischen Abomodellen wechseln. Geplant sind die Abomodelle \textit{Frei}, \textit{Standart} und \textit{Professionell} wovon Ersteres kostenlos und standardmäßig ausgewählt sein sollte. Diese Funktion enthält neben dem Auswählen des Modells die Zahlung und Überprüfung vertraglicher Kündigungsfristen. Die Funktion gehört nicht zu den Kernanforderungen jedoch kann ohne Sie kein Umsatz erzielt werden und hat daher trotzdem eine hohe Priorität. 
 \paragraph{Sequenzen von Benutzeraktionen und Systemantworten}
 Nach der Auswahl des gewünschten Abomodells, muss, falls sich der User für ein kostenpflichtiges Modell entscheidet, man einen Startzeitpunkt (nach Richtlinie ABO3) entscheiden. Nach der Eingabe von Rechnungsadresse, die, falls Sie für den Benutzer schon bekannt ist, auch schon vor eingetragen sein sollte, kann der Benutzer eine präferierte Zahlungsmethode anwählen, wodurch er/sie zu einem externen Zahlungsdienstleister weitergeleitet wird. Schließlich kann der Prozess abgeschlossen werden und das neue Abomodell wird zum angegebenen Startzeitpunkt gesetzt. Eine Bezahlbestätigung wird versendet. Der Vorgang kann zu jedem Zeitpunkt abgebrochen werden.
 
@@ -174,8 +173,26 @@ siehe \ref{acc}
 \subsection{Admin}
 \subsubsection{Abomodelle modifizieren}
 \paragraph{Beschreibung und Priorität}
-\paragraph{Sequenzen von Benutzeraktionen und Systemantworten}
+Der Admin kann hiermit alle drei verfügbaren Abomodelle (Frei, Standard und Professionell) grundlegend ändern. Alle Abomodelle haben verschiedene Funktionen, welche der Admin anpassen kann. Der Admin hat die Möglichkeit die Kosten der verschieden Modelle anzupassen, Funktionen freischalten und Funktionen einschränken oder sogar ganz entfernen. Falls der Admin die Kosten eines Modells ändert, oder Funktionen hinzufügt oder entfernt, müssen gesetzliche Regelungen für Vertragsänderungen eingehalten werden. Das heißt Nutzer dieses Abomodells müssen benachrichtigt werden und es muss Ihnen eine Möglichkeit gegeben werden, das Abomodell zu kündigen. Das passiert unabhängig davon, ob der Admin die Kosten erhöht oder verringert, oder Funktionen hinzufügt oder entfernt. 
+\paragraph{Sequenzen von Adminaktionen und Systemantworten}
+Falls der Admin Abomodelle modifizieren will, muss der Admin gemäß ABOM3 einen Startzeitpunkt wählen, ab dem die Änderungen gültig werden. Dem Admin soll bekannt gemacht werden, ob der Zeitpunkt zu Nahe gewählt ist. Danach kann der Admin aus folgenden Funktionen wählen:
+\begin{itemize}
+	\item Vorhanden Funktion bearbeiten oder entfernen (Funktion muss in dem Abomodell momentan verfügbar sein).
+	\item Eine neue Funktion hinzufügen
+	\item Den Preis des Abomodells ändern
+\end{itemize}
+Wenn der Admin sich für eine der Funktionen entschieden hat, kann er diese ausführen und bestätigen sofern alles den Anforderungen entspricht. Der gesamte Vorgang kann jederzeit auch abgebrochen werden. Fährt der Admin fort, speichert das System die Änderungen und wendet diese zu dem gegebenen Zeitpunkt an.
+
 \paragraph{Funktionale Anforderungen}
+\begin{itemize}
+	\item \textbf{ABOM1} Darstellen der Maske zum Auswählen des Abomodells und Eintragen von Startzeitpunkt.
+	\item \textbf{ABOM2} Funktion entsprechend dem gewählten Abomodell muss änderbar und löschbar sein
+	\item \textbf{ABOM3} Funktion soll hinzufügbar sein.
+	\item \textbf{ABOM4} Ein neuer Preis für das Abomodell soll wählbar sein.
+	\item \textbf{ABOM5} Der Startzeitpunkt muss in der Zukunft liegen und muss den gesetzlichen Regelungen entsprechen
+	\item \textbf{ABOM6} Validieren der Eingabe des Startzeitpunkts (nach ABO5) und Reflektieren möglicher Fehler in der Maske
+\end{itemize}
+
 
 \subsubsection{Supportaccount erstellen???}
 
