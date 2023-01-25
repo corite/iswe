@@ -154,7 +154,7 @@ Nach der Auswahl des gewünschten Abomodells, muss, falls sich der User für ein
 	\item \textbf{ABO8} Setzen des neuen Abomodells in den Benutzerdaten zum angegebenen Startzeitpunkt
 \end{itemize}
 
-\subsubsection{Account für Support freischalten???}
+\subsubsection{Account für Support freischalten???} \label{sys_feat:freischalten}
 
 \subsubsection{Account verwalten}
 
@@ -172,11 +172,15 @@ Der Nutzer muss einen Verbrauchstyp auswählen und dann zu diesem Typ einen Zeit
 \subsection{Support}
 \subsubsection{Account eines Users verwalten}
 \paragraph{Beschreibung und Priorität}
-Diese Funktion ermöglicht es dem Nutzer nach Erstellung seines Accounts Änderungen daran vorzunehmen, wie zum Beispiel, seine Adresse nach einem Umzug zu ändern. Außerdem hat der Nutzer hier die Möglichkeit die Daten seines Accounts zu verwalten, also löschen oder anfordern nach DSGVO. Die Priorität sollte hoch eingestuft werden, da wir uns zum einen an die DSGVO halten sollten und zum anderen sichergestellt werden sollte, dass wir relevante Vebrauchsstatistiken zum Vergleich bereitstellen können.
+Ein Support-Benutzer muss in der Lage sein etwaige Benutzerdaten auf Anfrage des jeweiligen Benutzers zu ändern. Dafür muss allerdings das Einsehen der Benutzerdaten für den Supportbenutzer freigschaltet werden (siehe \ref{sys_feat:freischalten}). Diese Funktion ist nicht teil der Kernanforderungen, jedoch muss es unbedingt Teil der ersten Version sein, da die Kundenzufriedenheit davon abhängig ist. Daher ergibt sich eine mittlere Priorität.
 \paragraph{Sequenzen von Benutzeraktionen und Systemantworten}
-siehe \ref{acc}
+Der Support-Benutzer kann den Benutzer auswählen, dessen Stammdaten bearbeitet werden soll. Dabei werden dem Support-Benutzer nur diejenige Benutzernamen angezeigt, die die Barbeitung freigeschaltet hasben. Danach wird eine Oberfläche angezeigt, die der Oberfläche vom Bearbeiten der eigenen Stzammdatan eines Benutzers ähnelt. Hier können nun die Änderungen vorgenommen und gespeichert werden. 
 \paragraph{Funktionale Anforderungen}
-siehe \ref{acc}
+\begin{itemize}
+	\item \textbf{SMG1} Zeige alle Benutzer, die die Bearbeitung nach \ref{sys_feat:freischalten} freigeschaltet haben.
+	\item \textbf{SMG2} Bearbeiten aller Stammdaten eines Benutzers in der Oberfläche ermöglichen.
+	\item \textbf{SMG3} Speichern der veränderten Daten. 
+\end{itemize}
 
 \subsection{Admin}
 \subsubsection{Abomodelle modifizieren}
