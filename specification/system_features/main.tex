@@ -154,7 +154,18 @@ Nach der Auswahl des gewünschten Abomodells, muss, falls sich der User für ein
 	\item \textbf{ABO8} Setzen des neuen Abomodells in den Benutzerdaten zum angegebenen Startzeitpunkt
 \end{itemize}
 
-\subsubsection{Account für Support freischalten???} \label{sys_feat:freischalten}
+\subsubsection{Account für Support freischalten}
+\paragraph{Beschreibung und Priorität}
+Diese Funktion ermöglicht es dem Benutzer bei Problemen seinen Account für den Support freizuschalten, sodass der Support Änderungen vornehmen kann und gleichzeitig wird so die DSGVO eingehalten, was sehr wichtig für das System ist.
+\paragraph{Sequenzen von Benutzeraktionen und Systemantworten} 
+Der Benutzer hat mit der Nutzung des Systems ein Problem und benötigt Hilfe. Nachdem er das FAQ zur Handhabung des Systems gelesen hat und er dort keine Lösung für sein Problem finden konnte, nutzt er die Supportfunktion, wo er mit einem Mitarbeiter in Kontakt kommt. Zuerst versucht der Support dem Nutzer ohne weitere Daten weiterzuhelfen, sollte dies das Problem immer noch nicht lösen, muss der Nutzer seinen Account für den Support freischalten. Dem Nutzer wird ein Code generiert, den er dem Support durch gibt und den der Support benötigt, um sich berechtigten Zugang zum Nutzeraccount zu verschaffen. Nun kann der  Support dem Nutzer optimal weiterhelfen, indem er Zugriff auf seinen Account hat.
+\paragraph{Funktionale Anforderungen}
+\begin{itemize}
+	\item \textbf{REG1} Laufende Internet- und/oder Telefonverbindung.
+	\item \textbf{REG2} Der generierte Code für den Nutzer besteht aus Zahlen und Buchstaben.
+	\item \textbf{REG3} Der generierte Code von Nutzer muss unbedingt mit dem benötigten Code des Supports übereinstimmen.
+	
+\end{itemize}
 
 \subsubsection{Account verwalten}
 
