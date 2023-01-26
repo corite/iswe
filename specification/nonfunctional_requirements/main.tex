@@ -43,18 +43,15 @@ um den Datenverlust gering zu halten. %sollen wir das begründen?
 
 
 \subsection{Datenschutzanforderungen}
-\textit{Specify any requirements regarding security or privacy issues 
-surrounding use of the product or protection of the data used or created by the product.
-Define any user identity authentication requirements. 
-Refer to any external policies or regulations containing security issues that affect the product. 
-Define any security or privacy certifications that must be satisfied.}
+Die Datenschutzanforderungen sollen der Datenschutzgrundverordnung entsprechen. Bei einem Datenbankbreach sollen die sensiblen Daten der Nutzer nicht gefährdet werden.Deswegen dürfen die Kontodaten, Passwörter und Adressen nicht zusammen gespeichert werden. Weiterhin werden die Account-, Bezahl- und Verbrauchsdaten jeweils in verschiedenen Datenbanken gespeichert. Passwörter werden zusätzlich als Hashwerte abgespeichert, welche dann nur noch abgeglichen werden müssen.\\
+Es sollen möglichst wenig persönliche Daten erhoben werden müssen und viele sollen optional sein:
 
 \begin{enumerate}
-    \item Datenschutz? persönliche Daten, die erhoben werden, sind optional%????
-    \item (ELI: Was müssen wir erheben? Was muss/soll optional bleiben?)
-    \item verschlüsseln der Daten (wie genau?)
+    \item Ein Nutzername und das zugehörige Passwort müssen abgespeichert werden um den Nutzer eindeutig zuzuordnen.
+    \item Zu Immobilien können Adressen gespeichert werden sind aber optional
+    \item Eingetragene Daten zu den Immobilien werden pro Benutzer in einer Datenbank gespeichert
 \end{enumerate}
-
+Die Verbräuche eines Nutzers werden zusätzlich anonym in einer Datenbank für Vergleiche festgehalten. Alle Daten von Gas-, Strom- und Wasserverbräuche werden ohne Nutzerbezug abgespeichert.
 
 \subsection{Software-Qualitätsattribute}
 \textit{Specify any additional quality characteristics for the product that will be important to either the customers or
