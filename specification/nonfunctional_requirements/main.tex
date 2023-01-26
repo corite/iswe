@@ -43,15 +43,17 @@ um den Datenverlust gering zu halten. %sollen wir das begründen?
 
 
 \subsection{Datenschutzanforderungen}
-Die Datenschutzanforderungen sollen der Datenschutzgrundverordnung entsprechen. Bei einem Datenbankbreach sollen die sensiblen Daten der Nutzer nicht gefährdet werden.Deswegen dürfen die Kontodaten, Passwörter und Adressen nicht zusammen gespeichert werden. Weiterhin werden die Account-, Bezahl- und Verbrauchsdaten jeweils in verschiedenen Datenbanken gespeichert. Passwörter werden zusätzlich als Hashwerte abgespeichert, welche dann nur noch abgeglichen werden müssen.\\
+Die Datenschutzanforderungen sollen der Datenschutzgrundverordnung entsprechen. Bei einem Datenbankbreach sollen die sensiblen Daten der Nutzer nicht gefährdet werden. Deswegen dürfen die Kontodaten, Passwörter und Adressen nicht zusammen gespeichert werden. Weiterhin werden die Account-, Bezahl- und Verbrauchsdaten jeweils in verschiedenen Datenbanken gespeichert. Passwörter werden zusätzlich nur als Hashwerte abgespeichert, welche dann nur noch abgeglichen werden müssen.\\
 Es sollen möglichst wenig persönliche Daten erhoben werden müssen und viele sollen optional sein:
 
 \begin{enumerate}
-    \item Ein Nutzername und das zugehörige Passwort müssen abgespeichert werden um den Nutzer eindeutig zuzuordnen.
+    \item Ein Nutzername und das zugehörige Passwort müssen abgespeichert werden um den Nutzer eindeutig zuzuordnen
+    \item Der Nutzer kann seine Kreditkartendaten abspeichern, muss er aber nicht
+    \item Der Nutzer kann seine Adresse angeben, muss er aber nicht
     \item Zu Immobilien können Adressen gespeichert werden sind aber optional
-    \item Eingetragene Daten zu den Immobilien werden pro Benutzer in einer Datenbank gespeichert
+    \item Eingetragene Daten zu einer Immobilien werden pro Benutzer in einer Datenbank gespeichert
 \end{enumerate}
-Die Verbräuche eines Nutzers werden zusätzlich anonym in einer Datenbank für Vergleiche festgehalten. Alle Daten von Gas-, Strom- und Wasserverbräuche werden ohne Nutzerbezug abgespeichert.
+Die Verbräuche eines Nutzers werden zusätzlich anonym in einer Datenbank für Vergleiche festgehalten. Alle Daten von Gas-, Strom- und Wasserverbräuche werden ohne Nutzerbezug abgespeichert. Diese Daten dienen Verbrauchsstatistiken mit denen sich jeder Nutzer vergleichen kann. Es wird Wert darauf gelegt, dass sich diese Daten nicht zurückverfolgen lassen, aufgrund der Regionalität. Sollten zu wenig Daten für einen regionalen Vergleich vorliegen, wird dieser nicht angeboten.
 
 \subsection{Software-Qualitätsattribute}
 \textit{Specify any additional quality characteristics for the product that will be important to either the customers or
