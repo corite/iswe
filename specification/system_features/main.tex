@@ -34,7 +34,7 @@ Diese Funktion ermöglicht es, einer Person, die an dem Produkt interessiert ist
 
 \subsubsection{Verbräuche eintragen}
 \paragraph{Beschreibung und Priorität}
-Es ermöglicht dem Benutzer seine Daten in die Datenbank einzutragen, welche später für weitere Features von nöten sind. Neben dem manuellen Eintragen gibt es auch die Möglichkeit der automatischen Erfassung der Daten mittels einem Gerät, das der Benutzer zuhause installieren muss, sobald dies passiert ist übermittelt das Gerät jeden Tag die aktuellen Daten… oder so.
+Es ermöglicht dem Benutzer seine Daten in die Datenbank einzutragen, welche später für weitere Features von Nöten sind. Neben dem manuellen Eintragen gibt es auch die Möglichkeit der automatischen Erfassung der Daten mittels einem Gerät, das der Benutzer zuhause installieren muss, sobald dies passiert ist übermittelt das Gerät jeden Tag die aktuellen Daten… oder so.
 
 \paragraph{Sequenzen von Benutzeraktionen und Systemantworten}
 Der Benutzer trägt in einer WebMaske seine einzelnen Verbräuche ein und kann mit einem Klick auf den Button “hochladen” seine Daten der Datenbank hinzufügen, bevor dies geschieht, wird aber überprüft, ob die Daten neu und sinnig sind.
@@ -103,7 +103,7 @@ TODO: Text an Pfeile
 	\node[split] (s3) [below of=s2] {};
 	\node[activity] (5) [right of=s3, node distance=5cm] {Rechnungsadresse eintragen};
 	\node[split] (s4) [below of=s3] {};
-	\node[activity] (6) [below of=s4] {Bezahlungmethode wählen};
+	\node[activity] (6) [below of=s4] {Bezahlmethode wählen};
 	\node[activity] (7) [right of=6,  node distance=5cm] {Bezahlung durchführen};
 	\node[split] (s5) [right of=7,  node distance=3.5cm] {};
 	\node[object] (8) [below of=s5] {Bestätigung};
@@ -136,7 +136,7 @@ TODO: Text an Pfeile
 	\draw[->] (10) -- (finish);
 \end{tikzpicture}
 \paragraph{Beschreibung und Priorität}
-Der Benutzer kann hiermit zwischen Abomodellen wechseln. Geplant sind die Abomodelle \textit{Frei}, \textit{Standart} und \textit{Professionell} wovon Ersteres kostenlos und standardmäßig ausgewählt sein sollte. Diese Funktion enthält neben dem Auswählen des Modells die Zahlung und Überprüfung vertraglicher Kündigungsfristen. Die Funktion gehört nicht zu den Kernanforderungen jedoch kann ohne Sie kein Umsatz erzielt werden und hat daher trotzdem eine hohe Priorität. 
+Der Benutzer kann hiermit zwischen Abomodellen wechseln. Geplant sind die Abomodelle \textit{Frei}, \textit{Standard} und \textit{Professionell} wovon Ersteres kostenlos und standardmäßig ausgewählt sein sollte. Diese Funktion enthält neben dem Auswählen des Modells die Zahlung und Überprüfung vertraglicher Kündigungsfristen. Die Funktion gehört nicht zu den Kernanforderungen jedoch kann ohne Sie kein Umsatz erzielt werden und hat daher trotzdem eine hohe Priorität. 
 \paragraph{Sequenzen von Benutzeraktionen und Systemantworten}
 Nach der Auswahl des gewünschten Abomodells, muss, falls sich der User für ein kostenpflichtiges Modell entscheidet, man einen Startzeitpunkt (nach Richtlinie ABO3) entscheiden. Nach der Eingabe von Rechnungsadresse, die, falls Sie für den Benutzer schon bekannt ist, auch schon vor eingetragen sein sollte, kann der Benutzer eine präferierte Zahlungsmethode anwählen, wodurch er/sie zu einem externen Zahlungsdienstleister weitergeleitet wird. Schließlich kann der Prozess abgeschlossen werden und das neue Abomodell wird zum angegebenen Startzeitpunkt gesetzt. Eine Bezahlbestätigung wird versendet. Der Vorgang kann zu jedem Zeitpunkt abgebrochen werden.
 
@@ -176,7 +176,7 @@ Der Benutzer hat mit der Nutzung des Systems ein Problem und benötigt Hilfe. Na
 
 \subsubsection{Kosten einsehen}
 \paragraph{Beschreibung und Priorität}
-Die Funktion Kosten einsehen ermöglicht dem Nutzer die Kosten zu seinen Verbäuchen einzusehen. Vorausgesetzt ist hierbei dass der Nutzer entweder seine Strom- /Gas- /Wasserverträge zu Verfügung stellt, oder die Kosten manuell einträgt. Sofern der Nutzer dies getan hat, kann er sich die Kosten für seine Verbräuche ansehen. Zudem kann er sich bei eigenen Verbrauchstypen auch eigene Kosten eintragen. Beispiel: Der Nutzer hat den Verbrauchstyp Anzahl an Kaffee pro Tag. Dazu kann der Nutzer nun einen Preis eintragen: Ein Kaffee kostet einen Euro. 
+Die Funktion Kosten einsehen ermöglicht dem Nutzer die Kosten zu seinen Verbräuchen einzusehen. Vorausgesetzt ist hierbei dass der Nutzer entweder seine Strom- /Gas- /Wasserverträge zu Verfügung stellt, oder die Kosten manuell einträgt. Sofern der Nutzer dies getan hat, kann er sich die Kosten für seine Verbräuche ansehen. Zudem kann er sich bei eigenen Verbrauchstypen auch eigene Kosten eintragen. Beispiel: Der Nutzer hat den Verbrauchstyp Anzahl an Kaffee pro Tag. Dazu kann der Nutzer nun einen Preis eintragen: Ein Kaffee kostet einen Euro. 
 \paragraph{Sequenzen von Benutzeraktionen und Systemantworten}
 Der Nutzer muss einen Verbrauchstyp auswählen und dann zu diesem Typ einen Zeitraum wählen. Danach werden ihm die Kosten für den Verbrauch über den Zeitraum angezeigt. Wenn der Nutzer seinen Verbrauch vergleicht, ist neben dem Vergleich des Verbrauchs auch ein Vergleich der Kosten sichtbar. 
 
@@ -186,9 +186,9 @@ Der Nutzer muss einen Verbrauchstyp auswählen und dann zu diesem Typ einen Zeit
 \subsection{Support}
 \subsubsection{Account eines Users verwalten}
 \paragraph{Beschreibung und Priorität}
-Ein Support-Benutzer muss in der Lage sein etwaige Benutzerdaten auf Anfrage des jeweiligen Benutzers zu ändern. Dafür muss allerdings das Einsehen der Benutzerdaten für den Supportbenutzer freigschaltet werden (siehe \ref{sys_feat:freischalten}). Diese Funktion ist nicht teil der Kernanforderungen, jedoch muss es unbedingt Teil der ersten Version sein, da die Kundenzufriedenheit davon abhängig ist. Daher ergibt sich eine mittlere Priorität.
+Ein Support-Benutzer muss in der Lage sein etwaige Benutzerdaten auf Anfrage des jeweiligen Benutzers zu ändern. Dafür muss allerdings das Einsehen der Benutzerdaten für den Support freigeschaltet werden (siehe \ref{sys_feat:freischalten}). Diese Funktion ist nicht teil der Kernanforderungen, jedoch muss es unbedingt Teil der ersten Version sein, da die Kundenzufriedenheit davon abhängig ist. Daher ergibt sich eine mittlere Priorität.
 \paragraph{Sequenzen von Benutzeraktionen und Systemantworten}
-Der Support-Benutzer kann den Benutzer auswählen, dessen Stammdaten bearbeitet werden soll. Dabei werden dem Support-Benutzer nur diejenige Benutzernamen angezeigt, die die Barbeitung freigeschaltet hasben. Danach wird eine Oberfläche angezeigt, die der Oberfläche vom Bearbeiten der eigenen Stzammdatan eines Benutzers ähnelt. Hier können nun die Änderungen vorgenommen und gespeichert werden. 
+Der Support-Benutzer kann den Benutzer auswählen, dessen Stammdaten bearbeitet werden soll. Dabei werden dem Support-Benutzer nur diejenige Benutzernamen angezeigt, die die Bearbeitung freigeschaltet haben. Danach wird eine Oberfläche angezeigt, die der Oberfläche vom Bearbeiten der eigenen Stammdaten eines Benutzers ähnelt. Hier können nun die Änderungen vorgenommen und gespeichert werden. 
 \paragraph{Funktionale Anforderungen}
 \begin{itemize}
 	\item \textbf{SMG1} Zeige alle Benutzer, die die Bearbeitung nach \ref{sys_feat:freischalten} freigeschaltet haben.
