@@ -9,9 +9,6 @@ Make such requirements as specific as possible.
 You may need to state performance requirements 
 for individual functional requirements or features.}
 
-\textbf{wahrscheinlich so lightweight wie möglich, 
-weil potentiell jeder Mensch die Webseite erreichen können muss}
-
 
 \subsection{Sicherheitsanforderungen}
 \textit{Specify those requirements that are concerned 
@@ -43,7 +40,11 @@ um den Datenverlust gering zu halten. %sollen wir das begründen?
 
 
 \subsection{Datenschutzanforderungen}
-Die Datenschutzanforderungen sollen der Datenschutzgrundverordnung entsprechen. Bei einem Datenbankbreach sollen die sensiblen Daten der Nutzer nicht gefährdet werden. Deswegen dürfen die Kontodaten, Passwörter und Adressen nicht zusammen gespeichert werden. Weiterhin werden die Account-, Bezahl- und Verbrauchsdaten jeweils in verschiedenen Datenbanken gespeichert. Passwörter werden zusätzlich nur als Hashwerte abgespeichert, welche dann nur noch abgeglichen werden müssen.\\
+Die Datenschutzanforderungen sollen der Datenschutzgrundverordnung entsprechen. 
+Bei einem Datenbankbreach sollen die sensiblen Daten der Nutzer nicht gefährdet werden. 
+Deswegen dürfen die Kontodaten, Passwörter und Adressen nicht zusammen gespeichert werden. 
+Weiterhin werden die Account-, Bezahl- und Verbrauchsdaten jeweils in verschiedenen Datenbanken gespeichert. 
+Passwörter werden zusätzlich nur als Hashwerte abgespeichert, welche dann nur noch abgeglichen werden müssen.\\
 Es sollen möglichst wenig persönliche Daten erhoben werden müssen und viele sollen optional sein:
 
 \begin{enumerate}
@@ -74,39 +75,62 @@ such as ease of use over ease of learning.}
 
 \begin{itemize}
     \item \textbf{Verfügbarkeit: }
-    Die abzurufenden Daten sollten zu jederzeit verfügbar sein,
+    Die abzurufenden Daten sollten jederzeit verfügbar sein,
     damit der Benutzer immer die Möglichkeit hat, 
     seine Verbäuche einzusehen und vergleichen zu können.
+    Im Normalbetrieb sollte das System innerhalb eines Monats maximal für ((Zeiteinheit)) nicht erreichbar sein.
     
-    \textit{(ELI: immer verfügbar, max 2h Ausfall bis Reaktion, 
-    max 6h bevor Stress kommt(müssen wir uns für sowas einen Plan ausdenken??)\\,
-    es dürfen nur ca 5 min an Daten verloren gehen\\
-    messbar: Trainingsszenario? bei dem geschaut wird, 
-    wie viele Daten verloren gehen oder sowas? )}
+    Um das zu gewährleisten, sollte man jeden Tag an mehreren Uhrzeiten auf das System zugreifen
+    und dokumentieren, ob man vom System eine Antwort bekommt und wie lange das dauert. 
+    Daraus wird analysiert, ob es bestimmte Uhrzeiten, Wochentage oder Monate gibt, 
+    an denen mit einem höheren Betrieb zu rechnen ist, als an den anderen und es kann dementsprechend das
+    System auf diese Zeiten angepasst werden, damit die Verfügbarkeit trotzdem gewährleistet werden kann. 
+   
+    Es sollte auch regelmäßig getestet werden, ob das System im Hochlastbetrieb erreichbar ist, 
+    indem man auf dem System eine besonders hohe Menge an Anfragen simuliert und währenddessen probiert,
+    ob das System immer noch verfügbar ist. 
     
-    \item \textbf{Richtigkeit: }
-    Es sollten die korrekten, 
-    vom Nutzer verbrauchten Daten einsehbar und 
-    aktuell sein und angezeigt werden.
+    Im Fall eines Ausfalls des Systems sollte es nach spätestens sechs Stunden wieder erreichbar sein.
 
-\textit{(ELI: kann man das spezifizieren?? unrealistische Angaben überprüfen?
-\\TestNutzer anlegen, austesten, 
-    wie sich die Daten verhalten und errechnen, 
-    was eigentlich rauskommen sollte)}
+    \item \textbf{Wiederherstellbarkeit: }
+    Beim Versagen einer Komponente oder des ganzen Systems soll nach zwei Stunden bemerkt werden, 
+    dass ein Problem aufgetreten ist und nach spätestens sechs Stunden muss das System wieder verfügbar sein.
+    Weiterhin sollten alle fünf Minuten ein Back-up ((angelegt)) werden, um den Datenverlust während eines Ausfalls
+    auf nur 5 Minuten vor Versagen des Systems zu beschränken. 
+    ALT: Weiterhin sollen nicht mehr als fünf Minuten an Daten verloren gehen.
+    
+    Dazu sollten Trainingsszenarios geplant werden, bei denen ein Versagen des Systems simuliert wird. 
+    Es wird gemessen, wie lange es dauert, das System wieder verfügbar zu machen, und es kann beobachtet werden,
+    wie aktuell die Daten sind, welche vor dem Ausfall gespeichert wurden. 
+    
+  
     \item \textbf{Wartungsfähigkeit: }
     Die Administratoren und der Support sollten korrekte Verbrauchsdaten 
-    pflegen und die Anwendung jederzeit an ein Abo-Modell anpassbar sein.
-
-    \textit{(ELI: heißt das auch, dass der Code übersichtlich, verständlich, 
-    nachvollziehbar ist? Kann man sowas messen?
-    Probleme/Bugs müssen schnell erkannt und gefixt werden?? )}
+    pflegen und die Anwendung sollte jederzeit an ein Abo-Modell anpassbar sein.
+    ((messbar?))
+    
+    Das heißt, der Code muss übersichtlich, nachvollziehbar und gut dokumentiert sein. 
+    Es sollte ein einheitlicher Standart festgelegt werden, welcher von höheren Instanzen durchgesetzt wird. 
+    Um die Wartbarkeit zu testen, soll in einem Trainingsszenario ein Fehler im Code simuliert werden, 
+    und es wird beobachtet, wie lange es dauert bis das Problem gefunden und beseitigt wird. 
+    
 
     \item \textbf{Benutzerfreundlichkeit: }
     Die angezeigten Daten sollten möglichst viele Kundenbedürfnisse 
     befriedigen, übersichtlich und leicht verständlich sein.
-
-    \textit{(ELI: könnte verschiedene Versionen des Designs an 
-    Leute verteilen, die abstimmen, bewerten, kritisieren?)}
+    Man kann den Nutzer stichprobenartig bitten, eine Bewertung oder Kritik zu hinterlegen zur Benutzerfreundlichkeit. 
+    Weiterhin kann analysiert werden, ob bei dem Support Fragen zum Ausführen oder Finden einer konkreten Funktionalität besonders häufig vorkommt.
+    Sehr wichtige Funktionen ((wie zb)) sollten sehr intuitiv ausführbar sein und speziellere, weniger interessante Funktionen können zweitrangig 
+    betrachtet werden, damit das Design simpel und nicht überfüllt ist.
+    ((messbar??))
+    
+    Um ein geeignetes User Interface festzulegen, sollten Befragungen am Menschen der Zielgruppe stattfinden,
+    welche verschiedene Designs bewerten.
+    Oder man kann sie darum bitten, in den verschiedenen ((Interface)) eine konkrete Funktion zu finden und auszuführen.
+    Es wird die Zeit gemessen, die benötigt wurde um die Funktion auszuführen.
+    Das Design, mit dem die Befragten am schnellsten arbeiten konnten, ist für sie das Intuitivste und sollte als finales Design in Betracht gezogen werden. 
+    
+   
 \end{itemize}
 
 \subsection{Geschäftsregeln}
