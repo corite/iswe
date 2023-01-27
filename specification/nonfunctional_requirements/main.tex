@@ -20,24 +20,15 @@ Define any safeguards or actions that must be taken, as well as actions that mus
 Refer to any external policies or regulations that state safety issues that affect the product’s design or use. 
 Define any safety certifications that must be satisfied.}
 
-
-Bei einem Datenbankbreach sollten die sensiblen Daten unserer Nutzer nicht 
-gefährdet werden.
-Deswegen dürfen die Kontodaten, Passwörter und Adressen nicht zusammen gespeichert werden.
-Weiterhin werden die Account-, Bezahl- und Verbrauchsdaten jeweils in verschiedenen Datenbanken ((gespeichert)).
+Um die Nutzerdaten ausreichend zu schützen, werden hohe Sicherheitsanforderungen benötigt. Dazu gehört zum einen die Verschlüsselung der Kommunikation, aber auch das verschlüsselte ablegen sensibler Daten. Außerdem wird das System regelmäßig auf den neusten Stand gebracht um mögliche aufkommenden Sicherheitslücken durch externe Bibliotheken so schnell wie möglich zu schließen. Mögliche Brute Force Attacken werden eingeschränkt ohne dem User zu viel Freiraum zu nehmen durch die in \ref{acc} gegebenen Funktionalen Anforderungen.\\
+Falls in eines unserer Systeme eingedrungen werden sollte, müssen sensible Daten trotzdem so gut wie möglich geschützt sein. Deshalb werden die Kontodaten, Passwörter und Adressen nicht zusammen gespeichert.
+Weiterhin werden die Account-, Bezahl- und Verbrauchsdaten jeweils in verschiedenen Datenbanken gespeichert.
 %Risikobewertung vs Kosten??
 
-Im Fall eines Ausfalles des ((Systems)) sollte nach spätestens zwei Stunden
-eine Reaktion von ((uns)) kommen, 
-Bemühungen das System ((zum laufen zu bekommen)).
-Sechs Stunden Ausfall sind zu viel, das muss vermieden werden.
-
-Daten müssen in mindestens zwei Verschiedenen ((Orten)) 
-abgespeichert werden, 
-damit bei einem Verlust von Daten % wie können wir das verhindern?
-möglichst wenig verloren geht.
-Es sollen maximal alle fünf Minuten die Daten gespeichert werden, 
-um den Datenverlust gering zu halten. %sollen wir das begründen?
+Die Daten werden an mindestens zwei Verschiedenen Orten 
+abgespeichert, damit bei einem Verlust von Daten % wie können wir das verhindern?
+ein Backup vorhanden ist.
+Diese Backups werden alle 5 Minuten erstellt, um den Datenverlust so gering wie möglich zu halten. %sollen wir das begründen?
 
 
 
