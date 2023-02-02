@@ -1,133 +1,65 @@
 \section{Nicht-Funktionale Anforderungen}
 
-\subsection{Leistungsanforderungen}
-\textit{If there are performance requirements for the product under various 
-circumstances, state them here and explain their rationale, 
-to help the developers understand the intent and make suitable design choices. 
-Specify the timing relationships for real time systems. 
-Make such requirements as specific as possible. 
-You may need to state performance requirements 
-for individual functional requirements or features.}
+\subsection{Benutzerfreundlichkeit}
+Da wir uns an den Endkunden richten, hat die Beachtung der Benutzerfreundlichkeit eine sehr hohe Priorität.
+
+Die angezeigten Daten sollten möglichst viele Kundenbedürfnisse
+befriedigen, übersichtlich und leicht verständlich sein.
+Um dies zu testen, kann man den Nutzer stichprobenartig bitten, eine Bewertung oder Kritik zu hinterlegen zur Benutzerfreundlichkeit.
+Vor Fertigstellung des Produkts, sollten auch Prototypen an mögliche zukünftige Kunden ferteilt werden und \textit{Usability-Tests} durchgeführt werden. In diesen Tests sollten dann, die wichtigsten Funktionen getestet werden, wie Registrierung, Verbräuche eintragen oder Statistiken einsehen unter die Probe gestellt werden.
+Hier kann auch ggf. die Zeit gemessen werden, die ein Benutzer braucht um bestimmte Aktionen durchzuführen.
+
+Weiterhin kann analysiert werden, ob bei dem Support Fragen zum Ausführen oder Finden einer konkreten Funktionalität besonders häufig vorkommt. Gegebenenfalls wäre eine FAQ-Seite dann von Nutzen.
+
+\subsection{Verfügbarkeit}
+Die abzurufenden Daten sollten jederzeit verfügbar sein,
+damit der Benutzer immer die Möglichkeit hat,
+seine Verbäuche einzusehen und vergleichen zu können. Zusätzlich sollen auch die externen Verbrauchs-Einlese-Geräte jederzeit in der Lage sein, neue Daten ins System einzupflegen.
+Unser Ziel ist, dass im Normalbetrieb das System innerhalb eines Monats maximal für eine Stunde nicht erreichbar sein sollte.
+
+Um das zu gewährleisten, sollte man jeden Tag an mehreren Uhrzeiten auf das System zugreifen
+und dokumentieren, ob man vom System eine Antwort bekommt und wie lange das dauert.
+Daraus wird analysiert, ob es bestimmte Uhrzeiten, Wochentage oder Monate gibt,
+an denen mit einem höheren Betrieb zu rechnen ist, als an den anderen und es kann dementsprechend das
+System auf diese Zeiten angepasst werden, damit die Verfügbarkeit trotzdem gewährleistet werden kann.
+
+Es sollte auch regelmäßig getestet werden, ob das System im Hochlastbetrieb erreichbar ist,
+indem man auf dem System eine besonders hohe Menge an Anfragen simuliert und währenddessen probiert,
+ob das System immer noch verfügbar ist.
+
+Im Fall eines Ausfalls des Systems sollte es nach spätestens sechs Stunden wieder erreichbar sein. Um dieses Ziel zu testen, messen wir bei einem Totalausfall die Zeit, die das Syste, lahmgelegt ist. Idelaerweise erhalten wir den Anfangszeitpunkt durch etwaige Logs oder ähnliche Maßnahmen, die in der Umsetzung einer grundsätzlichen Wartbarkeit (\ref{sec:other}) bzw. der Analysierbarkeit (\ref{sec:anal}) entstehen.
+
+\subsection{Wiederherstellbarkeit}
+Beim Versagen einer Komponente oder des ganzen Systems soll nach zwei Stunden bemerkt werden,
+dass ein Problem aufgetreten ist und nach spätestens sechs Stunden muss das System wieder verfügbar sein.
+Zusätzlich sollte stets sichergestellt werden, dass Daten, die älter als 5 Minuten sind, bei einem Ausfall des Systems rekonstruierbar sind. Etwaige Zahlungsinformation sollten niemals verloren gehen.
+
+Dazu sollten Trainingsszenarios geplant werden, bei denen ein Versagen des Systems simuliert wird.
+Es wird gemessen, wie lange es dauert, das System wieder verfügbar zu machen, und es kann beobachtet werden,
+wie aktuell die Daten sind, welche vor dem Ausfall gespeichert wurden.
 
 
-\subsection{Sicherheitsanforderungen}
-\textit{Specify those requirements that are concerned 
-with possible loss, damage, or harm that could result from the use of the product. 
-Define any safeguards or actions that must be taken, as well as actions that must be prevented. 
-Refer to any external policies or regulations that state safety issues that affect the product’s design or use. 
-Define any safety certifications that must be satisfied.}
+\subsection{Analysierbarkeit und Modifizierbarkeit} \label{sec:anal}
+Da ein neues Produkt geschaffen werden soll, muss unbedingt die Analysierbarkeit und Modifizierbarkeit gewährleistet sein um viele anfängliche Fehler, möglichst schnell auszuräumen.
+Dazu sollen Fehlermeldungen von Nutzern und des Systems innerhalb von 2h wahrgenommen und innerhalb von weiteren 3h lokalisiert werden.
+Weiterhin müssen gut dokumentiert werden, was das System wann macht, bzw. welche Fehler auftreten. Zum Beispiel in einem \textit{Log-File}.
 
-Um die Nutzerdaten ausreichend zu schützen, werden hohe Sicherheitsanforderungen benötigt. Dazu gehört zum einen die Verschlüsselung der Kommunikation, aber auch das verschlüsselte ablegen sensibler Daten. Außerdem wird das System regelmäßig auf den neusten Stand gebracht um mögliche aufkommenden Sicherheitslücken durch externe Bibliotheken so schnell wie möglich zu schließen. Mögliche Brute Force Attacken werden eingeschränkt ohne dem User zu viel Freiraum zu nehmen durch die in \ref{acc} gegebenen Funktionalen Anforderungen.\\
-Falls in eines unserer Systeme eingedrungen werden sollte, müssen sensible Daten trotzdem so gut wie möglich geschützt sein. Deshalb werden die Kontodaten, Passwörter und Adressen nicht zusammen gespeichert.
-Weiterhin werden die Account-, Bezahl- und Verbrauchsdaten jeweils in verschiedenen Datenbanken gespeichert.
-%Risikobewertung vs Kosten??
+Ein ganz einfaches Testscenario wäre, die Zeut zu messen beginnend von dem Auftreten des Fehlers und je bis der Fehler wahrgenommen wurde, lokalisiert bzw. behoben wurde.
 
-Die Daten werden an mindestens zwei Verschiedenen Orten 
-abgespeichert, damit bei einem Verlust von Daten % wie können wir das verhindern?
-ein Backup vorhanden ist.
-Diese Backups werden alle 5 Minuten erstellt, um den Datenverlust so gering wie möglich zu halten. %sollen wir das begründen?
+\subsection{Weitere Anforderungen} \label{sec:other}
+Hier sind weitere Anforderungen beziehungsweise Erwartungen an das System formultiert, die eingehalten werden sollen, aber nicht die selbe Priorität, wie die oben genannten nicht-funktionalen Anforderungen, genießen.
+\paragraph{Wartungsfähigkeit}
+
+Grundsätzliche Wartbarkeit ist natürlich Grundlage eines langbestehenden Produkts. Dazu zählt eine fundamentale Code-Dokumentation bzw. -Kommentierung, Einhaltung von Code-Guidlines und das, wie beim Punkt Analysierbarkeit (\ref{sec:anal}) schon angesprochen, mögliche \textit{Log-File}.
 
 
+\paragraph{Sicherheitsanforderungen}
+Um die Nutzerdaten ausreichend zu schützen, muss auch ein Augenmerk auf Sicherheit gelegt werden. Wir gehen davon aus, dass die Verbung zum Webserver stets verschlüsselt ist. Außerdem sollte die Möglichkeit von brute-Force-Attacken zum Beispiel bei der Anmeldung eingeschränkt werden.
 
+Im Falle, dass ein Angreifer in unser System eindringt, muss in der Datenablegung Maßnehmen gegen Datenklau getroffen werden, besonders in Bezug auf sensible Daten (Passwort, Wohnort, persönliche Verbräuche). Möglich wäre das Salzen und Hashen von Paswörtern und das Speichern der Daten an verschiedenen Orten.
 
-\subsection{Datenschutzanforderungen}
-Die Datenschutzanforderungen sollen der Datenschutzgrundverordnung entsprechen. 
-Bei einem Datenbankbreach sollen die sensiblen Daten der Nutzer nicht gefährdet werden. 
-Deswegen dürfen die Kontodaten, Passwörter und Adressen nicht zusammen gespeichert werden. 
-Weiterhin werden die Account-, Bezahl- und Verbrauchsdaten jeweils in verschiedenen Datenbanken gespeichert. 
-Passwörter werden zusätzlich nur als Hashwerte abgespeichert, welche dann nur noch abgeglichen werden müssen.\\
-Es sollen möglichst wenig persönliche Daten erhoben werden müssen und viele sollen optional sein:
+\paragraph{Datenschutzanforderungen}
+Es müssen nationale und internationale Datenschutzgesetze eingehalten werden. Nach DSGVO muss insbesondere jeder Benutzer in der Lage sein, all seine gespeicherten Daten einzusehen, herunterzuladen oder zu löschen.
 
-\begin{enumerate}
-    \item Ein Nutzername und das zugehörige Passwort müssen abgespeichert werden um den Nutzer eindeutig zuzuordnen
-    \item Der Nutzer kann seine Kreditkartendaten abspeichern, muss er aber nicht
-    \item Der Nutzer kann seine Adresse angeben, muss er aber nicht
-    \item Zu Immobilien können Adressen gespeichert werden sind aber optional
-    \item Eingetragene Daten zu einer Immobilien werden pro Benutzer in einer Datenbank gespeichert
-\end{enumerate}
-Die Verbräuche eines Nutzers werden zusätzlich anonym in einer Datenbank für Vergleiche festgehalten. Alle Daten von Gas-, Strom- und Wasserverbräuche werden ohne Nutzerbezug abgespeichert. Diese Daten dienen Verbrauchsstatistiken mit denen sich jeder Nutzer vergleichen kann. Es wird Wert darauf gelegt, dass sich diese Daten nicht zurückverfolgen lassen, aufgrund der Regionalität. Sollten zu wenig Daten für einen regionalen Vergleich vorliegen, wird dieser nicht angeboten.
-
-\subsection{Software-Qualitätsattribute}
-\textit{Specify any additional quality characteristics for the product that will be important to either the customers or
-the developers.
-Some to consider are: adaptability, availability, correctness, flexibility, 
-interoperability, maintainability, portability, reliability, reusability, 
-robustness, testability, and usability. Write these to be specific, quantitative, 
-and verifiable when possible.
-At the least, clarify the relative preferences for various attributes, 
-such as ease of use over ease of learning.}
-% Auf 4-5 wichtige Eigenschaften einigen, welche einander nicht ausschließen
-% Zur Auswahl: 
-% Anpassungsfähigkeit, Verfügbarkeit, Richtigkeit, Flexibilität,
-% Kombatibilität, Wartungsfähigkeit, Portabel, Zuverlässig,
-% Wiederverwendbarkeit, Robust, Testbar, Nützlich/ Benutzerfreundlich? 
-
-% Spezifisch, messbar, bestätigbar?
-
-\begin{itemize}
-    \item \textbf{Verfügbarkeit: }
-    Die abzurufenden Daten sollten jederzeit verfügbar sein,
-    damit der Benutzer immer die Möglichkeit hat, 
-    seine Verbäuche einzusehen und vergleichen zu können.
-    Im Normalbetrieb sollte das System innerhalb eines Monats maximal für ((Zeiteinheit)) nicht erreichbar sein.
-    
-    Um das zu gewährleisten, sollte man jeden Tag an mehreren Uhrzeiten auf das System zugreifen
-    und dokumentieren, ob man vom System eine Antwort bekommt und wie lange das dauert. 
-    Daraus wird analysiert, ob es bestimmte Uhrzeiten, Wochentage oder Monate gibt, 
-    an denen mit einem höheren Betrieb zu rechnen ist, als an den anderen und es kann dementsprechend das
-    System auf diese Zeiten angepasst werden, damit die Verfügbarkeit trotzdem gewährleistet werden kann. 
-   
-    Es sollte auch regelmäßig getestet werden, ob das System im Hochlastbetrieb erreichbar ist, 
-    indem man auf dem System eine besonders hohe Menge an Anfragen simuliert und währenddessen probiert,
-    ob das System immer noch verfügbar ist. 
-    
-    Im Fall eines Ausfalls des Systems sollte es nach spätestens sechs Stunden wieder erreichbar sein.
-
-    \item \textbf{Wiederherstellbarkeit: }
-    Beim Versagen einer Komponente oder des ganzen Systems soll nach zwei Stunden bemerkt werden, 
-    dass ein Problem aufgetreten ist und nach spätestens sechs Stunden muss das System wieder verfügbar sein.
-    Weiterhin sollten alle fünf Minuten ein Back-up ((angelegt)) werden, um den Datenverlust während eines Ausfalls
-    auf nur 5 Minuten vor Versagen des Systems zu beschränken. 
-    ALT: Weiterhin sollen nicht mehr als fünf Minuten an Daten verloren gehen.
-    
-    Dazu sollten Trainingsszenarios geplant werden, bei denen ein Versagen des Systems simuliert wird. 
-    Es wird gemessen, wie lange es dauert, das System wieder verfügbar zu machen, und es kann beobachtet werden,
-    wie aktuell die Daten sind, welche vor dem Ausfall gespeichert wurden. 
-    
-  
-    \item \textbf{Wartungsfähigkeit: }
-    Die Administratoren und der Support sollten korrekte Verbrauchsdaten 
-    pflegen und die Anwendung sollte jederzeit an ein Abo-Modell anpassbar sein.
-    ((messbar?))
-    
-    Das heißt, der Code muss übersichtlich, nachvollziehbar und gut dokumentiert sein. 
-    Es sollte ein einheitlicher Standart festgelegt werden, welcher von höheren Instanzen durchgesetzt wird. 
-    Um die Wartbarkeit zu testen, soll in einem Trainingsszenario ein Fehler im Code simuliert werden, 
-    und es wird beobachtet, wie lange es dauert bis das Problem gefunden und beseitigt wird. 
-    
-
-    \item \textbf{Benutzerfreundlichkeit: }
-    Die angezeigten Daten sollten möglichst viele Kundenbedürfnisse 
-    befriedigen, übersichtlich und leicht verständlich sein.
-    Man kann den Nutzer stichprobenartig bitten, eine Bewertung oder Kritik zu hinterlegen zur Benutzerfreundlichkeit. 
-    Weiterhin kann analysiert werden, ob bei dem Support Fragen zum Ausführen oder Finden einer konkreten Funktionalität besonders häufig vorkommt.
-    Sehr wichtige Funktionen ((wie zb)) sollten sehr intuitiv ausführbar sein und speziellere, weniger interessante Funktionen können zweitrangig 
-    betrachtet werden, damit das Design simpel und nicht überfüllt ist.
-    ((messbar??))
-    
-    Um ein geeignetes User Interface festzulegen, sollten Befragungen am Menschen der Zielgruppe stattfinden,
-    welche verschiedene Designs bewerten.
-    Oder man kann sie darum bitten, in den verschiedenen ((Interface)) eine konkrete Funktion zu finden und auszuführen.
-    Es wird die Zeit gemessen, die benötigt wurde um die Funktion auszuführen.
-    Das Design, mit dem die Befragten am schnellsten arbeiten konnten, ist für sie das Intuitivste und sollte als finales Design in Betracht gezogen werden. 
-    
-   
-\end{itemize}
-
-\subsection{Geschäftsregeln}
-\textit{List any operating principles about the product, 
-such as which individuals or roles can perform which functions under specific circumstances. 
-These are not functional requirements in themselves, 
-but they may imply certain functional requirements to enforce the rules}
-
-    Es gibt 3 Rollen mit jeweils unterschiedlichen Berechtigungen im System: Benutzer, Support und Admin. Die detaillierte Aufteilung der Befugnisse ist in \ref{system_features} festgelegt.
+\subsection{Unbedeutende Anforderungen}
+Weil das Produkt auf einem Webserver laufen soll, ist die Übertragbarkeit des Systems kein anstrebsames Ziel. Außerdem ist extreme Genauigkeit der Messdaten beziehungsweise der Prognosen nicht erforderlich, die nur der generelle Trend interessant ist.
