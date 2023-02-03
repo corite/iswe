@@ -8,8 +8,20 @@ Wir haben die Systemfunktionen nach Usergruppen aufgeteilt.
 \subsection{Systemfunktionen für alle Usergruppen}
 \subsubsection{Anmeldung}
 \paragraph{Beschreibung und Priorität}
+
+Bevor ein dem System bereits bekannter Nutzer Die Funktionen seiner Usergruppe ausführen kann, muss er sich zunächst authentifizieren. Die Funktion hat eine sehr hohe Priorität, da sonst Nutzer und Nutzergruppen nicht voneinander unterschieden werden können.
+
 \paragraph{Sequenzen von Benutzeraktionen und Systemantworten}
+
+Der Nutzer gibt in einer Anmeldemaske seinen Benutzername oder seine Email-Adresse und sein Passwort ein und bestätigt dies. Ist ANM4 erfüllt so ist der Nutzer nun eingeloggt und wird zum Home-Bildschirm weitergeleitet. War dies nicht der Fall, so wird eine Fehlermeldung mit den möglichen Ursachen angezeigt.
+
 \paragraph{Funktionale Anforderungen}
+\begin{itemize}
+	\item \textbf{ANM1} Darstellen der Anmelde-Maske.
+	\item \textbf{ANM2} Validieren den Eingabe also Überprüfung von ANM4 durch ggf. Abgleich mit der Datenbank.
+	\item \textbf{ANM3} Auf nicht erfüllte Anforderungen (ANM4) in der Anmeldemaske aufmerksam machen, falls diese nicht erfüllt sind.
+	\item \textbf{ANM4} Der Benutzername oder die Email-Adresse muss im System vorhanden sein und das Passwort bzw. dessen Hash müssen übereinstimmen.
+\end{itemize}
 
 \subsection{Benutzer}
 \subsubsection{Accounterstellung}\label{acc}
@@ -35,6 +47,7 @@ Diese Funktion ermöglicht es, einer Person, die an dem Produkt interessiert ist
 \end{itemize}
 
 \subsubsection{Verbräuche eintragen}
+\label{sysf:verb_eintragen}
 \paragraph{Beschreibung und Priorität}
 Es ermöglicht dem Benutzer seine Daten in die Datenbank einzutragen, welche später für weitere Features von Nöten sind. Neben dem manuellen Eintragen gibt es auch die Möglichkeit der automatischen Erfassung der Daten mittels einem Gerät, das der Benutzer zuhause installieren muss, sobald dies passiert ist übermittelt das Gerät jeden Tag die aktuellen Daten… oder so.
 
@@ -44,7 +57,12 @@ Der Benutzer trägt in einer WebMaske seine einzelnen Verbräuche ein und kann m
 
 \subsubsection{Statistiken einsehen}
 \paragraph{Beschreibung und Priorität}
+Die Funktion ermöglicht es dem Benutzer seine eingetragenen Verbräuche (siehe \ref{sysf:verb_eintragen}) zu visualisieren. Da dieses Funktion den meisten Nutzen für die Benutzer bringt, hat auch diese Funktion eine hohe Priorität, sie ist aber nicht essentiell für das Funktionieren des Systems.
+
 \paragraph{Sequenzen von Benutzeraktionen und Systemantworten}
+
+Der Nutzer geht auf den Menüpunkt Statistiken und wählt den gewünschten Verbrauchszeitraum und die Verbrauchsart aus. Außerdem kann er sich für eine Art der Visualisierung (z.B. Säulendiagramm, Liniendiagramm, oder Tabelle) entscheiden. Die gewünschten Daten werden daraufhin dargestellt.
+
 \paragraph{Funktionale Anforderungen}
 
 \subsubsection{Immobilien bearbeiten}
@@ -173,7 +191,21 @@ Der Benutzer hat mit der Nutzung des Systems ein Problem und benötigt Hilfe. Na
 \end{itemize}
 
 \subsubsection{Account verwalten}
+\paragraph{Beschreibung und Priorität}
+Das Feature erlaubt es dem Nutzer seine Accountdaten einzusehen, zu ändern und gegebenenfalls zu löschen. Das Feature hat eine sehr hohe Priorität.
 
+\paragraph{Sequenzen von Benutzeraktionen und Systemantworten}
+Der Nutzer wählt den Menüpunkt \gquote{Account Verwalten} aus. Dort sind alle Optionen AVW1 - AVW6 einsehbar und änderbar.  
+
+\paragraph{Funktionale Anforderungen}
+\begin{itemize}
+	\item \textbf{AVW1} Name
+	\item \textbf{AVW2} Adresse
+	\item \textbf{AVW3} Zahlungsmethode
+	\item \textbf{AVW4} Nutzername
+	\item \textbf{AVW5} Email
+	\item \textbf{AVW6} Passwort. Hier sollte das aktuelle Passwort jedoch nicht einsehbar sein (da es nicht gespeichert werden soll).
+\end{itemize}
 \subsubsection{Prognosen einsehen}
 
 \subsubsection{Kosten einsehen}
