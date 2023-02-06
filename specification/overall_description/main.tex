@@ -10,19 +10,19 @@ Beim entwickelten Produkt handelt es sich um eine komplette Neuentwicklung. Arch
 
 \subsubsection{Eintragen von Verbräuchen}
 
-Der primäre Anwendungsfall der Applikation ist das Eintragen und Verwalten von verschiedenartigen Verbrauchswerten. Hierzu zählen unter anderem aber nicht ausschließlich Gas, Strom und Wasser. 
+Der primäre Anwendungsfall der Applikation ist das Eintragen und Verwalten von verschiedenartigen Verbrauchswerten. Hierzu zählen unter anderem aber nicht ausschließlich Gas, Strom und Wasser.
 
 \paragraph{Manuelles Eintragen}
 
-    Verbrauchswerte können über das Web-Interface eingetragen werden.
+Verbrauchswerte können über das Web-Interface eingetragen werden.
 
 \paragraph{Konstante Verbraucher}
-    Verbraucher, bei denen der Verbrauch konstant ist können ebenfalls über das Webinterface eingetragen werden.
+Verbraucher, bei denen der Verbrauch konstant ist können ebenfalls über das Webinterface eingetragen werden.
 
 \paragraph{Automatisiertes Eintragen}
 \label{autom_eintragen}
 
-    Verbrauchswerte können zudem über Geräte von Drittanbietern direkt am Zähler ausgelesen werden. Die Werte werden dann vom Gerät über eine eine von der Applikation bereitzustellende API übertragen.
+Verbrauchswerte können zudem über Geräte von Drittanbietern direkt am Zähler ausgelesen werden. Die Werte werden dann vom Gerät über eine eine von der Applikation bereitzustellende API übertragen.
 
 \subsubsection{Statistiken}
 
@@ -47,9 +47,11 @@ Die letzte mögliche Vergleichsmetrik besteht in Standard Vergleichswerten welch
 % meschnl. Akteure + Eigenschaften (zB Rechte)
 % zB Admin: kompliziertere Oberflächen, kann zum benutzen geschult werden. Wie Support
 
-    Der Nutzerkreis wird auf Privatpersonen eingeschränkt. 
-    Zur Nutzung der App muss eines von verschiedenen Abomodellen ausgewählt werden.
-    Die Aufteilung folgt im generellen einem \glqq{}Freemium\grqq{} Schema, sprich es gibt eine kostenlose Klasse und eine (oder mehrere) Bezahlmodelle. Die Abgrenzung zwischen den Klassen bleibt zu entscheiden. Vorstellbar ist hier eine Begrenzung der Anzahl von Immobilien im Free-Modell, oder etwa das Features wie das automatisierte Eintragen von Verbrauchswerten (siehe \ref{autom_eintragen}) nur für bezahlende Nutzer zur Verfügung stehen.
+Der Nutzerkreis wird auf Privatpersonen eingeschränkt.
+Zur Nutzung der App muss eines von verschiedenen Abomodellen ausgewählt werden.
+Die Aufteilung folgt im generellen einem \glqq{}Freemium\grqq{} Schema, sprich es gibt eine kostenlose Klasse und eine (oder mehrere) Bezahlmodelle. Die Abgrenzung zwischen den Klassen bleibt zu entscheiden. Vorstellbar ist hier eine Begrenzung der Anzahl von Immobilien im Free-Modell, oder etwa das Features wie das automatisierte Eintragen von Verbrauchswerten (siehe \ref{autom_eintragen}) nur für bezahlende Nutzer zur Verfügung stehen.
+
+Neben dem Beutzer soll es auch weitere Benutzertypen geben - dem Support- und Admin-Benutzer. Diese können zur Bedienung des Produkts geschult werden.
 
 \subsection{Entwicklungsumgebung}
 % Wo gehostet? Wir können "völlig frei" schreiben.
@@ -60,7 +62,7 @@ Für die Laufzeitumgebung des Servers gibt es keine Einschränkungen.
 
 \subsubsection{Client}
 \label{subsec:OEclient}
-    Die Client-Anwendung wird in als Browser-Anwendung zur Verfügung gestellt. Sie muss alle gängigen Browser (Google-Chrome und Chromium basierte Browser, Firefox, Safari) auf allen gängigen Endgeräten (Smartphone, Tablet, PC) mit den jeweiligen Betriebssystemen (Android / iOS, Windows / MacOS / Linux) unterstützen.
+Die Client-Anwendung wird in als Browser-Anwendung zur Verfügung gestellt. Sie muss alle gängigen Browser (Google-Chrome und Chromium basierte Browser, Firefox, Safari) auf allen gängigen Endgeräten (Smartphone, Tablet, PC) mit den jeweiligen Betriebssystemen (Android / iOS, Windows / MacOS / Linux) unterstützen.
 
 \subsection{Design- und Implementierungsbeschränkungen}
 
@@ -68,7 +70,7 @@ Wie bereits in \ref{subsec:OEclient} beschrieben ist die Client-Anwendung als Br
 
 \subsection{Benutzerhandbuch/Nutzerdokumentationen}
 
-    Da die Client Applikation intuitiv bedienbar sein muss, sollte eine Dokumentation für den Großteil der Nutzer*innen nicht notwendig sein. Da jedoch auch technisch weniger versierte Nutzer zur Zielgruppe gehören und um spezielle Anwendungsfälle abzudecken wird eine Dokumentation in Form eines Online-Wiki direkt auf der Website der Anwendung bereitgestellt. Darüber hinaus können Fragen auch vom Kundensupport beantwortet werden. 
+Da die Client Applikation intuitiv bedienbar sein muss, sollte eine Dokumentation für den Großteil der Nutzer*innen nicht notwendig sein. Da jedoch auch technisch weniger versierte Nutzer zur Zielgruppe gehören und um spezielle Anwendungsfälle abzudecken wird eine Dokumentation in Form eines Online-Wiki direkt auf der Website der Anwendung bereitgestellt. Darüber hinaus können Fragen auch vom Kundensupport beantwortet werden.
 
 \subsection{Annahmen und Abhängigkeiten (Faktoren, die die Entwicklung beeinflussen, aber nicht behindern z.B. Wahl des Betriebssystems)}
 % Annahmen über die Welt
@@ -77,12 +79,11 @@ Wie bereits in \ref{subsec:OEclient} beschrieben ist die Client-Anwendung als Br
 
 
 \subsubsection{Statistiken}
-    Plattformunabhängig Statistiken (\ref{vgl_plattformunabhängig}) werden von Drittanbietern bereitgestellt. Das Format, die Aktualität der Daten und die Kontinuität der Bereitstellung kann nicht sichergestellt werden. 
+Plattformunabhängig Statistiken (\ref{vgl_plattformunabhängig}) werden von Drittanbietern bereitgestellt. Das Format, die Aktualität der Daten und die Kontinuität der Bereitstellung kann nicht sichergestellt werden.
 
 
 \subsubsection{Lesegerät}
-    Die Implementierung von kompatiblen Lesegeräten (siehe \ref{autom_eintragen}) ist abhängig von Drittanbietern.
+Die Implementierung von kompatiblen Lesegeräten (siehe \ref{autom_eintragen}) ist abhängig von Drittanbietern.
 \subsubsection{Payment Anbieter}
 
-    Um Nutzern das Bezahlen so komfortabel wie möglich zu machen müssen wir auf externe Zahlungsdienstleister wie beispielsweise PayPal, Klarna, Visa usw. zurückgreifen. Die Schnittstellen dieser Anbieter können sich ändern, sowie deren Geschäftsbedingungen, Kosten oder Anforderungen. 
-    
+Um Nutzern das Bezahlen so komfortabel wie möglich zu machen müssen wir auf externe Zahlungsdienstleister wie beispielsweise PayPal, Klarna, Visa usw. zurückgreifen. Die Schnittstellen dieser Anbieter können sich ändern, sowie deren Geschäftsbedingungen, Kosten oder Anforderungen.
