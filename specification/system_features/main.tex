@@ -3,7 +3,7 @@
 
 Wir haben die Systemfunktionen nach Usergruppen aufgeteilt.
 
-\includegraphics[scale=0.5]{UC.jpg}
+\includegraphics[scale=0.4]{use_case.png}
 
 \subsection{Systemfunktionen für alle Usergruppen}
 \subsubsection{Anmeldung}
@@ -112,52 +112,9 @@ Noch zu diskutieren.
 \end{itemize}
 
 \subsubsection{Abomodell ändern}
-TODO: Text an Pfeile
-
-\begin{tikzpicture}[object/.style = {draw, rectangle}, activity/.style = {draw, rounded corners=0.1cm}, split/.style = {draw, diamond}]
-	\node[circle, fill] (start) {};
-	\node[object] (1) [below of=start] {Abomodell ändern};
-	\node[activity] (2) [right of=1, node distance=4cm] {Modell wählen};
-	\node[activity] (3) [right of=2, node distance=4cm] {Startzeitpunkt wählen};
-	\node[split] (s1) [below of=1] {};
-	\node[split] (s2) [below of=s1] {};
-	\node[activity] (4) [right of=s2, node distance=5cm] {Modell auf \textit{Frei} setzen};
-	\node[circle, fill] (unabo) [right of=4, , node distance=3cm] {};
-	\node[split] (s3) [below of=s2] {};
-	\node[activity] (5) [right of=s3, node distance=5cm] {Rechnungsadresse eintragen};
-	\node[split] (s4) [below of=s3] {};
-	\node[activity] (6) [below of=s4] {Bezahlmethode wählen};
-	\node[activity] (7) [right of=6,  node distance=5cm] {Bezahlung durchführen};
-	\node[split] (s5) [right of=7,  node distance=3.5cm] {};
-	\node[object] (8) [below of=s5] {Bestätigung};
-	\node[activity] (9) [right of=s4, node distance=6.7cm] {Abbrechen};
-	\node[circle, fill] [right of=9, node distance=1.35cm] (cancel) {};
-	\node[activity] (10) [left of=8, node distance=3cm] {Abomodell setzen};
-	\node[circle, fill] [left of=10, node distance=2cm] (finish) {};
+\includegraphics[scale=0.5]{activity_abo.png}
 
 
-	\draw[->] (start) -- (1);
-	\draw[->] (1) -- (2);
-	\draw[->] (2) -- (3);
-	\draw[->] (3) -- (s1);
-	\draw[->] (s1) to [out=0,in=270, looseness=0.3] (3);
-	\draw[->] (s1) -- (s2);
-	\draw[->] (s2) -- (4);
-	\draw[->] (4) -- (unabo);
-	\draw[->] (s2) -- (s3);
-	\draw[->] (s3) -- (5);
-	\draw[->] (s3) -- (s4);
-	\draw[->] (5) -- (s4);
-	\draw[->] (s4) -- (6);
-	\draw[->] (6) -- (7);
-	\draw[->] (7) -- (s5);
-	\draw[->] (s5) -- (8);
-	\draw[->] (s5) to [out=90,in=0,looseness=0.1] (s4);
-	\draw[->] (s4) --(9);
-	\draw[->] (9) --(cancel);
-	\draw[->] (8) --(10);
-	\draw[->] (10) -- (finish);
-\end{tikzpicture}
 \paragraph{Beschreibung und Priorität}
 Der Benutzer kann hiermit zwischen Abomodellen wechseln. Geplant sind die Abomodelle \textit{Frei}, \textit{Standard} und \textit{Professionell} wovon Ersteres kostenlos und standardmäßig ausgewählt sein sollte. Diese Funktion enthält neben dem Auswählen des Modells die Zahlung und Überprüfung vertraglicher Kündigungsfristen. Die Funktion gehört nicht zu den Kernanforderungen jedoch kann ohne Sie kein Umsatz erzielt werden und hat daher trotzdem eine hohe Priorität.
 \paragraph{Sequenzen von Benutzeraktionen und Systemantworten}
@@ -218,6 +175,8 @@ Die Funktion Kosten einsehen ermöglicht dem Nutzer die Kosten zu seinen Verbrä
 Der Nutzer muss einen Verbrauchstyp auswählen und dann zu diesem Typ einen Zeitraum wählen. Danach werden ihm die Kosten für den Verbrauch über den Zeitraum angezeigt. Wenn der Nutzer seinen Verbrauch vergleicht, ist neben dem Vergleich des Verbrauchs auch ein Vergleich der Kosten sichtbar.
 
 \subsubsection{Verbrauch vergleichen!!}
+\includegraphics[scale=0.5]{activity_vergleich.png}
+% Bei Abfrage einer Vergleichszeitreihe auch darauf eingehen, dass diese auch von extern gekommen sein könnte
 
 \subsubsection{Support-Ticket erstellen und interagieren!!}
 % Hier also auch Support-Ticket Schließen
