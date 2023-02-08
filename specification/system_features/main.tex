@@ -187,9 +187,9 @@ Noch zu diskutieren
 \includegraphics[scale=0.5]{activity_vergleich.png}
 % Bei Abfrage einer Vergleichszeitreihe auch darauf eingehen, dass diese auch von extern gekommen sein könnte
 \paragraph{Beschreibung und Priorität}
-Die Funktion Verbrauch vergleichen ermöglicht dem Nutzer seinen Verbrauch mit seiner eigenen Verbrauchshistorie, oder mit den Verbräuchen anderer zu vergleichen. Falls man sich mit den Verbräuchen von anderen vergleichen möchte, kann man eine Vergleichsgruppe auswählen (Definiert von dem Admin nach 4.4.3 Vergleichsgruppen festlegen). Dann wird eine Vergleichszeitreihe neben der eigenen Verbrauchszeitreihe visualisiert.
+Die Funktion Verbrauch vergleichen ermöglicht dem Nutzer seinen Verbrauch mit seiner eigenen Verbrauchshistorie, oder mit den Verbräuchen anderer zu vergleichen. Falls man sich mit den Verbräuchen von anderen vergleichen möchte, kann man Vergleichstags auswählen (\ref{sec:vergl_tags}). Dann wird eine Vergleichszeitreihe neben der eigenen Verbrauchszeitreihe visualisiert.
 \paragraph{Sequenzen von Benutzeraktionen und Systemantworten}
-Zunächst muss der Nutzer einen Verbrauchstyp auswählen. Danach wählt der Nutzer aus, ob er sich mit seinen eigenen Verbräuchen, oder mit den Verbräuchen anderer vergleichen möchte. Möchte er sich nur mit sich selber vergleichen, wählt der Nutzer diese Funktion und zwei Zeiträume aus, die er gegeneinander vergleichen möchte. Daraus werden zwei Zeitreihen generiert, die dann in einer Statistik visualisiert werden. Möchte der Nutzer sich mit anderen vergleichen wählt er eine Vergleichsgruppe (4.4.3 Vergleichsgruppen) aus und gibt wenn vorhanden auch Parameter an. Beispiel: Der Nutzer möchte sich regional Vergleichen, dann kann der Nutzer einen Längenparameter angeben, in welchem Umkreis der Nutzer sich vergleichen möchte. Auch hier muss der Nutzer einen Zeitraum wählen in dem der Nutzer sich vergleichen will. Dann wird eine Vergleichszeitreihe mit der Vergleichsgruppe in dem gegebenen Zeitraum erstellt und visualisiert.
+Zunächst muss der Nutzer einen Verbrauchstyp auswählen. Danach wählt der Nutzer aus, ob er sich mit seinen eigenen Verbräuchen, oder mit den Verbräuchen anderer vergleichen möchte. Möchte er sich nur mit sich selber vergleichen, wählt der Nutzer diese Funktion und zwei Zeiträume aus, die er gegeneinander vergleichen möchte. Daraus werden zwei Zeitreihen generiert, die dann in einer Statistik visualisiert werden. Möchte der Nutzer sich mit anderen vergleichen wählt  Vergleichstags (\ref{sec:vergl_tags}). Beispiel: Der Nutzer möchte sich regional Vergleichen, dann kann der Nutzer einen Längenparameter angeben, in welchem Umkreis der Nutzer sich vergleichen möchte. Auch hier muss der Nutzer einen Zeitraum wählen in dem der Nutzer sich vergleichen will. Dann wird eine Vergleichszeitreihe mit der Vergleichsgruppe in dem gegebenen Zeitraum erstellt und visualisiert.
 \paragraph{Funktionale Anforderungen}
 Noch zu diskutieren
 
@@ -254,13 +254,13 @@ Um einen Supportaccount zu erstellen soll eine Maske erstellt werden. In der Mas
 \paragraph{Funktionale Anforderungen}
 Noch zu diskutieren.
 
-\subsubsection{Vergleichsgruppen festlegen}
+\subsubsection{Vergleichstags festlegen}\label{sec:vergl_tags}
 \paragraph{Beschreibung und Priorität}
-Der Admin soll in der Lage sein Vergleichsgruppen festzulegen. Um eine Vergleichsgruppe zu definieren hat der Admin die Möglichkeit Regionale Vergleiche, Vergleiche in Haushaltsgröße, Vergleiche mit ähnlicher Immobiliengröße, Vergleiche mit Immobilienalter und Vergleiche mit dem Alter des Nutzers festzulegen. Dabei hat der Admin die Möglichkeit einer bis beliebig vieler der genannten Vergleichsarten zu einer Vergleichsgruppe zu bilden. Beispiel: Die Vergleichsgruppe besteht aus regionalen Nutzern und Nutzer welche die gleiche Haushaltsgröße besitzen. Wenn der Admin eine solche Vergleichsgruppe festgelegt hat, hat der Endnutzer die Möglichkeit sich mit dieser Vergleichsgruppe zu vergleichen.
+Der Admin soll in der Lage sein Vergleichstags festzulegen. Beispiele dafür wären Regionale Vergleiche, Vergleiche in Haushaltsgröße, Vergleiche mit ähnlicher Immobiliengröße, Vergleiche mit Immobilienalter und Vergleiche mit dem Alter des Nutzers. Später können dann Vergleichszeitreihen (\ref{sec:vergl_zeitr}) mit dem neuen Tag erstellt werden.
 \paragraph{Sequenzen von Adminaktionen und Systemantworten}
-Der Admin wählt in einer Maske eine Vergleichsart aus. Der Admin kann nun zusätzlich Vergleichsarten hinzufügen, oder wieder zu entfernen. Es muss gewährleistet sein, dass bei dem Bestätigen mindestens eine Vergleichsart gewählt wurde. Die Maske kann der Admin schlussendlich bestätigen oder abbrechen. Bei Bestätigung wird diese Vergleichsgruppe für alle Nutzer freigeschaltet.
+Der Admin wählt in einer Maske eine einen neuen Vergleichstag, den er hinzufügen möchte. Es muss gewährleistet sein, dassnicht schon ein Vergleichstag unter dem selben Namen existiert. Die Maske kann der Admin schlussendlich bestätigen oder abbrechen. Bei Bestätigung wird der Vergleichstag erstellt.
 \paragraph{Funktionale Anforderungen}
 Noch zu diskutieren.
 
 
-\subsubsection{Vergleichszeitreihe erstellen!!}
+\subsubsection{Vergleichszeitreihe erstellen!!}\label{sec:vergl_zeitr}
