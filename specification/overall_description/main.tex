@@ -4,7 +4,7 @@
 \subsection{Produktperspektive}
 
 
-Beim entwickelten Produkt handelt es sich um eine komplette Neuentwicklung. Architekturell handelt es sich um eine Client-Server Anwendung mit eine Browser Applikation welche mit einem Server kommuniziert, welcher wiederum alle benötigten Daten aufbereitet und persistiert. %TODO kling etwas seltsam (doppelt welche)
+Beim entwickelten Produkt handelt es sich um eine komplette Neuentwicklung. Architekturell handelt es sich um eine Client-Server Anwendung mit eine Browser Applikation welche mit einem Server kommuniziert, der wiederum alle benötigten Daten aufbereitet und persistiert.
 
 \subsection{Produktfunktionen}
 
@@ -16,13 +16,13 @@ Der primäre Anwendungsfall der Applikation ist das Eintragen und Verwalten von 
 
 Verbrauchswerte können über das Web-Interface eingetragen werden.
 
-\paragraph{Konstante Verbraucher} %TODO sollten wir das nur Verbraucher nennen, da dieser so im Glossar definiert ist?
+\paragraph{\textit{Verbraucher}}
 Verbraucher, bei denen der Verbrauch konstant ist können ebenfalls über das Webinterface eingetragen werden.
 
-\paragraph{Automatisiertes Eintragen} %TODO genau das gleiche, nur Externes Gerät? (Hier könnte man es denke ich aber auch so lassen)
+\paragraph{Automatisiertes Eintragen}
 \label{autom_eintragen}
 
-Verbrauchswerte können zudem über Geräte von Drittanbietern direkt am Zähler ausgelesen werden. Die Werte werden dann vom Gerät über eine eine von der Applikation bereitzustellende API übertragen.
+Verbrauchswerte können zudem über \textit{Externe Geräte} von Drittanbietern direkt am Zähler ausgelesen werden. Die Werte werden dann vom Gerät über eine eine von der Applikation bereitzustellende API übertragen.
 
 \subsubsection{Statistiken}
 
@@ -30,28 +30,28 @@ Alle gesammelten Daten können im Web-Interface auf verschiedene Arten visualisi
 
 \paragraph{Vergleich mit eigener Historie}
 
-Zunächst kann der Nutzer seinen aktuellen Verbrauch  mit (vom Nutzer ausgewählten) Vergleichszeiträumen aus seiner eigenen Verbrauchshistorie vergleichen. %TODO Vergleichszeiträume sollten Vergleichszeitreihen sein
+Zunächst kann der Nutzer seinen aktuellen Verbrauch  mit (vom Nutzer ausgewählten) Vergleichszeitreihen aus seiner eigenen Verbrauchshistorie vergleichen.
 
 
 \paragraph{Vergleich mit anderen Nutzern der Plattform}
-Darüber hinaus kann der Nutzer seinen Momentanverbrauch auch mit gemittelten Werten aus diversen Vergleichsgruppen aus der Nutzerbasis unserer Applikation vergleichen. Die Vergleichsgruppen sind variabel und müssen durch den Systemadministrator einstellbar sein. Vorstellbare Vergleichsgruppen sind beispielsweise eine Aufteilung der Nutzer nach Wohnsitz oder Größe der Immobilie. %TODO Vergleichsgruppen sollte Vergleichszeitreihen sein
+Darüber hinaus kann der Nutzer seinen Momentanverbrauch auch mit gemittelten Werten aus Vergleichszeitreihen die aus diversen Nutzergruppen mit bestimmten Vergleichstags generiert werden. Die Vergleichstags sind variabel und müssen durch den Systemadministrator einstellbar sein. Vorstellbare Vergleichstags sind beispielsweise eine Aufteilung der Nutzer nach Wohnsitz oder Größe der Immobilie.
 
 
 \paragraph{Vergleich mit plattformunabhängigen Metriken}
 \label{vgl_plattformunabhängig}
 
-Die letzte mögliche Vergleichsmetrik besteht in Standard Vergleichswerten welche nicht von Nutzern dieser Applikation, sondern von externen Forschungsinstituten bereitgestellt werden. Diese Daten werden aus dem Format des externen Instituts zur internen Verwendung in ein maschinenlesbares Format übertragen, um unabhängig von der Auslieferungsart der Daten des Instituts zu sein. %TODO maschinenlesbares Format = Vergleichszeitreihe?
-
+Die letzte mögliche Vergleichsmetrik besteht in Standard Vergleichswerten welche nicht von Nutzern dieser Applikation, sondern von externen Forschungsinstituten bereitgestellt werden.
+Diese Daten werden aus dem Format des externen Instituts zur internen Verwendung in eine Vergleichszeitreihe übertragen, um unabhängig von der Auslieferungsart der Daten des Instituts zu sein.
 
 \subsection{Benutzermerkmale}\label{sec:desc_user}
-% meschnl. Akteure + Eigenschaften (zB Rechte)
+% menschliche Akteure + Eigenschaften (zB Rechte)
 % zB Admin: kompliziertere Oberflächen, kann zum benutzen geschult werden. Wie Support
 
 Der Nutzerkreis wird auf Privatpersonen eingeschränkt.
 Zur Nutzung der App muss eines von drei Abomodellen (FREE, STANDARD, PROFESSIONAL) ausgewählt werden.
-Die Aufteilung folgt einem \gquote{Freemium} Schema, sprich es gibt eine kostenlose Klasse und zwei Bezahlmodelle. Die Abgrenzung zwischen den Klassen bleibt zu entscheiden. Vorstellbar ist hier eine Begrenzung der Anzahl von Immobilien im Free-Modell, oder etwa das Features wie das automatisierte Eintragen von Verbrauchswerten (siehe \ref{autom_eintragen}) nur für bezahlende Nutzer zur Verfügung stehen. %TODO generelle Anmerkung: Sachen die noch zu entscheiden sind in den Appendix
+Die Aufteilung folgt einem \gquote{Freemium} Schema, sprich es gibt eine kostenlose Klasse und zwei Bezahlmodelle. Die Abgrenzung zwischen den Klassen bleibt zu entscheiden. Vorstellbar ist hier eine Begrenzung der Anzahl von Immobilien im Free-Modell, oder etwa das Features wie das automatisierte Eintragen von Verbrauchswerten (siehe \ref{autom_eintragen}) nur für bezahlende Nutzer zur Verfügung stehen.
 
-Neben dem Beutzer soll es auch weitere Benutzertypen geben - dem Support- und Admin-Benutzer. Diese können zur Bedienung des Produkts geschult werden.
+Neben dem Benutzer soll es auch weitere Benutzertypen geben - dem Support- und Admin-Benutzer. Diese können zur Bedienung des Produkts geschult werden.
 
 \subsection{Entwicklungsumgebung}
 % Wo gehostet? Wir können "völlig frei" schreiben.
@@ -70,7 +70,7 @@ Wie bereits in \ref{subsec:OEclient} beschrieben ist die Client-Anwendung als Br
 
 \subsection{Benutzerhandbuch/Nutzerdokumentationen}
 
-Da die Client Applikation intuitiv bedienbar sein muss, sollte eine Dokumentation für den Großteil der Nutzer*innen nicht notwendig sein. Da jedoch auch technisch weniger versierte Nutzer zur Zielgruppe gehören und um spezielle Anwendungsfälle abzudecken wird eine Dokumentation in Form eines Online-Wiki direkt auf der Website der Anwendung bereitgestellt. Darüber hinaus können Fragen auch vom Kundensupport beantwortet werden.
+Da die Client Applikation intuitiv bedienbar sein muss, sollte eine Dokumentation für den Großteil der Nutzer nicht notwendig sein. Da jedoch auch technisch weniger versierte Nutzer zur Zielgruppe gehören und um spezielle Anwendungsfälle abzudecken wird eine Dokumentation in Form eines Online-Wiki direkt auf der Website der Anwendung bereitgestellt. Darüber hinaus können Fragen auch vom Kundensupport beantwortet werden.
 
 \subsection{Annahmen und Abhängigkeiten}
 % Annahmen über die Welt
@@ -79,11 +79,12 @@ Da die Client Applikation intuitiv bedienbar sein muss, sollte eine Dokumentatio
 
 
 \subsubsection{Statistiken}
-Plattformunabhängig Statistiken (\ref{vgl_plattformunabhängig}) werden von Drittanbietern bereitgestellt. Das Format, die Aktualität der Daten und die Kontinuität der Bereitstellung kann nicht sichergestellt werden. %TODO wenn Referenzen einfach nur so eingebettet werden ohne sie konkret in den Satz einzubinden lieber immer "(siehe X.X.X)"?
+Plattformunabhängig Statistiken (siehe \ref{vgl_plattformunabhängig}) werden von Drittanbietern bereitgestellt. Das Format, die Aktualität der Daten und die Kontinuität der Bereitstellung kann nicht sichergestellt werden.
 
 
-\subsubsection{Lesegerät}
-Die Implementierung von kompatiblen Lesegeräten (siehe \ref{autom_eintragen}) ist abhängig von Drittanbietern.
-\subsubsection{Payment Anbieter}
+\subsubsection{Externes Gerät}
+Die Implementierung von kompatiblen \textit{externen Geräten} (siehe \ref{autom_eintragen}) ist abhängig von Drittanbietern.
 
-Um Nutzern das Bezahlen so komfortabel wie möglich zu machen müssen wir auf externe Zahlungsdienstleister wie beispielsweise PayPal, Klarna, Visa usw. zurückgreifen. Die Schnittstellen dieser Anbieter können sich ändern, sowie deren Geschäftsbedingungen, Kosten und Anforderungen. %TODO ich denke es ist besser zu schreiben, dass wir das tun und nicht tun müssen
+\subsubsection{Zahlungsanbieter}
+
+Um Nutzern das Bezahlen so komfortabel wie möglich zu machen greifen wir auf externe Zahlungsdienstleister wie beispielsweise PayPal, Klarna, Visa usw. zurück. Die Schnittstellen dieser Anbieter können sich ändern, sowie deren Geschäftsbedingungen, Kosten und Anforderungen.
