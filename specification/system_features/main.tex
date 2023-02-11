@@ -270,11 +270,44 @@ Noch zu diskutieren.
 
 \subsubsection{Vergleichstags festlegen}\label{sec:vergl_tags}
 \paragraph{Beschreibung und Priorität}
-Der Admin soll in der Lage sein Vergleichstags festzulegen. Beispiele dafür wären Regionale Vergleiche, Vergleiche in Haushaltsgröße, Vergleiche mit ähnlicher Immobiliengröße, Vergleiche mit Immobilienalter und Vergleiche mit dem Alter des Nutzers. Später können dann Vergleichszeitreihen (\ref{sec:vergl_zeitr}) mit dem neuen Tag erstellt werden.
+Der Admin soll in der Lage sein Vergleichstags festzulegen. 
+Beispiele dafür wären Regionale Vergleiche, Vergleiche in Haushaltsgröße, Vergleiche mit ähnlicher Immobiliengröße, 
+Vergleiche mit Immobilienalter und Vergleiche mit dem Alter des Nutzers. 
+Später können dann Vergleichszeitreihen (\ref{sec:vergl_zeitr}) mit dem neuen Tag erstellt werden.
 \paragraph{Sequenzen von Adminaktionen und Systemantworten}
-Der Admin wählt in einer Maske eine einen neuen Vergleichstag, den er hinzufügen möchte. Es muss gewährleistet sein, dass nicht schon ein Vergleichstag unter dem selben Namen existiert. Die Maske kann der Admin schlussendlich bestätigen oder abbrechen. Bei Bestätigung wird der Vergleichstag erstellt.
+
+Der Admin wählt in einer Maske eine einen neuen Vergleichstag, den er hinzufügen möchte.
+Es muss gewährleistet sein, dass nicht schon ein Vergleichstag unter dem selben Namen existiert.
+Die Maske kann der Admin schlussendlich bestätigen oder abbrechen.
+Bei Bestätigung wird der Vergleichstag erstellt.
 \paragraph{Funktionale Anforderungen}
 Noch zu diskutieren.
 
 
-\subsubsection{Vergleichszeitreihe erstellen!!}\label{sec:vergl_zeitr}
+\subsubsection{Vergleichszeitreihe erstellen}\label{sec:vergl_zeitr}
+\paragraph{Beschreibung und Priorität}
+Der Admin kann Vergleichszeitreihen anlegen.
+Dafür lässt er sich die Daten aller Nutzer zu interessanten und relevanten
+Kennzahlen berechnen, welche bei ihm gespeichert werden, 
+damit er, wenn ein Nutzer sich vergleichen möchte mit anderen Nutzern,
+nur noch die Daten vom Admin geladen werden, statt jedes Mal auf die gesamte Datenbank zuzugreifen.
+Alternativ kann der Admin auch aus externen Ressourcen Vergleichswerte eintragen.
+
+\paragraph{Sequenzen von Adminaktionen und Systemantworten}
+Der Admin klickt im Menü(???) auf die Schaltfläche "Vergleichszeitreihe erstellen".
+Dann sieht man auf der Webseite die Möglichkeit "aus eigenen Nutzerdaten erstellen" oder "manuell eintragen".
+Wenn man das Erste auswählt, werden die Daten der Nutzer ausgewertet und mit den zugehörigen Tags verknüpft.
+Das kann einige Sekunden dauern also gibt es während der Ladezeit eine Ladegrafik, 
+welche dem Admin mitteilt, dass die Seite mit Rechnen beschäftigt ist.
+Der Admin kann dann in allen Tags die berechneten Werte einsehen. 
+Wenn er auf "Vergleichszeitreihe aktualisieren" klickt, werden diese Werte als neue Vergleichswerte definiert.
+Das heißt, wenn der Nutzer seinen Verbrauch mit dem des Durchschnitts vergleichen möchte,
+werden ab sofort diese neu ermittelten Werte verwendet, welche beim Admin gespeichert sind.
+
+Wenn der Admin sich dafür entscheidet, manuell eine Verbrauchszeitreihe anzulegen,
+bekommt er die Möglichkeit Tags einzutragen, denen der Eintrag zugeordnet werden soll.
+Außerdem kann er die Werte eintragen und Einheiten auswählen, die der Eintrag haben soll.
+Wenn er dann auf auf "bestätigen" klickt, werden die neuen Werte als
+neue Vergleichswerte definiert in den Tags die eingetragen wurden.
+\paragraph{Funktionale Anforderungen}
+Es muss gewährleistet werden, dass beim manuellen Eintragen die Tags tatsächlich existieren.
