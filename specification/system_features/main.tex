@@ -13,7 +13,7 @@ Bevor ein dem System bereits bekannter Nutzer die Funktionen seiner Usergruppe a
 
 Der Nutzer gibt in einer Anmeldemaske seinen Benutzername oder seine Email-Adresse und sein Passwort ein und bestätigt dies. Ist ANM4 erfüllt so ist der Nutzer nun eingeloggt und wird zum Home-Bildschirm weitergeleitet. War dies nicht der Fall, so wird eine Fehlermeldung mit den möglichen Ursachen angezeigt.
 
-\paragraph{Funktionale Anforderungen} %TODO generelle Anmerkung: "Funktionale Anforderungen" sollten "Qualitätsanforderungen" heißen
+\paragraph{Funktionale Anforderungen}
 \begin{itemize}
 	\item \textbf{ANM1} Darstellen der Anmelde-Maske.
 	\item \textbf{ANM2} Validieren den Eingabe also Überprüfung von ANM4 durch ggf. Abgleich mit der Datenbank.
@@ -25,7 +25,7 @@ Der Nutzer gibt in einer Anmeldemaske seinen Benutzername oder seine Email-Adres
 \subsubsection{Accounterstellung}\label{acc}
 \paragraph{Beschreibung und Priorität}
 Diese Funktion ermöglicht es, einer Person, die an dem Produkt interessiert ist, ein Account anzulegen und somit anfangen kann das Produkt zu nutzen. Die Priorität dieser Funktion ist sehr hoch da ohne sie das Produkt keine neuen Nutzer gewinnen kann.
-\paragraph{Sequenzen von Benutzeraktionen und Systemantworten} Der/die Interessierte gibt in der Anmelde-Maske ihren frei gewählten Benutzername, ihre E-Mail-Adresse und schließlich ein Passwort ein. Nach einem Knopfdruck, wird, wenn die Eingaben die funktionalen Anforderungen REG4, REG5, REG6 erfüllen, der Benutzer nun auf die Startseite weitergeleitet. Wenn nicht, wird der Benutzer über die nicht erfüllten Anforderungen in der Anmelde-Maske informiert und kann daraufhin seine/ihre Eingaben anpassen.
+\paragraph{Sequenzen von Benutzeraktionen und Systemantworten} Der Interessierte gibt in der Anmelde-Maske ihren frei gewählten Benutzername, ihre E-Mail-Adresse und schließlich ein Passwort ein. Nach einem Knopfdruck, wird, wenn die Eingaben die funktionalen Anforderungen REG4, REG5, REG6 erfüllen, der Benutzer nun auf die Startseite weitergeleitet. Wenn nicht, wird der Benutzer über die nicht erfüllten Anforderungen in der Anmelde-Maske informiert und kann daraufhin seine/ihre Eingaben anpassen.
 \paragraph{Funktionale Anforderungen}
 \begin{itemize}
 	\item \textbf{REG1} Darstellen der Anmelde-Maske
@@ -48,10 +48,13 @@ Diese Funktion ermöglicht es, einer Person, die an dem Produkt interessiert ist
 \subsubsection{Verbräuche eintragen}
 \label{sysf:verb_eintragen}
 \paragraph{Beschreibung und Priorität}
-Es ermöglicht dem Benutzer seine Verbrauchsdaten in die Datenbank einzutragen, welche später für weitere Features von Nöten sind. Neben dem manuellen Eintragen gibt es auch die Möglichkeit der automatischen Erfassung der Daten mittels eines Geräts, welches der Benutzer bei sich Zuhause installiert. Sobald dies passiert ist übermittelt das Gerät jeden Tag die aktuellen Daten.
+Es ermöglicht dem Benutzer seine Verbrauchsdaten in die Datenbank einzutragen, welche später für weitere Features von Nöten sind. Neben dem manuellen Eintragen gibt es auch die Möglichkeit der automatischen Erfassung der Daten mittels eines externen Geräts, welches der Benutzer bei sich Zuhause installiert. Sobald dies passiert ist übermittelt das Gerät jeden Tag die aktuellen Daten.
 
 \paragraph{Sequenzen von Benutzeraktionen und Systemantworten}
-Der Benutzer trägt in einer WebMaske seine einzelnen Verbräuche ein und kann mit einem Klick auf den Button “hochladen” seine Daten der Datenbank hinzufügen, bevor dies geschieht, wird aber überprüft, ob die Daten neu und sinnig sind. %TODO noch automatisches eintragen berücksichtigen
+Beim manuellen Eintragen trägt der Benutzer in einer Webmaske seine einzelnen Verbräuche ein und kann mit einem Klick auf den Button “hochladen” seine Daten der Datenbank hinzufügen, bevor dies geschieht, wird aber überprüft, ob die Daten neu und sinnig sind. 
+
+Die konkreten Anforderungen an die Schnittstelle für das externe Gerät zum automatischen Eintragen von Verbräuchen sind noch zu diskutieren.
+
 \paragraph{Funktionale Anforderungen}
 Noch zu diskutieren.
 
@@ -105,7 +108,8 @@ bearbeiten und entfernen. %was soll das noch können?
 % Ein Benutzer sollte(?) für das Eintragen von Wasser-/Gas-/ Stromverbrauch 
 % mindestens eine Immobilie angeben mit Informationen über den Flächeninhalt 
 % und Anzahl der Haushaltsmitglieder für eine möglichst genaue Analyse über den Verbrauch des Nutzers verglichen mit dem Durchschnitt. 
-Diese Funktion hat keine hohe Priorität(?) da sie nur für den Vergleich mit dem Durchschnitt relevant ist. %TODO das ist glaube Ich nicht richtig, da wir ohne Immobilie die Verbräuche Niemandem zuschreiben können
+Diese Funktion hat eine mittlere Priorität da Verbräuche an eine Immobilie gebunden sind.
+
 \paragraph{Sequenzen von Benutzeraktionen und Systemantworten}
 Der Benutzer wählt in seinem Profil aus,
 dass er seine Immobilien bearbeiten möchte.
@@ -131,27 +135,14 @@ Wenn der Nutzer zugestimmt hat, dass ihm das bewusst ist und trotzdem fortfahren
 \paragraph{Funktionale Anforderungen}
 Noch zu diskutieren.
 
-% Müssen wir dazu schreiben, was das Character Limit ist? 
-%dass Flächen  und Haushaltsgröße nur mit Zahlen angegeben werden können? 
-%Was wir mit ungültigen Antworten machen?
-\begin{itemize}
-	\item Wenn noch keine Immobilie angelegt wurde, gibts auch keine Option, etwas bearbeiten zu können (?)
-	\item Die Bezeichnung kann alle möglichen ASCII-Zeichen (?) beinhalten.
-	\item Der Flächeninhalt kann nur in positiven Fließkommazahlen/ ganzen Zahlen angegeben werden.
-	\item Die Haushaltsgröße kann nur in positiven ganzen Zahlen angegeben werden
-	\item ???
-\end{itemize}
-%TODO entweder ganz entfernen oder richtig machen
-
 \subsubsection{Abomodell ändern}
-%TODO auch in den Anhang?
 \includegraphics[scale=0.5]{activity_abo.png}
 
 
 \paragraph{Beschreibung und Priorität}
-Der Benutzer kann hiermit zwischen Abomodellen wechseln. Geplant sind die Abomodelle \textit{Frei}, \textit{Standard} und \textit{Professionell} wovon Ersteres kostenlos und standardmäßig ausgewählt sein sollte. Diese Funktion enthält neben dem Auswählen des Modells die Zahlung und Überprüfung vertraglicher Kündigungsfristen. Die Funktion gehört nicht zu den Kernanforderungen jedoch kann ohne Sie kein Umsatz erzielt werden und hat daher trotzdem eine hohe Priorität.
+Der Benutzer kann hiermit zwischen Abomodellen wechseln. Geplant sind die Abomodelle FREE, STANDARD und PROFESSIONAL, wovon Ersteres kostenlos und standardmäßig ausgewählt sein sollte. Diese Funktion enthält neben dem Auswählen des Modells die Zahlung und Überprüfung vertraglicher Kündigungsfristen. Die Funktion gehört nicht zu den Kernanforderungen jedoch kann ohne Sie kein Umsatz erzielt werden und hat daher trotzdem eine hohe Priorität.
 \paragraph{Sequenzen von Benutzeraktionen und Systemantworten}
-Nach der Auswahl des gewünschten Abomodells, muss, falls sich der User für ein kostenpflichtiges Modell entscheidet, man einen Startzeitpunkt (nach Richtlinie ABO3) entscheiden. Nach der Eingabe von Rechnungsadresse, die, falls Sie für den Benutzer schon bekannt ist, auch schon vor eingetragen sein sollte, kann der Benutzer eine präferierte Zahlungsmethode anwählen, wodurch er/sie zu einem externen Zahlungsdienstleister weitergeleitet wird. Schließlich kann der Prozess abgeschlossen werden und das neue Abomodell wird zum angegebenen Startzeitpunkt gesetzt. Eine Bezahlbestätigung wird versendet. Der Vorgang kann zu jedem Zeitpunkt abgebrochen werden.
+Nach der Auswahl des gewünschten Abomodells, muss, falls sich der User für ein kostenpflichtiges Modell entscheidet, man einen Startzeitpunkt (nach Richtlinie ABO3) entscheiden. Nach der Eingabe von Rechnungsadresse, die, falls Sie für den Benutzer schon bekannt ist, auch schon vor eingetragen sein sollte, kann der Benutzer eine präferierte Zahlungsmethode anwählen, wodurch er zu einem externen Zahlungsdienstleister weitergeleitet wird. Schließlich kann der Prozess abgeschlossen werden und das neue Abomodell wird zum angegebenen Startzeitpunkt gesetzt. Eine Bezahlbestätigung wird versendet. Der Vorgang kann zu jedem Zeitpunkt abgebrochen werden.
 
 \paragraph{Funktionale Anforderungen}
 \begin{itemize}
@@ -163,7 +154,7 @@ Nach der Auswahl des gewünschten Abomodells, muss, falls sich der User für ein
 		      \item Falls die Kündigungszeitraum eines laufendes Abos noch nicht abgelaufen ist, muss der Startzeitpunkt nach Ablauf dieses Zeitraums liegen
 	      \end{itemize}
 	\item \textbf{ABO4} Grundlegende Format-Überprüfungen der Rechnungsadresse (zB Postleitzahl besteht aus Zahlen etc.) und sollen bei Nichteinhaltung in der Maske kommuniziert werden
-	\item \textbf{ABO5} Eine Verbindung zu externen Zahlungsanbietern muss aufgebaut werden. Derzeit ist die Unterstützung von \textit{PayPal}, Lastschrift, Sofort-Überweisung der \textit{Sofort GmbH}, \textit{Klarna} und Kreditkartenzahlungen geplant %TODO ist \textit immer bei Marken? -> dann als Konvention in Einführung
+	\item \textbf{ABO5} Eine Verbindung zu den externen Zahlungsanbietern muss aufgebaut werden.
 	\item \textbf{ABO6} Schaffen einer Möglichkeit in jedem Schritt den Prozess abzubrechen
 	\item \textbf{ABO7} Versenden einer Bezahlbestätigung
 	\item \textbf{ABO8} Setzen des neuen Abomodells in den Benutzerdaten zum angegebenen Startzeitpunkt
@@ -183,7 +174,7 @@ Der Benutzer hat mit der Nutzung des Systems ein Problem und benötigt Hilfe. Na
 
 \end{itemize}
 
-\subsubsection{Account verwalten} %TODO sicher, dass das nur der normale Benutzer kann, nicht aber Support oder Admin?
+\subsubsection{Account verwalten}
 \paragraph{Beschreibung und Priorität}
 Das Feature erlaubt es dem Nutzer seine Accountdaten einzusehen, zu ändern und gegebenenfalls zu löschen. Das Feature hat eine sehr hohe Priorität.
 
@@ -204,10 +195,10 @@ Der Nutzer wählt den Menüpunkt \gquote{Account Verwalten} aus. Dort sind alle 
 \includegraphics[scale=0.5]{activity_vergleich.png}
 % Bei Abfrage einer Vergleichszeitreihe auch darauf eingehen, dass diese auch von extern gekommen sein könnte
 \paragraph{Beschreibung und Priorität}
-Die Funktion Verbrauch vergleichen ermöglicht dem Nutzer seinen Verbrauch mit seiner eigenen Verbrauchshistorie, oder mit den Verbräuchen anderer zu vergleichen. Falls man sich mit den Verbräuchen von anderen vergleichen möchte, kann man Vergleichstags auswählen (\ref{sec:vergl_tags}). Dann wird eine Vergleichszeitreihe neben der eigenen Verbrauchszeitreihe visualisiert.
+Die Funktion Verbrauch vergleichen ermöglicht dem Nutzer seinen Verbrauch mit seiner eigenen Verbrauchshistorie, oder mit den Verbräuchen anderer zu vergleichen. Falls man sich mit den Verbräuchen von anderen vergleichen möchte, kann man Vergleichstags auswählen (siehe \ref{sec:vergl_tags}). Dann wird eine Vergleichszeitreihe neben der eigenen Verbrauchszeitreihe visualisiert.
 \paragraph{Sequenzen von Benutzeraktionen und Systemantworten}
-Zunächst muss der Nutzer einen Verbrauchstyp auswählen. Danach wählt der Nutzer aus, ob er sich mit seinen eigenen Verbräuchen, oder mit den Verbräuchen anderer vergleichen möchte. Möchte er sich nur mit sich selber vergleichen, wählt der Nutzer diese Funktion und zwei Zeiträume aus, die er gegeneinander vergleichen möchte. Daraus werden zwei Zeitreihen generiert, die dann in einer Statistik visualisiert werden. Möchte der Nutzer sich mit Anderen vergleichen wählt er einen oder mehrere Vergleichstags (\ref{sec:vergl_tags}) aus. Beispiel: Der Nutzer möchte sich regional Vergleichen, dann kann der Nutzer einen Längenparameter angeben, in welchem Umkreis der Nutzer sich vergleichen möchte. Auch hier muss der Nutzer einen Zeitraum wählen in dem der Nutzer sich vergleichen will. Dann wird eine Vergleichszeitreihe mit der Vergleichsgruppe in dem gegebenen Zeitraum erstellt und visualisiert. 
-%TODO irgendwie komisch formuliert
+Zunächst muss der Nutzer einen Verbrauchstyp auswählen. Danach wählt der Nutzer aus, ob er sich mit seinen eigenen Verbräuchen, oder mit den Verbräuchen anderer vergleichen möchte. Möchte er sich nur mit sich selber vergleichen, wählt der Nutzer diese Funktion und zwei Zeiträume aus, die er gegeneinander vergleichen möchte. Daraus werden zwei Zeitreihen generiert, die dann in einer Statistik visualisiert werden. Möchte der Nutzer sich mit Anderen vergleichen wählt er einen oder mehrere Vergleichstags (siehe \ref{sec:vergl_tags}) aus. Beispiel: Der Nutzer möchte sich mit anderen Haushalten aus seiner Region vergleichen.
+Der Nutzer kann den Namen seiner Region und die Wohnfläche des Hauses angeben. Auch hier muss der Nutzer einen Zeitraum wählen in dem der Nutzer sich vergleichen will. Dann wird eine Vergleichszeitreihe mit der Vergleichsgruppe in dem gegebenen Zeitraum erstellt und visualisiert. 
 \paragraph{Funktionale Anforderungen}
 Noch zu diskutieren
 
@@ -256,7 +247,7 @@ Der Support-Benutzer kann den Benutzer auswählen, dessen Stammdaten bearbeitet 
 \subsection{Admin}
 \subsubsection{Abomodelle modifizieren}
 \paragraph{Beschreibung und Priorität}
-Der Admin kann hiermit alle drei verfügbaren Abomodelle (Frei, Standard und Professionell) grundlegend ändern. Alle Abomodelle haben verschiedene Funktionen, welche der Admin anpassen kann. Der Admin hat die Möglichkeit die Kosten der verschieden Modelle anzupassen, Funktionen freischalten und Funktionen einschränken oder sogar ganz entfernen. Falls der Admin die Kosten eines Modells ändert, oder Funktionen hinzufügt oder entfernt, müssen gesetzliche Regelungen für Vertragsänderungen eingehalten werden. Das heißt Nutzer dieses Abomodells müssen benachrichtigt werden und es muss Ihnen eine Möglichkeit gegeben werden, das Abomodell zu kündigen. Das passiert unabhängig davon, ob der Admin die Kosten erhöht oder verringert, oder Funktionen hinzufügt oder entfernt.
+Der Admin kann hiermit alle drei verfügbaren Abomodelle (FREE, STANDARD und PROFESSIONAL) grundlegend ändern. Alle Abomodelle haben verschiedene Funktionen, welche der Admin anpassen kann. Der Admin hat die Möglichkeit die Kosten der verschieden Modelle anzupassen, Funktionen freischalten und Funktionen einschränken oder sogar ganz entfernen. Falls der Admin die Kosten eines Modells ändert, oder Funktionen hinzufügt oder entfernt, müssen gesetzliche Regelungen für Vertragsänderungen eingehalten werden. Das heißt Nutzer dieses Abomodells müssen benachrichtigt werden und es muss Ihnen eine Möglichkeit gegeben werden, das Abomodell zu kündigen. Das passiert unabhängig davon, ob der Admin die Kosten erhöht oder verringert, oder Funktionen hinzufügt oder entfernt.
 \paragraph{Sequenzen von Adminaktionen und Systemantworten}
 Falls der Admin Abomodelle modifizieren will, muss der Admin gemäß ABOM3 einen Startzeitpunkt wählen, ab dem die Änderungen gültig werden. Dem Admin soll bekannt gemacht werden, ob der Zeitpunkt zu Nahe gewählt ist. Danach kann der Admin aus folgenden Funktionen wählen:
 \begin{itemize}
@@ -279,7 +270,7 @@ Wenn der Admin sich für eine der Funktionen entschieden hat, kann er diese ausf
 
 \subsubsection{Support- und Adminaccount erstellen}
 \paragraph{Beschreibung und Priorität}
-Ein Admin soll in der Lage sein Support- und Adminaccounts zu erstellen. Der Supportccount kann von dem Support Team verwendet werden um Zugang zu dem System zu erhalten. Über diesen Account kann der Support die Systemfunktionen des Supports nutzen. Ein Adminaccount hätte die selben Rechte wie der erstellende Adminbenutzer.
+Ein Admin soll in der Lage sein Support- und Adminaccounts zu erstellen. Der Supportaccount kann von dem Support Team verwendet werden um Zugang zu dem System zu erhalten. Über diesen Account kann der Support die Systemfunktionen des Supports nutzen. Ein Adminaccount hätte die selben Rechte wie der erstellende Adminbenutzer.
 \paragraph{Sequenzen von Adminaktionen und Systemantworten}
 Um einen Support- oder Adminaccount zu erstellen soll eine Maske erstellt werden. In der Maske gibt es die Felder: Name, Passwort und Email sowie die Wahl ob es sich um ein Support- oder Adminaccount handelt. Wenn der Admin alle Felder ausgefüllt hat, kann er auf der Maske ein Bestätigungsknopf drücken und der Account wird dadurch angelegt. Zusätzlich soll es auf der Maske ein \gquote{Schließen} Knopf geben falls der Admin die Aktion abbrechen will.
 \paragraph{Funktionale Anforderungen}
@@ -290,7 +281,7 @@ Noch zu diskutieren.
 Der Admin soll in der Lage sein Vergleichstags festzulegen. 
 Beispiele dafür wären Regionale Vergleiche, Vergleiche in Haushaltsgröße, Vergleiche mit ähnlicher Immobiliengröße, 
 Vergleiche mit Immobilienalter und Vergleiche mit dem Alter des Nutzers. 
-Später können dann Vergleichszeitreihen (\ref{sec:vergl_zeitr}) mit dem neuen Tag erstellt werden.
+Später können dann Vergleichszeitreihen (siehe \ref{sec:vergl_zeitr}) mit dem neuen Tag erstellt werden.
 \paragraph{Sequenzen von Adminaktionen und Systemantworten}
 
 Der Admin wählt in einer Maske eine einen neuen Vergleichstag, den er hinzufügen möchte.
@@ -311,7 +302,7 @@ nur noch die Daten vom Admin geladen werden, statt jedes Mal auf die gesamte Dat
 Alternativ kann der Admin auch aus externen Ressourcen Vergleichswerte eintragen.
 
 \paragraph{Sequenzen von Adminaktionen und Systemantworten}
-Der Admin klickt im Menü(???) auf die Schaltfläche "Vergleichszeitreihe erstellen".
+Der Admin klickt im Menü auf die Schaltfläche "Vergleichszeitreihe erstellen".
 Dann sieht man auf der Webseite die Möglichkeit "aus eigenen Nutzerdaten erstellen" oder "manuell eintragen".
 Wenn man das Erste auswählt, werden die Daten der Nutzer ausgewertet und mit den zugehörigen Tags verknüpft.
 Das kann einige Sekunden dauern also gibt es während der Ladezeit eine Ladegrafik, 
