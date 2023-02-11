@@ -66,6 +66,22 @@ Der Nutzer geht auf den Menüpunkt Statistiken und wählt den gewünschten Verbr
 \paragraph{Funktionale Anforderungen}
 Noch zu diskutieren.
 
+\subsubsection{Verbraucher verwalten}
+
+\paragraph{Beschreibung und Priorität}
+Es soll möglich sein, dass neben dem manuellen Eintragen der Verbräuche und automatischen Eintragen durch ein externes Gerät (siehe \ref{sysf:verb_eintragen}), die Verbräuche durch einen Verbraucher zu generieren. Dieser wird dein einen Verbauch jeden Tag generieren. Das Verwalten von Verbraucher hat eine eher niedrige Priorität, da die Kernfunktionalität der Verbräche schon mit mit manuellen Eintragen abgedeckt ist.
+\paragraph{Sequenzen von Benutzeraktionen und Systemantworten} Falls ein bestehender Verbraucher bearbeitet werden soll, soll dieser aus einer Liste aller erstellten Verbrächer auswählbar sein. Dabei ist jeder Verbraucher einer Immobilie zugeordnet, was in der Liste auch kommuniziert sein soll. Es kann natürlich auch ein Verbraucher aus der Liste gelöscht werden.
+
+Falls ein Verbraucher bearbeitet oder erstellt werden soll, kann man nun den Namen, den täglichen Verbrauch (in Bezug auf eine Verbrauchszeitreiehe) und die Immobilie eintragen oder bearbeiten. Schließlich können die Änderungen gespeichert werden. 
+\paragraph{Funktionale Anforderungen}
+\begin{itemize}
+	\item \textbf{VERV1} List aller Verbraucher anzeigen. Zusätzlich signalisierenzu welcher Immobilie der jeweilige Verbraucher assoziiert ist.
+	\item \textbf{VERV2} Name, assoziierte Immobilie und täglichen Verbrauch anpassen.
+	\item \textbf{VERV3} Tägliches erstellen eines Verbrauchs mit dem gespeicherten täglichen Verbrauch. 
+\end{itemize}
+
+
+
 \subsubsection{Prognosen einsehen}
 \paragraph{Beschreibung und Priorität}
 Die Funktion Prognosen einsehen dient dem Nutzer dazu Prognosen für zukünftige Verbräuche einzusehen. Die Prognosen werden auf Basis von vorherigen Verbräuchen und eingetragenen Verbrauchern gebildet. Wenn der Verbrauch eines Nutzers im letzten Jahr ungefähr gleich geblieben ist, wird dies auch für das nächste Jahr prognostiziert.
@@ -199,13 +215,13 @@ Noch zu diskutieren
 \label{sysf:ticket_erstellen}
 % Hier also auch Support-Ticket Schließen
 \paragraph{Beschreibung und Priorität}
-Dem Benutzer wird die Möglichkeit gegeben, Support Tickets zu erstellen und somit Kontakt zu einem Supporter aufzunehmen der ihm gegebenenfalls bei einem Problem bezüglich der Software helfen kann. Diese Funktion ist relevant um die Benutzerfreundlichkeit weiter zu erhöhen.
+Dem Benutzer wird die Möglichkeit gegeben, Support Tickets zu erstellen und somit Kontakt zu einem Supporter aufzunehmen der ihm gegebenenfalls bei einem Problem bezüglich der Software helfen kann. Wenn ein Problem gelöst wurde, aknn das Support-Ticket auch geschlossen werden. Diese Funktion ist relevant um die Benutzerfreundlichkeit weiter zu erhöhen.
 \paragraph{Sequenzen von Benutzeraktionen und Systemantworten}
-Der Benutzer wählt den Knopf um den Support zu kontaktieren. Hier hat er die Möglichkeit sein Problem schon konkreter zu schildern. Nach anschließender Bestätigung durch einen weiteren Knopfdruck wird das Ticket erstellt und der Benutzer erhält eine Benachrichtigung, dass sich zeitnah jemand um seine Angelegenheit kümmern wird. Sobald ein Supporter Zeit hat sich dem Problem anzunehmen, kann der Supporter das Ticket annehmen (siehe \ref{sysf:ticket_annehmen}) und ein Live-Chat zwischen beiden wird eingerichtet. Wenn sich das Problem erledigt hat, hat der Supporter die Möglichkeit den Live-Chat zu schließen.
+Der Benutzer wählt den Knopf um den Support zu kontaktieren. Hier hat er die Möglichkeit sein Problem schon konkreter zu schildern. Nach anschließender Bestätigung durch einen weiteren Knopfdruck wird das Ticket erstellt und der Benutzer erhält eine Benachrichtigung, dass sich zeitnah jemand um seine Angelegenheit kümmern wird. Sobald ein Supporter Zeit hat sich dem Problem anzunehmen, kann der Supporter das Ticket annehmen (siehe \ref{sysf:ticket_annehmen}) und ein Live-Chat zwischen beiden wird eingerichtet. Wenn sich das Problem erledigt hat, hat der Supporter die Möglichkeit den Live-Chat zu schließen. Es soll auch einen Knopf geben um das Support-Ticket zu schließen.
 \paragraph{Funktionale Anforderungen}
 \begin{itemize}
 \item \textbf{TICK1} Bereitstellung eines Interfaces um das Ticket zu erstellen.
-\item \textbf{TICK2} Möglichkeit für den Supporter den Live-Chat zu schließen.
+\item \textbf{TICK2} Möglichkeit für den Benutzer den Live-Chat zu schließen.
 \end{itemize}
 
 
@@ -215,14 +231,13 @@ interagieren}
 % Hier kann einfach nach akzeptieren gesagt werden siehe 4.2.11 und auch ein verweis auf 4.3.2 wäre gut.
 \paragraph{Beschreibung und Priorität}
 Es ist wichtig, dass der Support nicht unkontrolliert über alle Accounts der Nutzer verfügen kann. Daher müssen vor einer Interaktion mit den Daten der Nutzer immer ein Ticket vom Benutzer erstellt werden (siehe \ref{sysf:ticket_erstellen}).
-Nachdem das gelungen ist und das Ticket vom Support angenommen wurde, hat dieser die Möglichkeit den Account zu verwalten(siehe \ref{sysf:support_account_verwalten}) und dem Benutzer optimal zu Helfen.
+Nachdem das gelungen ist und das Ticket vom Support angenommen wurde, hat dieser die Möglichkeit den Account zu verwalten (siehe \ref{sysf:support_account_verwalten}) und dem Benutzer optimal zu Helfen.
 \paragraph{Sequenzen von Benutzeraktionen und Systemantworten}
-Nachdem der Benutzer ein Support-Ticket geöffnet hat(siehe \ref{sysf:ticket_erstellen}), muss der Support nur noch das Ticket annehmen, durch das Klicken auf einen Button. Danach öffnet sich ein Live-Chat zwischen beiden und der Supporter hat Zugriff auf die Daten des Benutzers. Nachdem das Problem gelöst wurde, kann der Supporter den Live-Chat und somit auch das Ticket schließen, durch das Klicken auf einen weiteren Button.
+Nachdem der Benutzer ein Support-Ticket geöffnet hat(siehe \ref{sysf:ticket_erstellen}), muss der Support nur noch das Ticket annehmen, durch das Klicken auf einen Button. Danach öffnet sich ein Live-Chat zwischen beiden und der Supporter hat Zugriff auf die Daten des Benutzers. Im Fall, dass es nützlich sein sollte, kann der Supporter das Bearbeiten, des Benutzer-Accounts anfragen (siehe \ref{sysf:support_account_verwalten}). Nachdem das Problem gelöst wurde, kann der Supporter den Live-Chat und somit auch das Ticket schließen, durch das Klicken auf einen weiteren Button.
 \paragraph{Funktionale Anforderungen}
 \begin{itemize}
-	\item \textbf{SUPA1} Laufende Internetverbindung.
-	\item \textbf{SUPA2} Bereitstellung eines Interfaces um das Ticket zu erstellen.
-	\item \textbf{SUPA3} Möglichkeit für den Supporter den Live-Chat zu schließen. 
+	\item \textbf{SUPA1} Möglichkeit für den Supporter den Live-Chat zu schließen. 
+	\item \textbf{SUPA2} Möglichkeit für den Supporter das Support-Ticket zu scließen.
 \end{itemize}
 
 \subsubsection{Account eines Users verwalten}
