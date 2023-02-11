@@ -11,7 +11,7 @@ Bevor ein dem System bereits bekannter Nutzer die Funktionen seiner Usergruppe a
 
 \paragraph{Sequenzen von Benutzeraktionen und Systemantworten}
 
-Der Nutzer gibt in einer Anmeldemaske seinen Benutzername oder seine Email-Adresse und sein Passwort ein und bestätigt dies. Ist ANM4 erfüllt so ist der Nutzer nun eingeloggt und wird zum Home-Bildschirm weitergeleitet. War dies nicht der Fall, so wird eine Fehlermeldung mit den möglichen Ursachen angezeigt.
+Der User gibt in einer Anmeldemaske seinen Benutzername oder seine Email-Adresse und sein Passwort ein und bestätigt dies. Ist ANM4 erfüllt so ist der User nun eingeloggt und wird zum Home-Bildschirm weitergeleitet. War dies nicht der Fall, so wird eine Fehlermeldung mit den möglichen Ursachen angezeigt.
 
 \paragraph{Funktionale Anforderungen}
 \begin{itemize}
@@ -163,7 +163,7 @@ Nach der Auswahl des gewünschten Abomodells, muss, falls sich der User für ein
 \subsubsection{Account für Support freischalten}
 \label{sys_feat:freischalten}
 \paragraph{Beschreibung und Priorität}
-Diese Funktion ermöglicht es dem Benutzer bei Problemen seinen Account für den Support freizuschalten, sodass der Support Änderungen vornehmen kann. Dies ermöglicht einen Kundensupport der zugleich Datenschutz- und Nutzerfreundlich ist.
+Diese Funktion ermöglicht es dem Benutzer bei Problemen seinen Account für den Support freizuschalten, sodass der Support Änderungen vornehmen kann. Dies ermöglicht einen Support der zugleich Datenschutz- und Nutzerfreundlich ist.
 \paragraph{Sequenzen von Benutzeraktionen und Systemantworten}
 Der Benutzer hat mit der Nutzung des Systems ein Problem und benötigt Hilfe. Nachdem er das FAQ zur Handhabung des Systems gelesen hat und er dort keine Lösung für sein Problem finden konnte, nutzt er die Supportfunktion, wo er mit einem Mitarbeiter in Kontakt kommt. Zuerst versucht der Support dem Nutzer ohne weitere Daten weiterzuhelfen, sollte dies das Problem immer noch nicht lösen, muss der Nutzer seinen Account für den Support freischalten. Dem Nutzer wird ein Code generiert, den er dem Support durch gibt und den der Support benötigt, um sich berechtigten Zugang zum Nutzeraccount zu verschaffen. Nun kann der  Support dem Nutzer optimal weiterhelfen, indem er Zugriff auf seinen Account hat.
 \paragraph{Funktionale Anforderungen}
@@ -202,7 +202,7 @@ Der Nutzer kann den Namen seiner Region und die Wohnfläche des Hauses angeben. 
 \paragraph{Funktionale Anforderungen}
 Noch zu diskutieren
 
-\subsubsection{Support-Ticket erstellen und interagieren}
+\subsubsection{Support Ticket erstellen und interagieren}
 \label{sysf:ticket_erstellen}
 % Hier also auch Support-Ticket Schließen
 \paragraph{Beschreibung und Priorität}
@@ -228,15 +228,15 @@ Nachdem der Benutzer ein Support-Ticket geöffnet hat(siehe \ref{sysf:ticket_ers
 \paragraph{Funktionale Anforderungen}
 \begin{itemize}
 	\item \textbf{SUPA1} Möglichkeit für den Supporter den Live-Chat zu schließen. 
-	\item \textbf{SUPA2} Möglichkeit für den Supporter das Support-Ticket zu scließen.
+	\item \textbf{SUPA2} Möglichkeit für den Supporter das Support Ticket zu schließen.
 \end{itemize}
 
 \subsubsection{Account eines Users verwalten}
 \label{sysf:support_account_verwalten}
 \paragraph{Beschreibung und Priorität}
-Ein Support-Benutzer muss in der Lage sein etwaige Benutzerdaten auf Anfrage des jeweiligen Benutzers zu ändern. Dafür muss allerdings das Einsehen der Benutzerdaten für den Support freigeschaltet werden (siehe \ref{sys_feat:freischalten}). Diese Funktion ist nicht teil der Kernanforderungen, jedoch muss es unbedingt Teil der ersten Version sein, da die Kundenzufriedenheit davon abhängig ist. Daher ergibt sich eine mittlere Priorität.
+Ein Supporter muss in der Lage sein etwaige Benutzerdaten auf Anfrage des jeweiligen Benutzers zu ändern. Dafür muss allerdings das Einsehen der Benutzerdaten für den Support freigeschaltet werden (siehe \ref{sys_feat:freischalten}). Diese Funktion ist nicht teil der Kernanforderungen, jedoch muss es unbedingt Teil der ersten Version sein, da die Kundenzufriedenheit davon abhängig ist. Daher ergibt sich eine mittlere Priorität.
 \paragraph{Sequenzen von Benutzeraktionen und Systemantworten}
-Der Support-Benutzer kann den Benutzer auswählen, dessen Stammdaten bearbeitet werden soll. Dabei werden dem Support-Benutzer nur diejenige Benutzernamen angezeigt, die die Bearbeitung freigeschaltet haben. Danach wird eine Oberfläche angezeigt, die der Oberfläche vom Bearbeiten der eigenen Stammdaten eines Benutzers ähnelt. Hier können nun die Änderungen vorgenommen und gespeichert werden.
+Der Supporter kann den Benutzer auswählen, dessen Stammdaten bearbeitet werden soll. Dabei werden dem Supporter nur diejenige Benutzernamen angezeigt, die die Bearbeitung freigeschaltet haben. Danach wird eine Oberfläche angezeigt, die der Oberfläche vom Bearbeiten der eigenen Stammdaten eines Benutzers ähnelt. Hier können nun die Änderungen vorgenommen und gespeichert werden.
 \paragraph{Funktionale Anforderungen}
 \begin{itemize}
 	\item \textbf{SMG1} Zeige alle Benutzer, die die Bearbeitung nach \ref{sys_feat:freischalten} freigeschaltet haben.
