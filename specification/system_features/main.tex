@@ -3,13 +3,11 @@
 
 Wir haben die Systemfunktionen nach Usergruppen aufgeteilt.
 
-\includegraphics[scale=0.4]{use_case.png}
-
 \subsection{Systemfunktionen für alle Usergruppen}
 \subsubsection{Anmeldung}
 \paragraph{Beschreibung und Priorität}
 
-Bevor ein dem System bereits bekannter Nutzer Die Funktionen seiner Usergruppe ausführen kann, muss er sich zunächst authentifizieren. Die Funktion hat eine sehr hohe Priorität, da sonst Nutzer und Nutzergruppen nicht voneinander unterschieden werden können.
+Bevor ein dem System bereits bekannter Nutzer die Funktionen seiner Usergruppe ausführen kann, muss er sich zunächst authentifizieren. Die Funktion hat eine sehr hohe Priorität, da sonst Nutzer und Nutzergruppen nicht voneinander unterschieden werden können.
 
 \paragraph{Sequenzen von Benutzeraktionen und Systemantworten}
 
@@ -26,7 +24,7 @@ Der Nutzer gibt in einer Anmeldemaske seinen Benutzername oder seine Email-Adres
 \subsection{Benutzer}
 \subsubsection{Accounterstellung}\label{acc}
 \paragraph{Beschreibung und Priorität}
-Diese Funktion ermöglicht es, einer Person, die an dem Produkt interessiert ist, ein Account anzulegen und somit anfangen kann das Produkt zu nutzen. Die Priorität dieser Funktion kann nicht überschätzt werden, da ohne sie, keine der Folgenden umsetzbar wäre.
+Diese Funktion ermöglicht es, einer Person, die an dem Produkt interessiert ist, ein Account anzulegen und somit anfangen kann das Produkt zu nutzen. Die Priorität dieser Funktion ist sehr hoch da ohne sie das Produkt keine neuen Nutzer gewinnen kann.
 \paragraph{Sequenzen von Benutzeraktionen und Systemantworten} Der/die Interessierte gibt in der Anmelde-Maske ihren frei gewählten Benutzername, ihre E-Mail-Adresse und schließlich ein Passwort ein. Nach einem Knopfdruck, wird, wenn die Eingaben die funktionalen Anforderungen REG4, REG5, REG6 erfüllen, der Benutzer nun auf die Startseite weitergeleitet. Wenn nicht, wird der Benutzer über die nicht erfüllten Anforderungen in der Anmelde-Maske informiert und kann daraufhin seine/ihre Eingaben anpassen.
 \paragraph{Funktionale Anforderungen}
 \begin{itemize}
@@ -50,10 +48,10 @@ Diese Funktion ermöglicht es, einer Person, die an dem Produkt interessiert ist
 \subsubsection{Verbräuche eintragen}
 \label{sysf:verb_eintragen}
 \paragraph{Beschreibung und Priorität}
-Es ermöglicht dem Benutzer seine Daten in die Datenbank einzutragen, welche später für weitere Features von Nöten sind. Neben dem manuellen Eintragen gibt es auch die Möglichkeit der automatischen Erfassung der Daten mittels einem Gerät, das der Benutzer zuhause installieren muss, sobald dies passiert ist übermittelt das Gerät jeden Tag die aktuellen Daten… oder so.
+Es ermöglicht dem Benutzer seine Verbrauchsdaten in die Datenbank einzutragen, welche später für weitere Features von Nöten sind. Neben dem manuellen Eintragen gibt es auch die Möglichkeit der automatischen Erfassung der Daten mittels eines Geräts, welches der Benutzer bei sich Zuhause installiert. Sobald dies passiert ist übermittelt das Gerät jeden Tag die aktuellen Daten.
 
 \paragraph{Sequenzen von Benutzeraktionen und Systemantworten}
-Der Benutzer trägt in einer WebMaske seine einzelnen Verbräuche ein und kann mit einem Klick auf den Button “hochladen” seine Daten der Datenbank hinzufügen, bevor dies geschieht, wird aber überprüft, ob die Daten neu und sinnig sind.
+Der Benutzer trägt in einer WebMaske seine einzelnen Verbräuche ein und kann mit einem Klick auf den Button “hochladen” seine Daten der Datenbank hinzufügen, bevor dies geschieht, wird aber überprüft, ob die Daten neu und sinnig sind. %TODO noch automatisches eintragen berücksichtigen
 \paragraph{Funktionale Anforderungen}
 Noch zu diskutieren.
 
@@ -70,7 +68,7 @@ Noch zu diskutieren.
 
 \subsubsection{Prognosen einsehen}
 \paragraph{Beschreibung und Priorität}
-Die Funktion Prognosen einsehen dient dem Nutzer dazu Prognosen für zukünftige Verbräuche einzusehen. Die Prognosen werden auf Basis von vorherigen Verbräuchen und eingetragenen Verbrauchern gebildet. Wenn der Verbauch eines Nutzers im letzten Jahr ungefähr gleich geblieben ist, wird dies auch für das nächste Jahr prognostiziert.
+Die Funktion Prognosen einsehen dient dem Nutzer dazu Prognosen für zukünftige Verbräuche einzusehen. Die Prognosen werden auf Basis von vorherigen Verbräuchen und eingetragenen Verbrauchern gebildet. Wenn der Verbrauch eines Nutzers im letzten Jahr ungefähr gleich geblieben ist, wird dies auch für das nächste Jahr prognostiziert.
 \paragraph{Sequenzen von Benutzeraktionen und Systemantworten}
 Wenn der Nutzer sich Prognosen für seine Verbräuche anzeigen lassen möchte, muss er zunächst einen vorhandenen Verbrauchstyp auswählen. Zusätzlich dazu muss der Nutzer einen bestimmten Zeitraum wählen, für die er die Prognose möchte. Falls dieser Zeitraum zu weit in der Zukunft liegt, oder der Verbrauchstyp kaum oder gar keine Verbräuche besitzt, können keine Prognosen ermittelt werden. Wenn Prognosen ermittelt werden können, werden diese dem Nutzer angezeigt. Ob diese Prognosen in Form eines Gesamtverbrauchs (z.B. 1600 kWh für nächstes Jahr), oder in Form einer Verbrauchszeitreihe (Diagramm) angezeigt werden ist noch offen.
 \paragraph{Funktionale Anforderungen}
@@ -78,7 +76,7 @@ Noch zu diskutieren
 
 \subsubsection{Kosten einsehen}
 \paragraph{Beschreibung und Priorität}
-Die Funktion Kosten einsehen ermöglicht dem Nutzer die Kosten zu seinen Verbräuchen einzusehen. Bevor dies geschehen kann, muss der Benutzer einen Preis pro angegbener Einheit angeben. Zudem kann er sich bei eigenen Verbrauchstypen auch eigene Kosten eintragen. Beispiel: Der Nutzer hat den Verbrauchstyp Anzahl an Kaffee pro Tag. Dazu kann der Nutzer nun einen Preis eintragen: Ein Kaffee kostet einen Euro.
+Die Funktion Kosten einsehen ermöglicht dem Nutzer die Kosten zu seinen Verbräuchen einzusehen. Bevor dies geschehen kann, muss der Benutzer einen Preis pro angegebener Einheit angeben. Zudem kann er sich bei eigenen Verbrauchstypen auch eigene Kosten eintragen. Beispiel: Der Nutzer hat den Verbrauchstyp Anzahl an Kaffee pro Tag. Dazu kann der Nutzer nun einen Preis eintragen: Ein Kaffee kostet einen Euro.
 \paragraph{Sequenzen von Benutzeraktionen und Systemantworten}
 Der Nutzer muss einen Verbrauchstyp auswählen und dann zu diesem Typ einen Zeitraum und Kosten pro Einheit wählen. Danach werden ihm die Kosten für den Verbrauch über den Zeitraum angezeigt. Wenn der Nutzer seinen Verbrauch vergleicht, ist neben dem Vergleich des Verbrauchs auch ein Vergleich der Kosten sichtbar.
 \paragraph{Funktionale Anforderungen}
@@ -91,7 +89,7 @@ bearbeiten und entfernen. %was soll das noch können?
 % Ein Benutzer sollte(?) für das Eintragen von Wasser-/Gas-/ Stromverbrauch 
 % mindestens eine Immobilie angeben mit Informationen über den Flächeninhalt 
 % und Anzahl der Haushaltsmitglieder für eine möglichst genaue Analyse über den Verbrauch des Nutzers verglichen mit dem Durchschnitt. 
-Diese Funktion hat keine hohe Priorität(?) da sie nur für den Vergleich mit dem Durchschnitt relevant ist.
+Diese Funktion hat keine hohe Priorität(?) da sie nur für den Vergleich mit dem Durchschnitt relevant ist. %TODO das ist glaube Ich nicht richtig, da wir ohne Immobilie die Verbräuche Niemandem zuschreiben können
 \paragraph{Sequenzen von Benutzeraktionen und Systemantworten}
 Der Benutzer wählt in seinem Profil aus,
 dass er seine Immobilien bearbeiten möchte.
@@ -127,8 +125,10 @@ Noch zu diskutieren.
 	\item Die Haushaltsgröße kann nur in positiven ganzen Zahlen angegeben werden
 	\item ???
 \end{itemize}
+%TODO entweder ganz entfernen oder richtig machen
 
 \subsubsection{Abomodell ändern}
+%TODO auch in den Anhang?
 \includegraphics[scale=0.5]{activity_abo.png}
 
 
@@ -147,7 +147,7 @@ Nach der Auswahl des gewünschten Abomodells, muss, falls sich der User für ein
 		      \item Falls die Kündigungszeitraum eines laufendes Abos noch nicht abgelaufen ist, muss der Startzeitpunkt nach Ablauf dieses Zeitraums liegen
 	      \end{itemize}
 	\item \textbf{ABO4} Grundlegende Format-Überprüfungen der Rechnungsadresse (zB Postleitzahl besteht aus Zahlen etc.) und sollen bei Nichteinhaltung in der Maske kommuniziert werden
-	\item \textbf{ABO5} Eine Verbindung zu sämtliche externen Zahlungsanbietern muss aufgebaut werden. Derzeit sind \textit{PayPal}, per Lastschrift, Sofort-Überweisung der \textit{Sofort GmbH}, \textit{Klarna}, mit Kreditkarte ???
+	\item \textbf{ABO5} Eine Verbindung zu externen Zahlungsanbietern muss aufgebaut werden. Derzeit ist die Unterstützung von \textit{PayPal}, Lastschrift, Sofort-Überweisung der \textit{Sofort GmbH}, \textit{Klarna} und Kreditkartenzahlungen geplant %TODO ist \textit immer bei Marken? -> dann als Konvention in Einführung
 	\item \textbf{ABO6} Schaffen einer Möglichkeit in jedem Schritt den Prozess abzubrechen
 	\item \textbf{ABO7} Versenden einer Bezahlbestätigung
 	\item \textbf{ABO8} Setzen des neuen Abomodells in den Benutzerdaten zum angegebenen Startzeitpunkt
@@ -156,7 +156,7 @@ Nach der Auswahl des gewünschten Abomodells, muss, falls sich der User für ein
 \subsubsection{Account für Support freischalten}
 \label{sys_feat:freischalten}
 \paragraph{Beschreibung und Priorität}
-Diese Funktion ermöglicht es dem Benutzer bei Problemen seinen Account für den Support freizuschalten, sodass der Support Änderungen vornehmen kann und gleichzeitig wird so die DSGVO eingehalten, was sehr wichtig für das System ist.
+Diese Funktion ermöglicht es dem Benutzer bei Problemen seinen Account für den Support freizuschalten, sodass der Support Änderungen vornehmen kann. Dies ermöglicht einen Kundensupport der zugleich Datenschutz- und Nutzerfreundlich ist.
 \paragraph{Sequenzen von Benutzeraktionen und Systemantworten}
 Der Benutzer hat mit der Nutzung des Systems ein Problem und benötigt Hilfe. Nachdem er das FAQ zur Handhabung des Systems gelesen hat und er dort keine Lösung für sein Problem finden konnte, nutzt er die Supportfunktion, wo er mit einem Mitarbeiter in Kontakt kommt. Zuerst versucht der Support dem Nutzer ohne weitere Daten weiterzuhelfen, sollte dies das Problem immer noch nicht lösen, muss der Nutzer seinen Account für den Support freischalten. Dem Nutzer wird ein Code generiert, den er dem Support durch gibt und den der Support benötigt, um sich berechtigten Zugang zum Nutzeraccount zu verschaffen. Nun kann der  Support dem Nutzer optimal weiterhelfen, indem er Zugriff auf seinen Account hat.
 \paragraph{Funktionale Anforderungen}
@@ -190,26 +190,39 @@ Der Nutzer wählt den Menüpunkt \gquote{Account Verwalten} aus. Dort sind alle 
 \paragraph{Beschreibung und Priorität}
 Die Funktion Verbrauch vergleichen ermöglicht dem Nutzer seinen Verbrauch mit seiner eigenen Verbrauchshistorie, oder mit den Verbräuchen anderer zu vergleichen. Falls man sich mit den Verbräuchen von anderen vergleichen möchte, kann man Vergleichstags auswählen (\ref{sec:vergl_tags}). Dann wird eine Vergleichszeitreihe neben der eigenen Verbrauchszeitreihe visualisiert.
 \paragraph{Sequenzen von Benutzeraktionen und Systemantworten}
-Zunächst muss der Nutzer einen Verbrauchstyp auswählen. Danach wählt der Nutzer aus, ob er sich mit seinen eigenen Verbräuchen, oder mit den Verbräuchen anderer vergleichen möchte. Möchte er sich nur mit sich selber vergleichen, wählt der Nutzer diese Funktion und zwei Zeiträume aus, die er gegeneinander vergleichen möchte. Daraus werden zwei Zeitreihen generiert, die dann in einer Statistik visualisiert werden. Möchte der Nutzer sich mit anderen vergleichen wählt  Vergleichstags (\ref{sec:vergl_tags}). Beispiel: Der Nutzer möchte sich regional Vergleichen, dann kann der Nutzer einen Längenparameter angeben, in welchem Umkreis der Nutzer sich vergleichen möchte. Auch hier muss der Nutzer einen Zeitraum wählen in dem der Nutzer sich vergleichen will. Dann wird eine Vergleichszeitreihe mit der Vergleichsgruppe in dem gegebenen Zeitraum erstellt und visualisiert.
+Zunächst muss der Nutzer einen Verbrauchstyp auswählen. Danach wählt der Nutzer aus, ob er sich mit seinen eigenen Verbräuchen, oder mit den Verbräuchen anderer vergleichen möchte. Möchte er sich nur mit sich selber vergleichen, wählt der Nutzer diese Funktion und zwei Zeiträume aus, die er gegeneinander vergleichen möchte. Daraus werden zwei Zeitreihen generiert, die dann in einer Statistik visualisiert werden. Möchte der Nutzer sich mit Anderen vergleichen wählt er einen oder mehrere Vergleichstags (\ref{sec:vergl_tags}) aus. Beispiel: Der Nutzer möchte sich regional Vergleichen, dann kann der Nutzer einen Längenparameter angeben, in welchem Umkreis der Nutzer sich vergleichen möchte. Auch hier muss der Nutzer einen Zeitraum wählen in dem der Nutzer sich vergleichen will. Dann wird eine Vergleichszeitreihe mit der Vergleichsgruppe in dem gegebenen Zeitraum erstellt und visualisiert. 
+%TODO irgendwie komisch formuliert
 \paragraph{Funktionale Anforderungen}
 Noch zu diskutieren
 
-\subsubsection{Support-Ticket erstellen und interagieren!!}
+\subsubsection{Support-Ticket erstellen und interagieren}
 % Hier also auch Support-Ticket Schließen
 \paragraph{Beschreibung und Priorität}
 Dem Benutzer wird die Möglichkeit gegeben, Support Tickets zu erstellen und somit Kontakt zu einem Supporter aufzunehmen der ihm gegebenenfalls bei einem Problem bezüglich der Software helfen kann. Diese Funktion ist relevant um die Benutzerfreundlichkeit weiter zu erhöhen.
 \paragraph{Sequenzen von Benutzeraktionen und Systemantworten}
-Der Benutzer wählt den Knopf um den Support zu kontaktieren. Hier hat er die Möglichkeit sein Problem schon konkreter zu schildern. Nach anschließender Bestätigung durch einen weiteren Knopfdruck wird das Ticket erstellt und der Benutzer erhält eine Benachrichtigung, dass sich zeitnah jemand um seine Angelegenheit kümmern wird. Sobald ein Supporter Zeit hat sich dem Problem anzunehmen, kann der Supporter das Ticket annehmen (siehe \ref{ticket_annehmen}) und ein Live Chat zwischen beiden wird eingerichtet. Wenn sich das Problem erledigt hat, hat der Supporter die Möglichkeit den Live Chat zu schließen.
+Der Benutzer wählt den Knopf um den Support zu kontaktieren. Hier hat er die Möglichkeit sein Problem schon konkreter zu schildern. Nach anschließender Bestätigung durch einen weiteren Knopfdruck wird das Ticket erstellt und der Benutzer erhält eine Benachrichtigung, dass sich zeitnah jemand um seine Angelegenheit kümmern wird. Sobald ein Supporter Zeit hat sich dem Problem anzunehmen, kann der Supporter das Ticket annehmen (siehe \ref{ticket_annehmen}) und ein Live-Chat zwischen beiden wird eingerichtet. Wenn sich das Problem erledigt hat, hat der Supporter die Möglichkeit den Live-Chat zu schließen.
+%TODO references resolven
 \paragraph{Funktionale Anforderungen}
 \begin{itemize}
 \item \textbf{TICK1} Bereitstellung eines Interfaces um das Ticket zu erstellen.
-\item \textbf{TICK2} Möglichkeit für den Supporter den Live Chat zu schließen.
+\item \textbf{TICK2} Möglichkeit für den Supporter den Live-Chat zu schließen.
 \end{itemize}
 
 
 \subsection{Support}
-\subsubsection{Support-Ticket eines Benutzers annehmen und interagieren!!}
+\subsubsection{Support-Ticket eines Benutzers annehmen und interagieren}
 % Hier kann einfach nach akzeptieren gesagt werden siehe 4.2.11 und auch ein verweis auf 4.3.2 wäre gut.
+\paragraph{Beschreibung und Priorität}
+Es ist wichtig, dass der Support nicht unkontrolliert über alle Accounts der Nutzer verfügen kann. Daher müssen vor einer Interaktion mit den Daten der Nutzer immer ein Ticket vom Benutzer erstellt werden (siehe \ref{ticket_erstellen}).
+Nachdem das gelungen ist und das Ticket vom Support angenommen wurde, hat dieser die Möglichkeit den Account zu verwalten(siehe \ref{account_verwalten}) und dem Benutzer optimal zu Helfen.
+\paragraph{Sequenzen von Benutzeraktionen und Systemantworten}
+Nachdem der Benutzer ein Support-Ticket geöffnet hat(siehe \ref{ticket_erstellen}), muss der Support nur noch das Ticket annehmen, durch das Klicken auf einen Button. Danach öffnet sich ein Live-Chat zwischen beiden und der Supporter hat Zugriff auf die Daten des Benutzers. Nachdem das Problem gelöst wurde, kann der Supporter den Live-Chat und somit auch das Ticket schließen, durch das Klicken auf einen weiteren Button.
+\paragraph{Funktionale Anforderungen}
+\begin{itemize}
+	\item \textbf{SUPA1} Laufende Internetverbindung.
+	\item \textbf{SUPA2} Bereitstellung eines Interfaces um das Ticket zu erstellen.
+	\item \textbf{SUPA3} Möglichkeit für den Supporter den Live-Chat zu schließen. 
+\end{itemize}
 
 \subsubsection{Account eines Users verwalten}
 \paragraph{Beschreibung und Priorität}
@@ -249,9 +262,9 @@ Wenn der Admin sich für eine der Funktionen entschieden hat, kann er diese ausf
 
 \subsubsection{Support- und Adminaccount erstellen}
 \paragraph{Beschreibung und Priorität}
-Der Admin soll in der Lage sein Support- und Adminaccounts zu erstellen. Der Supportccount kann von dem Support Team verwendet werden um Zugang zu dem System zu erhalten. Über diesen Account kann der Support die Systemfunktionen des Supports nutzen. Ein Adminacount hätte die selben Rechte wie der erstellende Adminbenutzer.
+Ein Admin soll in der Lage sein Support- und Adminaccounts zu erstellen. Der Supportccount kann von dem Support Team verwendet werden um Zugang zu dem System zu erhalten. Über diesen Account kann der Support die Systemfunktionen des Supports nutzen. Ein Adminaccount hätte die selben Rechte wie der erstellende Adminbenutzer.
 \paragraph{Sequenzen von Adminaktionen und Systemantworten}
-Um einen Support- oder Adminaccount zu erstellen soll eine Maske erstellt werden. In der Maske gibt es die Felder: Name, Passwort und Email sowie diw Wahl ob es sich um ein Support- oder Adminaccount handelt. Wenn der Admin alle Felder ausgefüllt hat, kann er auf der Maske ein Bestätigungsknopf drücken und der Account wird dadurch angelegt. Zusätzlich soll es auf der Maske ein "Schließen" Knopf geben falls der Admin die Aktion abbrechen will.
+Um einen Support- oder Adminaccount zu erstellen soll eine Maske erstellt werden. In der Maske gibt es die Felder: Name, Passwort und Email sowie die Wahl ob es sich um ein Support- oder Adminaccount handelt. Wenn der Admin alle Felder ausgefüllt hat, kann er auf der Maske ein Bestätigungsknopf drücken und der Account wird dadurch angelegt. Zusätzlich soll es auf der Maske ein \gquote{Schließen} Knopf geben falls der Admin die Aktion abbrechen will.
 \paragraph{Funktionale Anforderungen}
 Noch zu diskutieren.
 
@@ -262,9 +275,10 @@ Beispiele dafür wären Regionale Vergleiche, Vergleiche in Haushaltsgröße, Ve
 Vergleiche mit Immobilienalter und Vergleiche mit dem Alter des Nutzers. 
 Später können dann Vergleichszeitreihen (\ref{sec:vergl_zeitr}) mit dem neuen Tag erstellt werden.
 \paragraph{Sequenzen von Adminaktionen und Systemantworten}
-Der Admin wählt in einer Maske eine einen neuen Vergleichstag, den er hinzufügen möchte. 
-Es muss gewährleistet sein, dass nicht schon ein Vergleichstag unter dem selben Namen existiert. 
-Die Maske kann der Admin schlussendlich bestätigen oder abbrechen. 
+
+Der Admin wählt in einer Maske eine einen neuen Vergleichstag, den er hinzufügen möchte.
+Es muss gewährleistet sein, dass nicht schon ein Vergleichstag unter dem selben Namen existiert.
+Die Maske kann der Admin schlussendlich bestätigen oder abbrechen.
 Bei Bestätigung wird der Vergleichstag erstellt.
 \paragraph{Funktionale Anforderungen}
 Noch zu diskutieren.
@@ -297,5 +311,3 @@ Wenn er dann auf auf "bestätigen" klickt, werden die neuen Werte als
 neue Vergleichswerte definiert in den Tags die eingetragen wurden.
 \paragraph{Funktionale Anforderungen}
 Es muss gewährleistet werden, dass beim manuellen Eintragen die Tags tatsächlich existieren.
-
-
