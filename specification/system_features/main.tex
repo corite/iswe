@@ -66,6 +66,22 @@ Der Nutzer geht auf den Menüpunkt Statistiken und wählt den gewünschten Verbr
 \paragraph{Funktionale Anforderungen}
 Noch zu diskutieren.
 
+\subsubsection{Verbraucher verwalten}
+
+\paragraph{Beschreibung und Priorität}
+Es soll möglich sein, dass neben dem manuellen Eintragen der Verbräuche und automatischen Eintragen durch ein externes Gerät (siehe \ref{sysf:verb_eintragen}), die Verbräuche durch einen Verbraucher zu generieren. Dieser wird dein einen Verbauch jeden Tag generieren. Das Verwalten von Verbraucher hat eine eher niedrige Priorität, da die Kernfunktionalität der Verbräche schon mit mit manuellen Eintragen abgedeckt ist.
+\paragraph{Sequenzen von Benutzeraktionen und Systemantworten} Falls ein bestehender Verbraucher bearbeitet werden soll, soll dieser aus einer Liste aller erstellten Verbrächer auswählbar sein. Dabei ist jeder Verbraucher einer Immobilie zugeordnet, was in der Liste auch kommuniziert sein soll. Es kann natürlich auch ein Verbraucher aus der Liste gelöscht werden.
+
+Falls ein Verbraucher bearbeitet oder erstellt werden soll, kann man nun den Namen, den täglichen Verbrauch (in Bezug auf eine Verbrauchszeitreiehe) und die Immobilie eintragen oder bearbeiten. Schließlich können die Änderungen gespeichert werden. 
+\paragraph{Funktionale Anforderungen}
+\begin{itemize}
+	\item \textbf{VERV1} List aller Verbraucher anzeigen. Zusätzlich signalisierenzu welcher Immobilie der jeweilige Verbraucher assoziiert ist.
+	\item \textbf{VERV2} Name, assoziierte Immobilie und täglichen Verbrauch anpassen.
+	\item \textbf{VERV3} Tägliches erstellen eines Verbrauchs mit dem gespeicherten täglichen Verbrauch. 
+\end{itemize}
+
+
+
 \subsubsection{Prognosen einsehen}
 \paragraph{Beschreibung und Priorität}
 Die Funktion Prognosen einsehen dient dem Nutzer dazu Prognosen für zukünftige Verbräuche einzusehen. Die Prognosen werden auf Basis von vorherigen Verbräuchen und eingetragenen Verbrauchern gebildet. Wenn der Verbrauch eines Nutzers im letzten Jahr ungefähr gleich geblieben ist, wird dies auch für das nächste Jahr prognostiziert.
