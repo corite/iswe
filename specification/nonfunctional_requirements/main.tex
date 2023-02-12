@@ -2,24 +2,32 @@
 \label{quality_requirements}
 
 \subsection{Benutzerfreundlichkeit für den Benutzer}
-Da wir uns an den Endkunden richten, hat die Beachtung der Benutzerfreundlichkeit eine sehr hohe Priorität. Dies gilt allerdings in erster Linie nicht für Support oder Admin-Oberflächen, da diese geschult werden können (siehe \ref{sec:desc_user}).
+Da unsere Zielgruppe sehr breit gefächert ist und wir mit Nutzern rechnen müssen, welche nicht technikaffin sind,
+hat die Beachtung der Benutzerfreundlichkeit eine sehr hohe Priorität.
+Dies gilt allerdings in erster Linie nicht für Support oder Admin-Oberflächen, da diese geschult werden können (siehe \ref{sec:desc_user}).
 
 Die angezeigten Daten sollten möglichst viele Kundenbedürfnisse
 befriedigen, übersichtlich und leicht verständlich sein.
-Um dies zu testen, kann man den Nutzer stichprobenartig bitten, eine Bewertung oder Kritik zu hinterlegen zur Benutzerfreundlichkeit.
-Vor Fertigstellung des Produkts, sollten auch Prototypen an mögliche zukünftige Kunden verteilt werden und Usability-Tests durchgeführt werden. In diesen Tests sollten dann, die wichtigsten Funktionen getestet werden, wie Registrierung, Verbräuche eintragen oder Statistiken einsehen unter die Probe gestellt werden.
-Hier kann auch ggf. die Zeit gemessen werden, die ein Benutzer braucht um bestimmte Aktionen durchzuführen.
+Um das zu gewährleisten, sollte man vor Fertigstellung des Produkts Prototypen an mögliche zukünftige Kunden verteilen
+und Usability-Tests durchgeführt werden.
+In diesen Tests sollten dann die wichtigsten Funktionen, wie Registrierung, Verbräuche eintragen oder Statistiken einsehen
+unter die Probe gestellt werden.
+Hier kann auch ggf. die Zeit gemessen werden, die ein Benutzer benötigt, um bestimmte Aktionen durchzuführen.
+Außerdem kann man den Nutzer stichprobenartig bitten, eine Bewertung oder Kritik zu hinterlegen zur Benutzerfreundlichkeit.
 
-Weiterhin kann analysiert werden, ob bei dem Support Fragen zum Ausführen oder Finden einer konkreten Funktionalität besonders häufig vorkommt. Gegebenenfalls wäre eine FAQ-Seite dann von Nutzen.
+Weiterhin kann analysiert werden, ob bei dem Support Fragen zum Ausführen oder Finden einer konkreten Funktionalität besonders häufig vorkommt.
+Gegebenenfalls wäre eine FAQ-Seite dann hilfreich.
 
 \subsection{Verfügbarkeit}
 Die abzurufenden Daten sollten jederzeit verfügbar sein,
 damit der Benutzer immer die Möglichkeit hat,
-seine Verbräuche einzusehen und vergleichen zu können. Zusätzlich sollen auch die externen Verbrauchs-Einlese-Geräte jederzeit in der Lage sein, neue Daten ins System einzupflegen.
-Unser Ziel ist, dass im Normalbetrieb das System innerhalb eines Monats maximal für eine Stunde nicht erreichbar sein sollte.
+seine Verbräuche einzusehen und vergleichen zu können.
+Zusätzlich sollen auch die externen Verbrauchs-Einlese-Geräte jederzeit in der Lage sein, neue Daten ins System
+einzupflegen.
+Unser Ziel ist, dass im Normalbetrieb das System innerhalb eines Monats maximal für eine Stunde nicht erreichbar ist.
 
-Um das zu gewährleisten, sollte man jeden Tag an mehreren Uhrzeiten auf das System zugreifen
-und dokumentieren, ob man vom System eine Antwort bekommt und wie lange das dauert.
+Um das zu gewährleisten, greift man jeden Tag an mehreren Uhrzeiten auf das System zu
+und dokumentiert, ob man vom System eine Antwort bekommt und wie lange das dauert.
 Daraus wird analysiert, ob es bestimmte Uhrzeiten, Wochentage oder Monate gibt,
 an denen mit einem höheren Betrieb zu rechnen ist, als an den anderen und es kann dementsprechend das
 System auf diese Zeiten angepasst werden, damit die Verfügbarkeit trotzdem gewährleistet werden kann.
@@ -28,12 +36,16 @@ Es sollte auch regelmäßig getestet werden, ob das System im Hochlastbetrieb er
 indem man auf dem System eine besonders hohe Menge an Anfragen simuliert und währenddessen probiert,
 ob das System immer noch verfügbar ist.
 
-Im Fall eines Ausfalls des Systems sollte es nach spätestens sechs Stunden wieder erreichbar sein. Um dieses Ziel zu testen, messen wir bei einem Totalausfall die Zeit, die das System, lahmgelegt ist. Idealerweise erhalten wir den Anfangszeitpunkt durch etwaige Logs oder ähnliche Maßnahmen, die in der Umsetzung einer grundsätzlichen Wartbarkeit (siehe \ref{sec:other}) bzw. der Analysierbarkeit (siehe \ref{sec:anal}) entstehen.
+Im Fall eines Ausfalls des Systems sollte es nach spätestens sechs Stunden wieder erreichbar sein.
+Um dieses Ziel zu testen, messen wir bei einem Totalausfall die Zeit, die das System lahmgelegt ist.
+Idealerweise erhalten wir den Anfangszeitpunkt durch etwaige Logs oder ähnliche Maßnahmen,
+die in der Umsetzung einer grundsätzlichen Wartbarkeit (siehe \ref{sec:other}) bzw. der Analysierbarkeit (siehe \ref{sec:anal}) entstehen.
 
 \subsection{Wiederherstellbarkeit}
 Beim Versagen einer Komponente oder des ganzen Systems soll nach zwei Stunden bemerkt werden,
 dass ein Problem aufgetreten ist und nach spätestens sechs Stunden muss das System wieder verfügbar sein.
-Zusätzlich sollte stets sichergestellt werden, dass Daten, die älter als 5 Minuten sind, bei einem Ausfall des Systems rekonstruierbar sind. Etwaige Zahlungsinformation sollten niemals verloren gehen.
+Zusätzlich sollte stets sichergestellt werden, dass Daten, die älter als 5 Minuten sind, bei einem Ausfall des Systems rekonstruierbar sind.
+Etwaige Zahlungsinformation sollten niemals verloren gehen.
 
 Dazu sollten Trainingsszenarios geplant werden, bei denen ein Versagen des Systems simuliert wird.
 Es wird gemessen, wie lange es dauert, das System wieder verfügbar zu machen, und es kann beobachtet werden,
@@ -41,26 +53,40 @@ wie aktuell die Daten sind, welche vor dem Ausfall gespeichert wurden.
 
 
 \subsection{Analysierbarkeit und Modifizierbarkeit} \label{sec:anal}
-Da ein neues Produkt geschaffen werden soll, muss unbedingt die Analysierbarkeit und Modifizierbarkeit gewährleistet sein um viele anfängliche Fehler, möglichst schnell auszuräumen.
+Da ein neues Produkt geschaffen werden soll, muss unbedingt die Analysierbarkeit und Modifizierbarkeit gewährleistet
+sein, um viele anfängliche Fehler möglichst schnell auszuräumen.
 Dazu sollen Fehlermeldungen des Systems innerhalb von 2h wahrgenommen und innerhalb von weiteren 3h lokalisiert werden.
-Weiterhin müssen gut dokumentiert werden, was das System wann macht, bzw. welche Fehler auftreten. Zum Beispiel in einer Logdatei.
+Weiterhin muss gut dokumentiert werden, was das System wann macht, bzw. welche Fehler auftreten, z.B. in einer Logdatei.
 
-Ein ganz einfaches Testszenario wäre, die Zeit zu messen beginnend von dem Auftreten des Fehlers und je bis der Fehler wahrgenommen wurde, lokalisiert bzw. behoben wurde.
+Ein ganz einfaches Testszenario wäre, die Zeit zu messen beginnend von dem Auftreten des Fehlers,
+bis der Fehler wahrgenommen, dann lokalisiert und zuletzt behoben wurde.
+
 
 \subsection{Weitere Anforderungen} \label{sec:other}
-Hier sind weitere Anforderungen beziehungsweise Erwartungen an das System formuliert, die eingehalten werden sollen, aber nicht die selbe Priorität, wie die oben genannten Qualtitätsanforderungen, genießen.
-\paragraph{Wartungsfähigkeit}
+Hier sind weitere Anforderungen beziehungsweise Erwartungen an das System formuliert,
+die eingehalten werden sollen, aber nicht dieselbe Priorität, wie die oben genannten Qualtitätsanforderungen, genießen.
+\paragraph{Wartbarkeit}
 
-Grundsätzliche Wartbarkeit ist natürlich Grundlage eines langlebigen Produkts. Dazu zählt eine fundamentale Code-Dokumentation bzw. -Kommentierung, Einhaltung von Code-Guidelines und das, wie beim Punkt Analysierbarkeit (siehe \ref{sec:anal}) schon angesprochen, mögliche Logdateien.
+Grundsätzliche Wartbarkeit ist natürlich Grundlage eines langlebigen Produkts.
+Dazu zählt eine fundamentale Code-Dokumentation bzw. -Kommentierung, Einhaltung von Code-Guidelines und,
+wie beim Punkt Analysierbarkeit (siehe \ref{sec:anal}) schon angesprochen, mögliche Logdateien.
 
 
 \paragraph{Sicherheitsanforderungen}
-Um die Nutzerdaten ausreichend zu schützen, muss auch ein Augenmerk auf Sicherheit gelegt werden. Wir gehen davon aus, dass die Verbindung zum Webserver stets verschlüsselt ist. Außerdem sollte die Möglichkeit von brute-Force-Attacken zum Beispiel bei der Anmeldung eingeschränkt werden.
+Um die Nutzerdaten ausreichend zu schützen, muss auch ein Augenmerk auf Sicherheit gelegt werden.
+Wir gehen davon aus, dass die Verbindung zum Webserver stets verschlüsselt ist.
+Außerdem sollte die Möglichkeit von brute-Force-Attacken zum Beispiel bei der Anmeldung eingeschränkt werden.
 
-Im Falle, dass ein Angreifer in unser System eindringt, muss in der Datenablegung Maßnehmen gegen Datenklau getroffen werden, besonders in Bezug auf sensible Daten (Passwort, Wohnort, persönliche Verbräuche). Möglich wäre das Salzen und Hashen von Passwörtern und das Speichern der Daten an verschiedenen Orten.
+Im Falle, dass ein Angreifer in unser System eindringt, muss in der Datenablegung Maßnahmen gegen Datenklau
+getroffen werden, besonders in Bezug auf sensible Daten (Passwort, Wohnort, persönliche Verbräuche).
+Möglich wäre das Salzen und Hashen von Passwörtern und das Speichern der Daten an verschiedenen Orten.
 
 \paragraph{Datenschutzanforderungen}
-Es müssen nationale und internationale Datenschutzgesetze eingehalten werden. Nach DSGVO muss insbesondere jeder Benutzer in der Lage sein, all seine gespeicherten Daten einzusehen, herunterzuladen oder zu löschen.
+Es müssen nationale und internationale Datenschutzgesetze eingehalten werden.
+Nach DSGVO muss insbesondere jeder Benutzer in der Lage sein, all seine gespeicherten Daten einzusehen,
+herunterzuladen oder zu löschen.
 
 \subsection{Nicht-zu-berücksichtigende Anforderungen}
-Weil das Produkt auf einem Webserver laufen soll, ist die Übertragbarkeit des Systems kein Ziel. Außerdem ist extreme Genauigkeit der Messdaten beziehungsweise der Prognosen nicht erforderlich, die nur der generelle Trend interessant ist.
+Weil das Produkt auf einem Webserver laufen soll, ist die Übertragbarkeit des Systems kein Ziel.
+Außerdem ist extreme Genauigkeit der Messdaten beziehungsweise der Prognosen nicht erforderlich,
+da nur der generelle Trend interessant ist.
