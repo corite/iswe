@@ -262,7 +262,7 @@ kann er ein Support Ticket öffenen (siehe \ref{sysf:ticket_erstellen}).
 Zuerst versucht der Support dem Nutzer ohne weitere Daten weiterzuhelfen.
 Sollte dies das Problem immer noch nicht lösen, muss der Nutzer seinen Account für den Support freischalten.
 Dazu soll eine Oberfläche implementiert werden, wo der Nutzer die Freischaltung aktivieren, bestätigen und zurückziehen kann.
-Nach dem Schließen des Support-Tickets, soll die Freischaltung deaktiviert werden.
+Nach dem Schließen des Support Tickets, soll die Freischaltung deaktiviert werden.
 \paragraph{Funktionale Anforderungen}
 \begin{itemize}
 	\item \textbf{SUPF1} Nach Ticketerstellung (siehe \ref{sysf:ticket_erstellen}) soll die Möglichkeit für den Benutzer existieren, die Bearbeitung für den Supporter freizuschalten.
@@ -327,11 +327,11 @@ Noch zu diskutieren
 
 \subsubsection{Support Ticket erstellen und interagieren}
 \label{sysf:ticket_erstellen}
-% Hier also auch Support-Ticket Schließen
+% Hier also auch Support Ticket Schließen
 \paragraph{Beschreibung und Priorität}
 Dem Benutzer wird die Möglichkeit gegeben, Support Tickets zu erstellen und somit Kontakt zu einem Supporter aufzunehmen
 der ihm gegebenenfalls bei einem Problem bezüglich der Software helfen kann.
-Wenn ein Problem gelöst wurde, kann das Support-Ticket auch geschlossen werden.
+Wenn ein Problem gelöst wurde, kann das Support Ticket auch geschlossen werden.
 Diese Funktion ist relevant um die Benutzerfreundlichkeit weiter zu erhöhen.
 \paragraph{Sequenzen von Benutzeraktionen und Systemantworten}
 Der Benutzer wählt den Knopf \gquote{Support kontaktieren} um mit dem Support in Kontakt zu treten.
@@ -341,7 +341,7 @@ und der Benutzer erhält eine Benachrichtigung, dass sich zeitnah jemand um sein
 Sobald ein Supporter Zeit hat, sich mit dem Problem zu beschäftigen, kann der Supporter das Ticket annehmen (siehe~\ref{sysf:ticket_annehmen})
 und ein Live-Chat zwischen beiden wird eingerichtet.
 Wenn sich das Problem erledigt hat, bekommt der Support die Möglichkeit den Live-Chat zu schließen.
-Es soll auch einen Knopf geben, um das Support-Ticket zu schließen.
+Es soll auch einen Knopf geben, um das Support Ticket zu schließen.
 \paragraph{Funktionale Anforderungen}
 \begin{itemize}
 	\item \textbf{TICK1} Bereitstellung eines Interfaces um das Ticket zu erstellen.
@@ -353,7 +353,7 @@ Es soll auch einen Knopf geben, um das Support-Ticket zu schließen.
 %--------------------------------------------------------------------------------------------------------------------
 
 \subsection{Support}
-\subsubsection{Support-Ticket eines Benutzers annehmen und \label{sysf:ticket_annehmen}
+\subsubsection{Support Ticket eines Benutzers annehmen und \label{sysf:ticket_annehmen}
 	interagieren}
 % Hier kann einfach nach akzeptieren gesagt werden siehe 4.2.11 und auch ein verweis auf 4.3.2 wäre gut.
 \paragraph{Beschreibung und Priorität}
@@ -362,7 +362,7 @@ Daher müssen vor einer Interaktion mit den Daten der Nutzer immer ein Ticket vo
 Nachdem das gelungen ist und das Ticket vom Support angenommen wurde, hat dieser die Berechtigung
 den Account zu verwalten (siehe ~\ref{sysf:support_account_verwalten}) und dem Benutzer optimal zu helfen.
 \paragraph{Sequenzen von Benutzeraktionen und Systemantworten}
-Nachdem der Benutzer ein Support-Ticket geöffnet hat (siehe ~\ref{sysf:ticket_erstellen}), muss der Support
+Nachdem der Benutzer ein Support Ticket geöffnet hat (siehe ~\ref{sysf:ticket_erstellen}), muss der Support
 nur noch das Ticket annehmen, durch das Klicken auf einen Button.
 Danach öffnet sich ein Live-Chat zwischen beiden und der Support hat Zugriff auf die Daten des Benutzers.
 Im Fall, dass es nützlich sein sollte, kann der Supporter das Bearbeiten des Benutzer-Accounts anfragen (siehe~\ref{sysf:support_account_verwalten}).
