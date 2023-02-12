@@ -1,21 +1,21 @@
 \section{Systemfunktionen}
 \label{system_features}
 
-Wir haben die Systemfunktionen nach Nutzergruppen, also Benutzer, Support und Admin aufgeteilt. Use-Case sowie Klassendiagramm finden sich im Appendic in Abschnitt \hyperref[sec:app_modelle]{B}.
+Wir haben die Systemfunktionen nach Nutzergruppen, also Benutzer, Support und Admin aufgeteilt. Use-Case sowie Klassendiagramm finden sich im Appendix in Abschnitt \hyperref[sec:app_modelle]{B}.
 
 \subsection{Systemfunktionen für alle Nutzergruppen}
 \subsubsection{Anmeldung}
 \paragraph{Beschreibung und Priorität}
 
-Bevor ein dem System bereits bekannter Nutzer die Funktionen seiner Nutzergruppe ausführen kann,
+Bevor ein dem System bereits bekannter Nutzer, Supporter oder Admin die Funktionen seiner Nutzergruppe ausführen kann,
 muss er sich zunächst authentifizieren.
-Die Funktion hat eine sehr hohe Priorität, da sonst Nutzer und Nutzergruppen nicht voneinander unterschieden werden können.
+Die Funktion hat eine sehr hohe Priorität, da sonst Nutzergruppen nicht voneinander unterschieden werden und persönlichen Daten nicht den Individuen zugeordnet werden können.
 
 \paragraph{Sequenzen von Benutzeraktionen und Systemantworten}
 
-Der Nutzer gibt in einer Anmelde-Maske seinen Benutzernamen oder seine E-Mail-Adresse und sein Passwort ein
+Der Nutzer, Supporter oder Admin gibt in einer Anmelde-Maske seinen Benutzernamen oder seine E-Mail-Adresse und sein Passwort ein
 und bestätigt dies.
-Ist ANM4 erfüllt so ist der Nutzer nun eingeloggt und wird zum Home-Bildschirm weitergeleitet.
+Ist ANM4 erfüllt so ist er nun eingeloggt und wird zum Home-Bildschirm weitergeleitet.
 War dies nicht der Fall, so wird eine Fehlermeldung mit den möglichen Ursachen angezeigt.
 
 \paragraph{Funktionale Anforderungen}
