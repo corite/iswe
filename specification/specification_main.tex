@@ -1,4 +1,5 @@
 \documentclass{article}
+\usepackage[a4paper, left=25mm,right=25mm, top=25mm,bottom=25mm]{geometry}
 \usepackage[ngerman]{babel}
 \usepackage{tikz}
 \usetikzlibrary{shapes.geometric}
@@ -13,7 +14,90 @@
 \title{ISWE-Projekt: Verbrauchstransparenz}
 \author{Svaran Chandla (193922), Bernd-Albrecht Heizmann (192915),
     \\Christian Ortlepp (191835), Elisabeth Ostryanin (191674), \\Moritz Seppelt (194557), Dennis Untiet (192151)}
-\maketitle   
+
+
+
+
+%-----------------------------------------------------------------------------------------------------------------------
+%       TITLE PAGE
+%-----------------------------------------------------------------------------------------------------------------------
+
+\begin{titlepage} % Suppresses displaying the page number on the title page and the subsequent page counts as page 1
+	\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for horizontal lines, change thickness here
+
+	\center % Centre everything on the page
+
+	%------------------------------------------------
+	%	Headings
+	%------------------------------------------------
+
+
+	\vspace*{6cm}
+	\center\textsc{\huge System Requirements Specification
+	}\\[1.5cm] % erste Überschrift
+
+	\textsc{\LARGE Ingenieursmäßige Softwareentwicklung}\\[0.5cm] % zweite Überschrift
+
+	\textsc{\Large Steffen Späthe }\\[0.5cm] % dritte Überschrift
+
+	%------------------------------------------------
+	%	Title
+	%------------------------------------------------
+
+	\HRule\\[0.4cm]
+
+	{\Huge\bfseries Verbrauchstransparenz}\\[0.4cm] % Title
+
+	\HRule\\[1.5cm]
+
+	%------------------------------------------------
+	%	Author(s)
+	%------------------------------------------------
+
+	\begin{minipage}{0.4\textwidth}
+		\begin{flushright}
+			\large
+			\textit{Autoren}\\
+			{Svaran Chandla }\\
+			{Bernd-Albrecht Heizmann }\\
+			{Christian Ortlepp} \\
+			{Elisabeth Ostryanin} \\
+			Moritz Seppelt \\
+			Dennis Untiet
+			%\textsc{Blazkowicz} % Your name
+		\end{flushright}
+	\end{minipage}
+	~
+	\begin{minipage}{0.4\textwidth}
+		\begin{flushleft}
+			\large
+			\textit{Matrikelnummern}\\
+			193922\\
+			192915\\
+			191835\\
+			191674\\
+			194557\\
+			192151\\
+		\end{flushleft}
+	\end{minipage}
+
+
+
+	\vfill% Position the date 3/4 down the remaining page
+
+	{\large\today} % Date, change the \today to a set date if you want to be precise
+
+
+	\vfill
+
+\end{titlepage}
+
+%-----------------------------------------------------------------------------------------------------------------------
+%   TOC & SECTIONS
+%-----------------------------------------------------------------------------------------------------------------------
+
+
+
 \tableofcontents
 \newpage
 \input{introduction/main.tex}
