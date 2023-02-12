@@ -1,14 +1,13 @@
-\section{Allgemeine Beschreibung}
+\section{Allgemeine Beschreibung}\label{sec:allgemeine-beschreibung}
 
-
-\subsection{Produktperspektive}
+\subsection{Produktperspektive}\label{subsec:produktperspektive}
 
 
 Beim entwickelten Produkt handelt es sich um eine komplette Neuentwicklung.
 Architekturell handelt es sich um eine Client-Server-Anwendung mit einer Browserapplikation,
 welche mit einem Server kommuniziert, der wiederum alle benötigten Daten aufbereitet und persistiert.
 
-\subsection{Produktfunktionen}
+\subsection{Produktfunktionen}\label{subsec:produktfunktionen}
 
 \subsubsection{Eintragen von Verbräuchen}
 
@@ -23,14 +22,14 @@ Verbrauchswerte können über das Webinterface eingetragen werden.
 Verbraucher, bei denen der Verbrauch konstant ist, können ebenfalls über das Webinterface eingetragen werden.
 
 \paragraph{Automatisiertes Eintragen}
-\label{autom_eintragen}
+\label{par:autom_eintragen}
 
-Verbrauchswerte können zudem über Externe Geräte von Drittanbietern direkt am Zähler ausgelesen werden.
+Verbrauchswerte können zudem über externe Geräte von Drittanbietern direkt am Zähler ausgelesen werden.
 Die Werte werden dann vom Gerät über eine von der Applikation bereitzustellende API übertragen.
 
 \subsubsection{Statistiken}
 
-Alle gesammelten Daten können im Webinterface auf verschiedene Arten visualisiert
+Alle gesammelten Daten können im Webinterface auf verschiedenen Arten visualisiert
 und mit anderen Daten verglichen werden.
 Der Vergleich soll sowohl anhand des eigentlichen Verbrauchs (also in beispielsweise kWh)
 als auch umgerechnet in Kosten in der jeweiligen Landeswährung oder Umweltbelastung in beispielsweise Tonnen $CO_2$
@@ -50,14 +49,14 @@ Vorstellbare Vergleichstags sind beispielsweise eine Aufteilung der Nutzer nach 
 
 
 \paragraph{Vergleich mit plattformunabhängigen Metriken}
-\label{vgl_plattformunabhängig}
+\label{par:vgl_plattformunabhaengig}
 
 Die letzte mögliche Vergleichsmetrik besteht in Standard Vergleichswerten, welche nicht von Nutzern dieser Applikation,
 sondern von externen Forschungsinstituten bereitgestellt werden.
 Diese Daten werden aus dem Format des externen Instituts zur internen Verwendung in eine Vergleichszeitreihe übertragen,
 um unabhängig von der Auslieferungsart der Daten des Instituts zu sein.
 
-\subsection{Benutzermerkmale}\label{sec:desc_user}
+\subsection{Benutzermerkmale}\label{subsec:desc_user}
 % menschliche Akteure + Eigenschaften (zB Rechte)
 % zB Admin: kompliziertere Oberflächen, kann zum benutzen geschult werden. Wie Support
 
@@ -66,7 +65,7 @@ Zur Nutzung der App muss eines von drei Abomodellen (FREE, STANDARD, PROFESSIONA
 Die Aufteilung folgt einem \gquote{Freemium} Schema, sprich es gibt eine kostenlose Klasse und zwei Bezahlmodelle.
 Die Abgrenzung zwischen den Klassen bleibt zu entscheiden.
 Vorstellbar ist hier eine Begrenzung der Anzahl von Immobilien im Free-Modell,
-oder etwa, dass Features, wie das automatisierte Eintragen von Verbrauchswerten (siehe \ref{autom_eintragen}),
+oder etwa, dass Features, wie das automatisierte Eintragen von Verbrauchswerten (siehe ~\ref{par:autom_eintragen}),
 nur für bezahlende Nutzer zur Verfügung stehen.
 
 Neben dem Benutzer soll es auch weitere Benutzertypen geben - dem Support- und Admin-Benutzer.
@@ -88,7 +87,7 @@ auf allen gängigen Endgeräten (Smartphone, Tablet, PC) mit den jeweiligen Betr
 
 \subsection{Design- und Implementierungsbeschränkungen}
 
-Wie bereits in \ref{subsec:OEclient} beschrieben, ist die Client-Anwendung als Browserapplikation zu implementieren.
+Wie bereits in ~\ref{subsec:OEclient} beschrieben, ist die Client-Anwendung als Browserapplikation zu implementieren.
 Darüber hinaus muss die Nutzeranwendung einfach und intuitiv bedienbar sein da kein Fachpublikum angesprochen wird.
 
 \subsection{Benutzerhandbuch/Nutzerdokumentationen}
@@ -107,12 +106,12 @@ Darüber hinaus können Fragen auch vom Kundensupport beantwortet werden.
 
 
 \subsubsection{Statistiken}
-Plattformunabhängige Statistiken (siehe \ref{vgl_plattformunabhängig}) werden von Drittanbietern bereitgestellt.
+Plattformunabhängige Statistiken (siehe ~\ref{par:vgl_plattformunabhaengig}) werden von Drittanbietern bereitgestellt.
 Das Format, die Aktualität der Daten und die Kontinuität der Bereitstellung kann nicht sichergestellt werden.
 
 
 \subsubsection{Externes Gerät}
-Die Implementierung von kompatiblen externen Geräten (siehe \ref{autom_eintragen}) ist abhängig von Drittanbietern.
+Die Implementierung von kompatiblen externen Geräten (siehe ~\ref{par:autom_eintragen}) ist abhängig von Drittanbietern.
 
 \subsubsection{Zahlungsanbieter}
 
