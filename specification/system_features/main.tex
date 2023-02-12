@@ -261,16 +261,14 @@ Nachdem er die FAQ zur Handhabung des Systems gelesen hat und er dort keine Lös
 kann er ein Support Ticket öffenen (siehe \ref{sysf:ticket_erstellen}).
 Zuerst versucht der Support dem Nutzer ohne weitere Daten weiterzuhelfen.
 Sollte dies das Problem immer noch nicht lösen, muss der Nutzer seinen Account für den Support freischalten.
-Dem Nutzer wird ein Code generiert, den er dem Support durchgibt und den der Support benötigt,
-um sich berechtigten Zugang zum Nutzeraccount zu verschaffen.
-Nun kann der Support dem Nutzer optimal weiterhelfen, indem er Zugriff auf seinen Account hat.
+Dazu soll eine Oberfläche implementiert werden, wo der Nutzer die Freischaltung aktivieren, bestätigen und zurückziehen kann.
+Nach dem Schließen des Support-Tickets, soll die Freischaltung deaktiviert werden.
 \paragraph{Funktionale Anforderungen}
 \begin{itemize}
-	\item \textbf{SUPF1} Code zum Freischalten generieren. Die genauen Spezifikationen müssen noch diskutiert werden.
-	\item \textbf{SUPF2} Kommunikation des Codes an den Benutzer.
-	\item \textbf{SUPF3} Möglichkeit für den Support den Code einzugeben und die Berechtigungen anzufragen.
-	\item \textbf{SUPF4} Möglichkeit nach dem Freischalten für den Support die Daten des Benutzers einzusehen und zu bearbeiten.
-
+	\item \textbf{SUPF1} Nach Ticketerstellung (siehe \ref{sysf:ticket_erstellen}) soll die Möglichkeit für den Benutzer existieren, die Bearbeitung für den Supporter freizuschalten.
+	\item \textbf{SUPF2} Der Support muss nach Freischaltung in der Lage sein, die Benutzerdaten einzusehen und zu bearbeiten.
+	\item \textbf{SUPF3} Der Benutzer soll stets in der Lage sein, die Freischaltung zurückzuziehen.
+	\item \textbf{SUPF4} Nach Schließung des Support Tickets, soll die Freischaltung deaktiviert werden.
 \end{itemize}
 
 
