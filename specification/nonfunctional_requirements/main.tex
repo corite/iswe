@@ -9,13 +9,13 @@ Dies gilt allerdings in erster Linie nicht für Support oder Admin-Oberflächen,
 Die angezeigten Daten sollten möglichst viele Kundenbedürfnisse
 befriedigen, übersichtlich und leicht verständlich sein.
 Um das zu gewährleisten, sollte man vor Fertigstellung des Produkts Prototypen an mögliche zukünftige Kunden verteilen
-und Usability-Tests durchgeführt werden.
-In diesen Tests sollten dann die wichtigsten Funktionen, wie Registrierung, Verbräuche eintragen oder Statistiken einsehen
-unter die Probe gestellt werden.
-Hier kann auch ggf. die Zeit gemessen werden, die ein Benutzer benötigt, um bestimmte Aktionen durchzuführen.
+und Usability-Tests durchführen.
+In diesen Tests werden dann die wichtigsten Funktionen, wie Registrierung, Verbräuche eintragen oder Statistiken einsehen,
+unter die Probe gestellt.
+Hier kann man auch ggf. die Zeit messen, die ein Benutzer benötigt, um bestimmte Aktionen durchzuführen.
 Außerdem kann man den Nutzer stichprobenartig bitten, eine Bewertung oder Kritik zu hinterlegen zur Benutzerfreundlichkeit.
 
-Weiterhin kann analysiert werden, ob bei dem Support Fragen zum Ausführen oder Finden einer konkreten Funktionalität
+Weiterhin kann man analysieren, ob bei dem Support Fragen zum Ausführen oder Finden einer konkreten Funktionalität
 besonders häufig vorkommen.
 Gegebenenfalls wäre eine FAQ-Seite dann hilfreich.
 
@@ -40,13 +40,14 @@ ob das System immer noch verfügbar ist.
 Im Fall eines Ausfalls sollte das System nach spätestens sechs Stunden wieder erreichbar sein.
 Um dies zu testen, messen wir bei einem Totalausfall die Zeit, die das System nicht verfügbar ist.
 Idealerweise erhalten wir den Anfangszeitpunkt durch etwaige Logs oder ähnliche Maßnahmen,
-die in der Umsetzung einer gruWiederherstellbarkeitndsätzlichen Wartbarkeit (siehe \ref{sec:other})
+die in der Umsetzung einer grundsätzlichen Wartbarkeit (siehe \ref{sec:other})
 bzw. der Analysierbarkeit (siehe \ref{sec:anal}) entstehen.
 
-\subsection{}
-Das Versagen einer Komponente oder des ganzen Systems soll nach zwei Stunden bemerkt werden
-und nach spätestens sechs Stunden soll das System wieder verfügbar sein.
-Zusätzlich sollte stets sichergestellt werden, dass Daten, die älter als 5 Minuten sind, bei einem Ausfall des Systems rekonstruierbar sind.
+\subsection{Wiederherstellbarkeit}
+Das Versagen einer Komponente oder des ganzen Systems sollte man nach zwei Stunden bemerken
+und nach spätestens sechs Stunden muss das System wieder verfügbar sein.
+Zusätzlich sollte stets sichergestellt werden, dass Daten, die älter als 5 Minuten sind,
+bei einem Ausfall des Systems rekonstruierbar sind.
 Etwaige Zahlungsinformation sollten niemals verloren gehen.
 
 Dazu sollten Trainingsszenarios geplant werden, bei denen ein Versagen des Systems simuliert wird.
@@ -54,11 +55,11 @@ Es wird gemessen, wie lange es dauert, bis das System wieder verfügbar ist und 
 wie aktuell die Daten sind, welche vor dem Ausfall gespeichert wurden.
 
 
-\subsection{Analysierbarkeit und Modifizierbarkeit} \label{sec:anal}
+\subsection{Analysierbarkeit und Modifizierbarkeit} \label{sec:anal} % lol
 Da ein neues Produkt geschaffen werden soll, muss unbedingt die Analysierbarkeit und Modifizierbarkeit gewährleistet
 sein, um viele anfängliche Fehler möglichst schnell zu beheben.
 Dazu sollen Fehlermeldungen des Systems innerhalb von 2h wahrgenommen und innerhalb von weiteren 3h lokalisiert werden.
-Weiterhin muss gut dokumentiert werden, was das System wann macht, bzw. welche Fehler auftreten, z.B. in einer Logdatei.
+Weiterhin muss man gut dokumentieren, was das System wann macht, bzw. welche Fehler auftreten, z.B. in einer Logdatei.
 
 Ein ganz einfaches Testszenario wäre, die Zeit zu messen beginnend von dem Auftreten des Fehlers,
 bis der Fehler wahrgenommen, dann lokalisiert und zuletzt behoben wurde.
@@ -66,7 +67,7 @@ bis der Fehler wahrgenommen, dann lokalisiert und zuletzt behoben wurde.
 
 \subsection{Weitere Anforderungen} \label{sec:other}
 Hier sind weitere Anforderungen beziehungsweise Erwartungen an das System formuliert,
-die eingehalten werden sollen, aber nicht dieselbe Priorität, wie die breits genannten Qualtitätsanforderungen, aufweisen.
+die man einhalten sollte, welche aber nicht dieselbe Priorität, wie die breits genannten Qualtitätsanforderungen, aufweisen.
 \paragraph{Wartbarkeit}
 
 Grundsätzliche Wartbarkeit ist natürlich Grundlage eines langlebigen Produkts.
@@ -78,7 +79,7 @@ wie beim Punkt Analysierbarkeit (siehe ~\ref{sec:anal}) schon angesprochen, mög
 Um die Nutzerdaten ausreichend zu schützen, muss auch ein Augenmerk auf Sicherheit gelegt werden.
 Wir gehen davon aus, dass die Verbindung zum Webserver stets verschlüsselt ist.
 Außerdem sollte die Möglichkeit von Brute-Force-Attacken beispielsweise bei der Anmeldung eingeschränkt werden.
-Im Falle, dass ein Angreifer in unser System eindringt, muss in der Datenablegung Maßnahmen gegen Datendiebstahl
+Im Falle, dass ein Angreifer in unser System eindringt, müssen in der Datenablegung Maßnahmen gegen Datendiebstahl
 getroffen werden, besonders in Bezug auf sensible Daten (Passwort, Wohnort, persönliche Verbräuche).
 Möglich wäre das Salzen und Hashen von Passwörtern und das Speichern der Daten an verschiedenen Orten.
 
@@ -88,6 +89,6 @@ Nach DSGVO muss insbesondere jeder Benutzer in der Lage sein, all seine gespeich
 herunterzuladen oder zu löschen.
 
 \subsection{Nicht-zu-berücksichtigende Anforderungen}
-Weil das Produkt auf einem Webserver laufen soll, ist die Übertragbarkeit des Systems kein anstrebsames Ziel.
+Weil das Produkt auf einem Webserver laufen soll, ist die Übertragbarkeit des Systems kein erstrebenswertes Ziel.
 Außerdem ist extreme Genauigkeit der Messdaten beziehungsweise der Prognosen nicht erforderlich,
 da nur der allgemeine Trend von Interesse ist.
