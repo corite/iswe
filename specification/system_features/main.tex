@@ -1,7 +1,7 @@
 \section{Systemfunktionen}
 \label{system_features}
 
-Wir haben die Systemfunktionen nach Nutzergruppen aufgeteilt.
+Wir haben die Systemfunktionen nach Nutzergruppen, also Benutzer, Support und Admin aufgeteilt. Use-Case sowie Klassendiagramm finden sich im Appendic in Abschnitt \hyperref[sec:app_modelle]{B}.
 
 \subsection{Systemfunktionen für alle Nutzergruppen}
 \subsubsection{Anmeldung}
@@ -23,9 +23,9 @@ War dies nicht der Fall, so wird eine Fehlermeldung mit den möglichen Ursachen 
 	\item \textbf{ANM1} Darstellen der Anmelde-Maske.
 	\item \textbf{ANM2} Validieren der Eingabe also Überprüfung von ANM4 durch ggf. Abgleich mit der Datenbank.
 	\item \textbf{ANM3} Auf nicht erfüllte Anforderungen (ANM4) in der Anmelde-Maske aufmerksam machen,
-						falls diese nicht erfüllt sind.
+	      falls diese nicht erfüllt sind.
 	\item \textbf{ANM4} Der Benutzername oder die E-Mail-Adresse muss im System vorhanden sein und das Passwort
-						bzw. dessen Hash müssen übereinstimmen.
+	      bzw. dessen Hash müssen übereinstimmen.
 \end{itemize}
 
 
@@ -49,9 +49,9 @@ und kann daraufhin seine Eingaben anpassen.
 \begin{itemize}
 	\item \textbf{REG1} Darstellen der Anmelde-Maske
 	\item \textbf{REG2} Validieren der Eingabe also Überprüfung von REG4, REG5, REG6
-						durch ggf. Abgleich mit der Datenbank
+	      durch ggf. Abgleich mit der Datenbank
 	\item \textbf{REG3} Auf nicht erfüllte Anforderungen (REG4, REG5, REG6) in der Anmelde-Maske aufmerksam machen,
-						falls diese nicht erfüllt sind.
+	      falls diese nicht erfüllt sind.
 	\item \textbf{REG4} Keine 2 Benutzer dürfen denselben Benutzernamen haben.
 	\item \textbf{REG5} Das Passwort muss dem folgenden Standard genügen:
 	      \begin{itemize}
@@ -59,7 +59,7 @@ und kann daraufhin seine Eingaben anpassen.
 		      \item Enthält min. einen deutschen Großbuchstaben (A-Z, Ä, Ö, Ü)
 		      \item Enthält min. einen deutschen Kleinbuchstaben (a-z, ä, ö, ü, ß)
 		      \item Enthält min. eine arabische Ziffer (0-9)
-			  \item Enthält min. ein Sonderzeichen (!, \$, \#, \%, \ldots)
+		      \item Enthält min. ein Sonderzeichen (!, \$, \#, \%, \ldots)
 	      \end{itemize}
 	\item \textbf{REG6} Die eingegebene E-Mail-Adresse muss im richtigen Format sein.
 	\item \textbf{REG7} Abspeichern der neuen Accountdaten.
@@ -128,7 +128,7 @@ Schließlich können die Änderungen gespeichert werden.
 \paragraph{Funktionale Anforderungen}
 \begin{itemize}
 	\item \textbf{VERV1} 	Liste aller Verbraucher anzeigen.
-							Zusätzlich signalisieren, zu welcher Immobilie der jeweilige Verbraucher assoziiert ist.
+	      Zusätzlich signalisieren, zu welcher Immobilie der jeweilige Verbraucher assoziiert ist.
 	\item \textbf{VERV2} 	Name, assoziierte Immobilie und täglichen Verbrauch anpassen.
 	\item \textbf{VERV3} 	Tägliches Erstellen eines Verbrauchs mit dem gespeicherten täglichen Verbrauch.
 \end{itemize}
@@ -229,18 +229,18 @@ Der Vorgang kann zu jedem Zeitpunkt abgebrochen werden.
 \paragraph{Funktionale Anforderungen}
 \begin{itemize}
 	\item \textbf{ABO1} Darstellen der Maske zum Auswählen des Abomodells und Eintragen von Startzeitpunkt
-						und Rechnungsdresse.
+	      und Rechnungsdresse.
 	\item \textbf{ABO2} Validieren der Eingabe des Startzeitpunkts (nach ABO3) und Reflektieren möglicher
-						Fehler in der Maske.
+	      Fehler in der Maske.
 	\item \textbf{ABO3} Der Startzeitpunkt muss folgenden Richtlinien genügen:
 	      \begin{itemize}
 		      \item Er muss in der Zukunft liegen oder am derzeitigen Tag sein
 		      \item Falls der Kündigungszeitraum eines laufendes Abos noch nicht abgelaufen ist,
-			  		muss der Startzeitpunkt nach Ablauf dieses Zeitraums liegen
+		            muss der Startzeitpunkt nach Ablauf dieses Zeitraums liegen
 	      \end{itemize}
 	\item \textbf{ABO4} Grundlegende Format-Überprüfungen der Rechnungsadresse
-						(z.B. Postleitzahl besteht aus Zahlen etc.).
-						Nichteinhaltung sollen in der Maske kommuniziert werden.
+	      (z.B. Postleitzahl besteht aus Zahlen etc.).
+	      Nichteinhaltung sollen in der Maske kommuniziert werden.
 	\item \textbf{ABO5} Eine Verbindung zu den externen Zahlungsanbietern muss aufgebaut werden.
 	\item \textbf{ABO6} Schaffen einer Möglichkeit in jedem Schritt den Prozess abzubrechen.
 	\item \textbf{ABO7} Versenden einer Zahlungsbestätigung.
@@ -291,8 +291,8 @@ Dort sind alle Optionen AVW1 - AVW6 einsehbar und änderbar.
 	\item \textbf{AVW4} Nutzername.
 	\item \textbf{AVW5} Email.
 	\item \textbf{AVW6} Passwort.
-						Hier sollte das aktuelle Passwort jedoch nicht einsehbar sein
-						(da es nicht gespeichert werden soll).
+	      Hier sollte das aktuelle Passwort jedoch nicht einsehbar sein
+	      (da es nicht gespeichert werden soll).
 \end{itemize}
 
 
@@ -345,8 +345,8 @@ Wenn sich das Problem erledigt hat, bekommt der Support die Möglichkeit den Liv
 Es soll auch einen Knopf geben, um das Support-Ticket zu schließen.
 \paragraph{Funktionale Anforderungen}
 \begin{itemize}
-\item \textbf{TICK1} Bereitstellung eines Interfaces um das Ticket zu erstellen.
-\item \textbf{TICK2} Möglichkeit für den Benutzer den Live-Chat zu schließen.
+	\item \textbf{TICK1} Bereitstellung eines Interfaces um das Ticket zu erstellen.
+	\item \textbf{TICK2} Möglichkeit für den Benutzer den Live-Chat zu schließen.
 \end{itemize}
 
 %--------------------------------------------------------------------------------------------------------------------
@@ -355,7 +355,7 @@ Es soll auch einen Knopf geben, um das Support-Ticket zu schließen.
 
 \subsection{Support}
 \subsubsection{Support-Ticket eines Benutzers annehmen und \label{sysf:ticket_annehmen}
-interagieren}
+	interagieren}
 % Hier kann einfach nach akzeptieren gesagt werden siehe 4.2.11 und auch ein verweis auf 4.3.2 wäre gut.
 \paragraph{Beschreibung und Priorität}
 Es ist wichtig, dass der Support nicht unkontrolliert auf alle Accounts der Nutzer zugreifen kann.
@@ -373,7 +373,7 @@ und der Support verliert den Zugriff auf die Daten des Nutzers.
 % TODO: und der Support verliert wieder den Zugriff auf den Nutzer
 \paragraph{Funktionale Anforderungen}
 \begin{itemize}
-	\item \textbf{SUPA1} Möglichkeit für den Supporter den Live-Chat zu schließen. 
+	\item \textbf{SUPA1} Möglichkeit für den Supporter den Live-Chat zu schließen.
 	\item \textbf{SUPA2} Möglichkeit für den Supporter das Support Ticket zu schließen.
 \end{itemize}
 
@@ -442,7 +442,7 @@ Fährt der Admin fort, speichert das System die Änderungen und wendet diese zu 
 	\item \textbf{ABOM4} Ein neuer Preis für das Abomodell soll wählbar sein.
 	\item \textbf{ABOM5} Der Startzeitpunkt muss in der Zukunft liegen und muss den gesetzlichen Regelungen entsprechen.
 	\item \textbf{ABOM6} Validieren der Eingabe des Startzeitpunkts (nach ABO5) und Reflektieren möglicher Fehler
-							in der Maske.
+	      in der Maske.
 \end{itemize}
 
 %--------------------------------------------------------------------------------------------------------------------
@@ -471,7 +471,7 @@ Noch zu diskutieren.
 \paragraph{Beschreibung und Priorität}
 Der Admin soll in der Lage sein, Vergleichstags festzulegen.
 Beispiele dafür wären regionale Vergleiche, Vergleiche in Haushaltsgröße, Vergleiche mit ähnlicher Immobiliengröße,
-Vergleiche mit Immobilienalter und Vergleiche mit dem Alter des Nutzers. 
+Vergleiche mit Immobilienalter und Vergleiche mit dem Alter des Nutzers.
 Später können dann Vergleichszeitreihen (siehe~\ref{sec:vergl_zeitr}) mit dem neuen Tag erstellt werden.
 \paragraph{Sequenzen von Adminaktionen und Systemantworten}
 
@@ -488,7 +488,7 @@ Noch zu diskutieren.
 \paragraph{Beschreibung und Priorität}
 Der Admin kann Vergleichszeitreihen anlegen.
 Dafür lässt er sich die Daten aller Nutzer zu interessanten und relevanten
-Kennzahlen berechnen, welche bei ihm gespeichert werden, 
+Kennzahlen berechnen, welche bei ihm gespeichert werden,
 damit er, wenn ein Nutzer sich vergleichen möchte mit anderen Nutzern,
 nur noch die Daten vom Admin geladen werden, statt jedes Mal auf die gesamte Datenbank zuzugreifen.
 Alternativ kann der Admin auch aus externen Ressourcen Vergleichswerte eintragen.
@@ -498,9 +498,9 @@ Der Admin klickt im Menü auf die Schaltfläche \gquote{Vergleichszeitreihe erst
 Dann sieht man auf der Webseite die Möglichkeit \gquote{aus eigenen Nutzerdaten erstellen} oder
 \gquote{manuell eintragen}.
 Wenn man das Erste auswählt, werden die Daten der Nutzer ausgewertet und mit den zugehörigen Tags verknüpft.
-Das kann einige Sekunden dauern also gibt es während der Ladezeit eine Ladegrafik, 
+Das kann einige Sekunden dauern also gibt es während der Ladezeit eine Ladegrafik,
 welche dem Admin mitteilt, dass die Seite mit Rechnen beschäftigt ist.
-Der Admin kann dann in allen Tags die berechneten Werte einsehen. 
+Der Admin kann dann in allen Tags die berechneten Werte einsehen.
 Wenn er auf \gquote{Vergleichszeitreihe aktualisieren} klickt,
 wird er danach gefragt, ob er sich sicher ist, dass er die Vergleichszeitreihe aktualisieren möchte.
 Wenn der Admin die Anfrage bestätigt, werden diese Werte als neue Vergleichswerte definiert.
