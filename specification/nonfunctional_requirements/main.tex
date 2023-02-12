@@ -15,7 +15,8 @@ unter die Probe gestellt werden.
 Hier kann auch ggf. die Zeit gemessen werden, die ein Benutzer benötigt, um bestimmte Aktionen durchzuführen.
 Außerdem kann man den Nutzer stichprobenartig bitten, eine Bewertung oder Kritik zu hinterlegen zur Benutzerfreundlichkeit.
 
-Weiterhin kann analysiert werden, ob bei dem Support Fragen zum Ausführen oder Finden einer konkreten Funktionalität besonders häufig vorkommt.
+Weiterhin kann analysiert werden, ob bei dem Support Fragen zum Ausführen oder Finden einer konkreten Funktionalität
+besonders häufig vorkommen.
 Gegebenenfalls wäre eine FAQ-Seite dann hilfreich.
 
 \subsection{Verfügbarkeit}
@@ -24,7 +25,7 @@ damit der Benutzer immer die Möglichkeit hat,
 seine Verbräuche einzusehen und vergleichen zu können.
 Zusätzlich sollen auch die externen Verbrauchs-Einlese-Geräte jederzeit in der Lage sein, neue Daten ins System
 einzupflegen.
-Unser Ziel ist, dass im Normalbetrieb das System innerhalb eines Monats maximal für eine Stunde nicht erreichbar ist.
+Unser Ziel ist es, dass im Normalbetrieb das System innerhalb eines Monats maximal für eine Stunde nicht erreichbar ist.
 
 Um das zu gewährleisten, greift man jeden Tag an mehreren Uhrzeiten auf das System zu
 und dokumentiert, ob man vom System eine Antwort bekommt und wie lange das dauert.
@@ -32,29 +33,30 @@ Daraus wird analysiert, ob es bestimmte Uhrzeiten, Wochentage oder Monate gibt,
 an denen mit einem höheren Betrieb zu rechnen ist, als an den anderen und es kann dementsprechend das
 System auf diese Zeiten angepasst werden, damit die Verfügbarkeit trotzdem gewährleistet werden kann.
 
-Es sollte auch regelmäßig getestet werden, ob das System im Hochlastbetrieb erreichbar ist,
-indem man auf dem System eine besonders hohe Menge an Anfragen simuliert und währenddessen probiert,
+Außerdem sollte regelmäßig getestet werden, ob das System im Hochlastbetrieb erreichbar ist.
+Dazu simuliert man eine besonders hohe Menge an Anfragen an das System und testet währenddessen,
 ob das System immer noch verfügbar ist.
 
-Im Fall eines Ausfalls des Systems sollte es nach spätestens sechs Stunden wieder erreichbar sein.
-Um dieses Ziel zu testen, messen wir bei einem Totalausfall die Zeit, die das System lahmgelegt ist.
+Im Fall eines Ausfalls sollte das System nach spätestens sechs Stunden wieder erreichbar sein.
+Um dies zu testen, messen wir bei einem Totalausfall die Zeit, die das System nicht verfügbar ist.
 Idealerweise erhalten wir den Anfangszeitpunkt durch etwaige Logs oder ähnliche Maßnahmen,
-die in der Umsetzung einer grundsätzlichen Wartbarkeit (siehe \ref{sec:other}) bzw. der Analysierbarkeit (siehe \ref{sec:anal}) entstehen.
+die in der Umsetzung einer gruWiederherstellbarkeitndsätzlichen Wartbarkeit (siehe \ref{sec:other})
+bzw. der Analysierbarkeit (siehe \ref{sec:anal}) entstehen.
 
-\subsection{Wiederherstellbarkeit}
-Beim Versagen einer Komponente oder des ganzen Systems soll nach zwei Stunden bemerkt werden,
-dass ein Problem aufgetreten ist und nach spätestens sechs Stunden muss das System wieder verfügbar sein.
+\subsection{}
+Das Versagen einer Komponente oder des ganzen Systems soll nach zwei Stunden bemerkt werden
+und nach spätestens sechs Stunden soll das System wieder verfügbar sein.
 Zusätzlich sollte stets sichergestellt werden, dass Daten, die älter als 5 Minuten sind, bei einem Ausfall des Systems rekonstruierbar sind.
 Etwaige Zahlungsinformation sollten niemals verloren gehen.
 
 Dazu sollten Trainingsszenarios geplant werden, bei denen ein Versagen des Systems simuliert wird.
-Es wird gemessen, wie lange es dauert, das System wieder verfügbar zu machen, und es kann beobachtet werden,
+Es wird gemessen, wie lange es dauert, bis das System wieder verfügbar ist und es kann beobachtet werden,
 wie aktuell die Daten sind, welche vor dem Ausfall gespeichert wurden.
 
 
 \subsection{Analysierbarkeit und Modifizierbarkeit} \label{sec:anal}
 Da ein neues Produkt geschaffen werden soll, muss unbedingt die Analysierbarkeit und Modifizierbarkeit gewährleistet
-sein, um viele anfängliche Fehler möglichst schnell auszuräumen.
+sein, um viele anfängliche Fehler möglichst schnell zu beheben.
 Dazu sollen Fehlermeldungen des Systems innerhalb von 2h wahrgenommen und innerhalb von weiteren 3h lokalisiert werden.
 Weiterhin muss gut dokumentiert werden, was das System wann macht, bzw. welche Fehler auftreten, z.B. in einer Logdatei.
 
@@ -64,20 +66,19 @@ bis der Fehler wahrgenommen, dann lokalisiert und zuletzt behoben wurde.
 
 \subsection{Weitere Anforderungen} \label{sec:other}
 Hier sind weitere Anforderungen beziehungsweise Erwartungen an das System formuliert,
-die eingehalten werden sollen, aber nicht dieselbe Priorität, wie die oben genannten Qualtitätsanforderungen, genießen.
+die eingehalten werden sollen, aber nicht dieselbe Priorität, wie die breits genannten Qualtitätsanforderungen, aufweisen.
 \paragraph{Wartbarkeit}
 
 Grundsätzliche Wartbarkeit ist natürlich Grundlage eines langlebigen Produkts.
 Dazu zählt eine fundamentale Code-Dokumentation bzw. -Kommentierung, Einhaltung von Code-Guidelines und,
-wie beim Punkt Analysierbarkeit (siehe \ref{sec:anal}) schon angesprochen, mögliche Logdateien.
+wie beim Punkt Analysierbarkeit (siehe ~\ref{sec:anal}) schon angesprochen, mögliche Logdateien.
 
 
 \paragraph{Sicherheitsanforderungen}
 Um die Nutzerdaten ausreichend zu schützen, muss auch ein Augenmerk auf Sicherheit gelegt werden.
 Wir gehen davon aus, dass die Verbindung zum Webserver stets verschlüsselt ist.
-Außerdem sollte die Möglichkeit von brute-Force-Attacken zum Beispiel bei der Anmeldung eingeschränkt werden.
-
-Im Falle, dass ein Angreifer in unser System eindringt, muss in der Datenablegung Maßnahmen gegen Datenklau
+Außerdem sollte die Möglichkeit von Brute-Force-Attacken beispielsweise bei der Anmeldung eingeschränkt werden.
+Im Falle, dass ein Angreifer in unser System eindringt, muss in der Datenablegung Maßnahmen gegen Datendiebstahl
 getroffen werden, besonders in Bezug auf sensible Daten (Passwort, Wohnort, persönliche Verbräuche).
 Möglich wäre das Salzen und Hashen von Passwörtern und das Speichern der Daten an verschiedenen Orten.
 
@@ -87,6 +88,6 @@ Nach DSGVO muss insbesondere jeder Benutzer in der Lage sein, all seine gespeich
 herunterzuladen oder zu löschen.
 
 \subsection{Nicht-zu-berücksichtigende Anforderungen}
-Weil das Produkt auf einem Webserver laufen soll, ist die Übertragbarkeit des Systems kein Ziel.
+Weil das Produkt auf einem Webserver laufen soll, ist die Übertragbarkeit des Systems kein anstrebsames Ziel.
 Außerdem ist extreme Genauigkeit der Messdaten beziehungsweise der Prognosen nicht erforderlich,
-da nur der generelle Trend interessant ist.
+da nur der allgemeine Trend von Interesse ist.
